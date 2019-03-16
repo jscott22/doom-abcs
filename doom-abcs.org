@@ -1,0 +1,62 @@
+#+TITLE:     Doom Emacs ABCs
+#+AUTHOR:    Jason Scott
+#+EMAIL:     dev.jason.scott@gmail.com
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+#+OPTIONS:   num:nil
+* Overview
+** SPC
+
+| Key       | Description             |
+|-----------+-------------------------|
+| ~SPC DEL~ | [[#SPCDEL][Blink cursor line]]       |
+| ~SPC SPC~ | [[#SPCSPC][Find file in project]]    |
+| ~SPC '~   | [[#SPC'][Resume search]]           |
+| ~SPC ,~   | [[#SPC,][Switch workspace buffer]] |
+
+* SPC
+** ~SPC DEL~ - Blink cursor line
+:PROPERTIES:
+:CUSTOM_ID: SPCDEL
+:END:
+*** Resources
+- Github: [[https://github.com/hlissner/doom-emacs/blob/93d2a2212d38517104c207b95f8757ed77555e43/modules/ui/nav-flash/autoload.el#L4][+nav-flash/blink-cursor]]
+
+*** Summary
+Blink current line using [[https://github.com/rolandwalker/nav-flash][nav-flash]].
+
+** ~SPC SPC~ - Find file in project
+:PROPERTIES:
+:CUSTOM_ID: SPCSPC
+:END:
+*** Resources
+- Github: [[https://github.com/hlissner/doom-emacs/blob/develop/modules/completion/ivy/autoload/ivy.el#L243][+ivy/projectile-find-file]]
+
+*** Summary
+A more sensible ~counsel-projectile-find-file~ which will revert to
+~counsel-find-file~ if invoked from $HOME, ~counsel-file-jump~ if invoked from a
+non-project, ~projectile-find-file~ if in a big project (more than
+~ivy-sort-max-size~ files), or ~counsel-projectile-find-file~ otherwise.
+
+The point of this is to avoid Emacs locking up indexing massive file trees.
+
+** ~SPC '~ - Resume search
+:PROPERTIES:
+:CUSTOM_ID: SPC'
+:END:
+*** Resources
+- Github: [[https://github.com/hlissner/doom-emacs/blob/develop/.local/packages/elpa/ivy-20190308.1051/ivy.el#L1066][ivy-resume]]
+
+*** Summary
+Resume the last completion session.
+
+** ~SPC ,~ - Switch workspace buffer
+:PROPERTIES:
+:CUSTOM_ID: SPC,
+:END:
+*** Resources
+- Github: [[https://github.com/hlissner/doom-emacs/blob/develop/modules/completion/ivy/autoload/ivy.el#L94][+ivy/switch-workspace-buffer]]
+
+*** Summary
+Switch to another buffer within the current workspace.
+
+If ~ARG~ (universal argument), open selection in other-window.
