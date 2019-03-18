@@ -36,7 +36,7 @@
 (defun build-org-file (prefix buffer)
   (with-current-buffer "*scratch*"
     (erase-buffer)
-    (org-table-create)
+
     (let ((bindings (map-bindings prefix buffer)))
       (-reduce-from
        (lambda (acc it)
@@ -60,4 +60,35 @@
        ""
        bindings))))
 
+(defun build-table()
+  (with-current-buffer "*scratch*"
+    (erase-buffer)
+    (org-mode)
+    (insert "#+NAME: OVERVIEW\n")
+    (org-table-create "2x1")
+    (goto-char (point-min))
+    (re-search-forward "^#\\+NAME: OVERVIEW")
+    (next-line)
+    (org-table-goto-column 1)
+    (insert "Key")
+    (org-table-goto-column 2)
+    (insert "Command")
+    (org-table-hline-and-move)
+    ;; (goto-char (org-table-end))
+    ;; (backward-char)
+    ;; (let ((current-prefix-arg 4)) ;; emulate C-u
+    ;;   (call-interactively 'org-table-insert-row) ;; invoke align-regexp interactively
+    ;;   )
+    (org-table-goto-column 1)
+    (insert "SPC RET")
+    (org-table-goto-column 2)
+    (org-insert-link nil "foo" "foo")
+    (re-search-forward "^#\\+NAME: OVERVIEW")
+    (next-line)
+    (org-table-align)
+    ))
+
+(build-table)
+
+(org-create-table)
 (build-org-file (vector (string-to-char (kbd doom-leader-key))) (current-buffer))
