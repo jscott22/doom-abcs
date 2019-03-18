@@ -29,14 +29,21 @@
 
 
 
-(defun build-entry (key descript cmd)
-      (format
-                     "** %s \n*** Function\n %s\n*** Documentation\n\t%s\n" key descript (documentation cmd)))
+(defun build-entry (keyparts key descript cmd)
+  (format
+   "** %s
+:PROPERTIES:
+:CUSTOM_ID: %s
+:PROPERTIES: *** Function
+%s
+*** Documentationt
+%s"
+   key (string-join keyparts) descript (documentation cmd)))
 
 (defun build-org-file (prefix buffer)
   (with-current-buffer "*scratch*"
     (erase-buffer)
-
+(build-table)
     (let ((bindings (map-bindings prefix buffer)))
       (-reduce-from
        (lambda (acc it)
@@ -46,19 +53,21 @@
                 (keyparts (split-string key " "))
                 (pfx (nth 1 keyparts))
                 (descript (cdr keymap)))
+           (goto-char (max-char))
            (if (not (equal acc pfx))
                (progn
                  (insert (format "* %s \n" (string-join (-take 2 keyparts))))
-                 (insert (build-entry key descript cmd))
+                 (insert (build-entry keyparts key descript cmd))
                  pfx
                  )
 
              (progn
-               (insert (build-entry key descript cmd))
+               (insert (build-entry keyparts key descript cmd))
                acc
                ))))
        ""
        bindings))))
+(build-org-file (vector (string-to-char (kbd doom-leader-key))) (current-buffer))
 
 (defun build-table()
   (with-current-buffer "*scratch*"
@@ -74,11 +83,6 @@
     (org-table-goto-column 2)
     (insert "Command")
     (org-table-hline-and-move)
-    ;; (goto-char (org-table-end))
-    ;; (backward-char)
-    ;; (let ((current-prefix-arg 4)) ;; emulate C-u
-    ;;   (call-interactively 'org-table-insert-row) ;; invoke align-regexp interactively
-    ;;   )
     (org-table-goto-column 1)
     (insert "SPC RET")
     (org-table-goto-column 2)
@@ -88,7 +92,8 @@
     (org-table-align)
     ))
 
+(defun add-row()
+  )
 (build-table)
 
 (org-create-table)
-(build-org-file (vector (string-to-char (kbd doom-leader-key))) (current-buffer))
