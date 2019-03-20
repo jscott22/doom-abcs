@@ -30,20 +30,24 @@
 
 
 (defun build-entry (keyparts key descript cmd)
-  (format
-   "** %s
+  (goto-char (max-char))
+  (insert
+   (format
+    "** %s
 :PROPERTIES:
 :CUSTOM_ID: %s
-:PROPERTIES: *** Function
+:PROPERTIES:
+*** Function
 %s
-*** Documentationt
-%s"
-   key (string-join keyparts) descript (documentation cmd)))
+*** Documentation
+%s\n"
+    key (string-join keyparts) descript (documentation cmd))))
+
 
 (defun build-org-file (prefix buffer)
   (with-current-buffer "*scratch*"
     (erase-buffer)
-(build-table)
+    (build-table)
     (let ((bindings (map-bindings prefix buffer)))
       (-reduce-from
        (lambda (acc it)
@@ -51,18 +55,19 @@
                 (cmd (cdr it))
                 (key (car keymap))
                 (keyparts (split-string key " "))
-                (pfx (nth 1 keyparts))
+                (pfx (-take 2  keyparts))
                 (descript (cdr keymap)))
-           (goto-char (max-char))
            (if (not (equal acc pfx))
                (progn
-                 (insert (format "* %s \n" (string-join (-take 2 keyparts))))
-                 (insert (build-entry keyparts key descript cmd))
+                 (add-table pfx)
+                 (add-row key descript nil)
+                 (build-entry keyparts key descript cmd)
                  pfx
                  )
 
              (progn
-               (insert (build-entry keyparts key descript cmd))
+               (add-row key descript t)
+               (build-entry keyparts key descript cmd)
                acc
                ))))
        ""
@@ -73,27 +78,47 @@
   (with-current-buffer "*scratch*"
     (erase-buffer)
     (org-mode)
-    (insert "#+NAME: OVERVIEW\n")
-    (org-table-create "2x1")
+    (insert "
+* Overview
+:PROPERTIES:
+:CUSTOM_ID: OVERVIEW
+:PROPERTIES:
+
+* Documentation
+:PROPERTIES:
+:CUSTOM_ID: DOCUMENTATION
+:PROPERTIES:
+")))
+
+(defun add-table(key-parts)
+  (with-current-buffer "*scratch*"
     (goto-char (point-min))
-    (re-search-forward "^#\\+NAME: OVERVIEW")
-    (next-line)
+    (re-search-forward (rx bol "* Documentation"))
+    (previous-line)
+    (insert (format "
+** %s
+#+NAME: %s\n" (string-join key-parts " ") (string-join key-parts)))
+    (org-table-create "2x1")
     (org-table-goto-column 1)
     (insert "Key")
     (org-table-goto-column 2)
     (insert "Command")
-    (org-table-hline-and-move)
-    (org-table-goto-column 1)
-    (insert "SPC RET")
-    (org-table-goto-column 2)
-    (org-insert-link nil "foo" "foo")
-    (re-search-forward "^#\\+NAME: OVERVIEW")
-    (next-line)
-    (org-table-align)
-    ))
+    (org-table-hline-and-move)))
 
-(defun add-row()
+(defun add-row(key descript insert)
+  (goto-char (point-min))
+  (re-search-forward "* Documentation")
+  (re-search-backward "#\\+NAME:")
+  (next-line)
+  (goto-char(org-table-end))
+  (forward-line -1)
+  (if insert (org-table-insert-row))
+  (org-table-goto-column 1)
+  (insert key)
+  (org-table-goto-column 2)
+  (insert descript)
+  (org-table-align)
   )
-(build-table)
 
-(org-create-table)
+(build-table)(add-table '("SPC" "RET"))
+(add-row '("SPC" "RET"))
