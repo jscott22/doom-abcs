@@ -29,23 +29,29 @@
 
 
 
-(defun build-entry (keyparts key descript cmd)
+(defun build-entry (key descript cmd)
   (let* ((doc (documentation cmd))
-        (doc-string (if (not doc) "" doc)))
-  (goto-char (max-char))
-  (insert
-   (format
-    "** %s
+         (doc-string (if (not doc) "" doc))
+         (uuid (org-id-uuid)))
+    (goto-char (max-char))
+    (insert
+     (format
+      "** %s
 :PROPERTIES:
 :CUSTOM_ID: %s
-:PROPERTIES:
+:END:
 *** Function
-%s
+*%s*
 *** Documentation
 %s\n"
-    key (string-join keyparts) descript (replace-regexp-in-string (rx bol "*") "" doc-string)))
-  ))
+      key uuid descript (replace-regexp-in-string (rx bol "*") "" doc-string)))
+    uuid))
 
+
+
+(defun add-entry(key descript cmd insert)
+  (let ((uuid (build-entry key descript cmd)))
+    (add-row uuid key descript insert)))
 
 (defun build-org-file (prefix)
   (with-temp-file "~/doom-abcs/index.org"
@@ -63,14 +69,12 @@
            (if (not (equal acc pfx))
                (progn
                  (add-table pfx)
-                 (add-row key descript nil)
-                 (build-entry keyparts key descript cmd)
+                 (add-entry key descript cmd nil)
                  pfx
                  )
 
              (progn
-               (add-row key descript )
-               (build-entry keyparts key descript cmd)
+               (add-entry key descript cmd t)
                acc
                ))))
        ""
@@ -79,15 +83,18 @@
 
 (defun build-table()
     (insert "
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+#+OPTIONS: num:nil
+
 * Overview
 :PROPERTIES:
 :CUSTOM_ID: OVERVIEW
-:PROPERTIES:
+:END:
 
 * Documentation
 :PROPERTIES:
 :CUSTOM_ID: DOCUMENTATION
-:PROPERTIES:
+:END:
 "))
 
 (defun add-table(key-parts) 
@@ -104,7 +111,7 @@
     (insert "Command")
     (org-table-hline-and-move))
 
-(defun add-row(key descript insert)
+(defun add-row(uuid key descript insert)
   (goto-char (point-min))
   (re-search-forward "* Documentation")
   (re-search-backward "#\\+NAME:")
@@ -113,11 +120,10 @@
   (forward-line -1)
   (if insert (org-table-insert-row))
   (org-table-goto-column 1)
-  (insert key)
+  (insert (format "~%s~" key))
   (org-table-goto-column 2)
-  (insert descript)
-  (org-table-align)
-  )
+  (insert (format "[[#%s][%s]]" uuid descript))
+  (org-table-align))
 
 (build-table)(add-table '("SPC" "RET"))
 (add-row '("SPC" "RET"))

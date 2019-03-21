@@ -1,0 +1,4460 @@
+
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+#+OPTIONS: num:nil
+
+* Overview
+:PROPERTIES:
+:CUSTOM_ID: OVERVIEW
+:END:
+** SPC RET 
+#+NAME: SPCRET
+| Key       | Command       |
+|-----------+---------------|
+| ~SPC RET~ | [[#ddd886db-adbb-41e6-836e-a3fd9f99087c][bookmark-jump]] |
+** SPC SPC 
+#+NAME: SPCSPC
+| Key       | Command              |
+|-----------+----------------------|
+| ~SPC SPC~ | [[#26278e75-70cf-4941-b6e9-3e764df58e7d][projectile-find-file]] |
+** SPC ' 
+#+NAME: SPC'
+| Key     | Command    |
+|---------+------------|
+| ~SPC '~ | [[#8539e917-f934-4061-aa8b-cadfb72e5bc9][ivy-resume]] |
+** SPC , 
+#+NAME: SPC,
+| Key     | Command                |
+|---------+------------------------|
+| ~SPC ,~ | [[#bfb7a058-e537-44a1-bc76-c6d5fa9f8a1b][persp-switch-to-buffer]] |
+** SPC . 
+#+NAME: SPC.
+| Key     | Command   |
+|---------+-----------|
+| ~SPC .~ | [[#78842be2-3498-4474-9ee1-1fea5505fb37][find-file]] |
+** SPC : 
+#+NAME: SPC:
+| Key     | Command                  |
+|---------+--------------------------|
+| ~SPC :~ | [[#40844712-a959-4e9c-ae7f-62cf4d1a061f][execute-extended-command]] |
+** SPC ; 
+#+NAME: SPC;
+| Key     | Command         |
+|---------+-----------------|
+| ~SPC ;~ | [[#f3871fb8-6761-4130-89c2-b5d842a07bde][eval-expression]] |
+** SPC < 
+#+NAME: SPC<
+| Key     | Command          |
+|---------+------------------|
+| ~SPC <~ | [[#3ef5c2c7-8713-468b-ac6d-84a601e2f6bb][switch-to-buffer]] |
+** SPC X 
+#+NAME: SPCX
+| Key     | Command     |
+|---------+-------------|
+| ~SPC X~ | [[#1d773481-86af-444e-bd59-9924a97a5d8d][org-capture]] |
+** SPC u 
+#+NAME: SPCu
+| Key     | Command            |
+|---------+--------------------|
+| ~SPC u~ | [[#d1046b21-bd85-4b15-aea2-99d27277c901][universal-argument]] |
+** SPC x 
+#+NAME: SPCx
+| Key     | Command                  |
+|---------+--------------------------|
+| ~SPC x~ | [[#66e376e1-de63-449c-bb44-f614ac5c3abb][doom/open-scratch-buffer]] |
+** SPC ~ 
+#+NAME: SPC~
+| Key     | Command       |
+|---------+---------------|
+| ~SPC ~~ | [[#3f70dab2-1a32-483e-bb53-dcd1541a0e2d][+popup/toggle]] |
+** SPC DEL 
+#+NAME: SPCDEL
+| Key       | Command                 |
+|-----------+-------------------------|
+| ~SPC DEL~ | [[#25c2c939-dd66-4dab-9b90-570c48741d34][+nav-flash/blink-cursor]] |
+** SPC t 
+#+NAME: SPCt
+| Key       | Command                  |
+|-----------+--------------------------|
+| ~SPC t b~ | [[#c6b4f519-bd97-4963-9ea6-8506bffc0476][doom-big-font-mode]]       |
+| ~SPC t f~ | [[#cd6c9224-500d-405d-ad7f-5670eed658bf][flycheck-mode]]            |
+| ~SPC t g~ | [[#784cade9-d8aa-4e2a-8d57-af5f1ae7fe0f][evil-goggles-mode]]        |
+| ~SPC t l~ | [[#c1cfad22-935c-47d8-8862-babc34f6b296][doom/toggle-line-numbers]] |
+| ~SPC t p~ | [[#3ebc7f9d-1371-4bc9-be4a-9671132ec5e4][+org-present/start]]       |
+| ~SPC t s~ | [[#49580ebd-86af-47df-98eb-398fefe7d51a][flyspell-mode]]            |
+| ~SPC t F~ | [[#b46e4d11-5889-48db-afec-8068b2e06e3b][toggle-frame-fullscreen]]  |
+** SPC s 
+#+NAME: SPCs
+| Key       | Command                |
+|-----------+------------------------|
+| ~SPC s S~ | [[#eee61d06-4cfc-4f01-a7e6-d6227bf8b905][+snippets/browse]]       |
+| ~SPC s c~ | [[#06dead72-f56e-426a-8eaa-aaf3668bcc7d][aya-create]]             |
+| ~SPC s e~ | [[#9bc35088-069d-4037-896e-e085edbf0e76][aya-expand]]             |
+| ~SPC s i~ | [[#715f3005-621c-4fcd-9ae8-2bca567a641f][yas-insert-snippet]]     |
+| ~SPC s n~ | [[#08e24a83-8259-42ce-b262-c16670043e17][yas-new-snippet]]        |
+| ~SPC s r~ | [[#afcd9927-e613-4ed9-b75c-a70db677a82b][yas-reload-all]]         |
+| ~SPC s s~ | [[#4e5e2f4f-eca9-40d3-bd44-fba0d66a5b53][+snippets/find-file]]    |
+| ~SPC s /~ | [[#18f2864e-4323-4b03-bedc-3ef21e487913][yas-visit-snippet-file]] |
+** SPC q 
+#+NAME: SPCq
+| Key       | Command                  |
+|-----------+--------------------------|
+| ~SPC q Q~ | [[#b438e395-1d7b-4668-bbb3-59add510d1bb][evil-save-and-quit]]       |
+| ~SPC q R~ | [[#c98333ec-731c-4cc8-9734-b34b206719ba][doom/restart]]             |
+| ~SPC q S~ | [[#7b9f26b5-23aa-490e-bacd-ec2b9dfe9c02][doom/save-session]]        |
+| ~SPC q l~ | [[#e53be59a-fecf-4f9c-8eb0-d7bdc87abe11][doom/quickload-session]]   |
+| ~SPC q q~ | [[#526cc63f-4179-4ea5-8795-11d4f620067a][evil-quit-all]]            |
+| ~SPC q r~ | [[#f4b6d9f8-0386-4c8b-a887-a27ac0e0af53][doom/restart-and-restore]] |
+| ~SPC q s~ | [[#9a411d2e-9bd1-4639-b24f-0f73a6fddfcc][doom/quicksave-session]]   |
+| ~SPC q L~ | [[#8123aefa-cbb6-4137-85d6-f442a4dd17f0][doom/load-session]]        |
+** SPC p 
+#+NAME: SPCp
+| Key       | Command                              |
+|-----------+--------------------------------------|
+| ~SPC p .~ | [[#0f69f28c-808d-4210-8e88-483155864057][+default/browse-project]]              |
+| ~SPC p /~ | [[#01224380-fe5d-4b8a-82e2-fa5d2474134f][projectile-find-file]]                 |
+| ~SPC p c~ | [[#3ee438fa-cc2d-4c8f-93b7-e8811f5fc52e][projectile-compile-project]]           |
+| ~SPC p o~ | [[#8db21c2a-8a48-480f-836e-7dd43a22bf5f][projectile-find-other-file]]           |
+| ~SPC p p~ | [[#f18f7a78-7ab4-4a91-9005-e5634c7906c9][projectile-switch-project]]            |
+| ~SPC p r~ | [[#0ed3cfe0-9c2b-4cde-b255-2d90d8b6609a][projectile-recentf]]                   |
+| ~SPC p t~ | [[#8c74a4d7-89a0-4c76-bde8-c9737c058d99][+default/project-tasks]]               |
+| ~SPC p x~ | [[#6c78b8d0-c9a0-40bd-bc91-7255324658c0][projectile-invalidate-cache]]          |
+| ~SPC p !~ | [[#c3baea07-da14-415e-9172-20ed316e1a0e][projectile-run-shell-command-in-root]] |
+** SPC o 
+#+NAME: SPCo
+| Key       | Command                      |
+|-----------+------------------------------|
+| ~SPC o A~ | [[#96e3834a-b5a9-459a-8a25-298175a8dd7a][org-agenda]]                   |
+| ~SPC o P~ | [[#0deb6f6f-b67d-4c6d-8710-dacfc600af2d][+treemacs/find-file]]          |
+| ~SPC o R~ | [[#96c2ea28-ff17-4b84-aa64-63b7a76ad1e0][+eval/open-repl-same-window]]  |
+| ~SPC o b~ | [[#c8d09934-9202-4f73-8a6a-29a54a16e068][browse-url-of-file]]           |
+| ~SPC o i~ | [[#26f4fd07-418f-4a4a-b78a-81ead7ec52cc][imenu-list-smart-toggle]]      |
+| ~SPC o p~ | [[#24aefb39-4bea-4fcf-bc16-41a7a4d5b841][+treemacs/toggle]]             |
+| ~SPC o r~ | [[#f9ac1337-fca2-4bc8-a428-ea7660cc547c][+eval/open-repl-other-window]] |
+| ~SPC o -~ | [[#bde8931f-5f2f-497c-9382-461ffc50ba76][dired-jump]]                   |
+** SPC n 
+#+NAME: SPCn
+| Key       | Command                  |
+|-----------+--------------------------|
+| ~SPC n l~ | [[#6804b10e-6c33-436b-9ab0-d526e874f991][org-store-link]]           |
+| ~SPC n n~ | [[#0d4cfaa6-986f-4a13-bfd6-f7d45c79db0b][+default/find-in-notes]]   |
+| ~SPC n s~ | [[#2043f14f-cc33-44f5-98b9-2f57a1500121][doom/open-scratch-buffer]] |
+| ~SPC n x~ | [[#5ea72aab-c498-43b2-b1d6-f8abffcd33be][org-capture]]              |
+| ~SPC n N~ | [[#507be8e8-0a5e-4c59-a918-4ccd22fd3378][+default/browse-notes]]    |
+** SPC i 
+#+NAME: SPCi
+| Key       | Command            |
+|-----------+--------------------|
+| ~SPC i y~ | [[#d4c5729d-b1b5-4dc9-97bd-fd45d019f1e8][+default/yank-pop]]  |
+| ~SPC i s~ | [[#6e4ddd41-7acc-4a4a-b309-fd66f07aa192][yas-insert-snippet]] |
+** SPC g 
+#+NAME: SPCg
+| Key       | Command                  |
+|-----------+--------------------------|
+| ~SPC g /~ | [[#bb8ba1d6-0654-4eaf-be15-b3d8eda62969][magit-dispatch]]           |
+| ~SPC g B~ | [[#7aa7f47a-afc0-44fc-ac53-b79668450148][magit-blame-addition]]     |
+| ~SPC g C~ | [[#d86bf6be-a880-4f98-9f48-025ccb27ef4c][+magit/clone]]             |
+| ~SPC g F~ | [[#34e4eda9-bcbd-4614-99cd-7229bd4f079d][magit-fetch]]              |
+| ~SPC g L~ | [[#af27acd3-c53b-424d-a57e-eb28d8a647fb][magit-log]]                |
+| ~SPC g R~ | [[#609480df-63a5-48de-b83f-0c41847718a6][vc-revert]]                |
+| ~SPC g S~ | [[#e6f54fe2-a435-4b9a-a47f-5c0f6cab3f29][magit-stage-file]]         |
+| ~SPC g U~ | [[#fc5ab156-f36b-48cf-918f-8cd4dfcfecd9][magit-unstage-file]]       |
+| ~SPC g [~ | [[#be85350a-3108-430b-92ca-0d7db75909aa][git-gutter:previous-hunk]] |
+| ~SPC g ]~ | [[#ea205d2c-6dfe-4651-a4ac-4c25419caec5][git-gutter:next-hunk]]     |
+| ~SPC g g~ | [[#50738165-b36a-449a-9f98-473879ed1a02][magit-status]]             |
+| ~SPC g r~ | [[#e039b402-96dc-4ab0-bff2-d967040051b6][git-gutter:revert-hunk]]   |
+| ~SPC g s~ | [[#1efc64cb-105a-4b56-8de3-1228d8245641][git-gutter:stage-hunk]]    |
+| ~SPC g t~ | [[#358408b3-05a8-49d6-aa03-a4d2170bd310][git-timemachine-toggle]]   |
+| ~SPC g x~ | [[#a000da5b-59c1-46f3-aa67-12cf302fae5d][magit-file-delete]]        |
+| ~SPC g '~ | [[#c1533220-d39f-4833-8e8b-2794bb8a2849][forge-dispatch]]           |
+** SPC f 
+#+NAME: SPCf
+| Key       | Command                          |
+|-----------+----------------------------------|
+| ~SPC f /~ | [[#4faaad38-ce99-4c73-b6be-28f4c424fcf6][projectile-find-file]]             |
+| ~SPC f >~ | [[#d8ffa58d-2100-4f9a-9f80-eb5dcc7387e2][doom/browse-in-other-project]]     |
+| ~SPC f ?~ | [[#474c09e4-62ed-4783-90c4-eabaecf5edb8][doom/find-file-in-other-project]]  |
+| ~SPC f E~ | [[#2969e944-783f-49b0-9235-be0ac42498db][+default/browse-emacsd]]           |
+| ~SPC f P~ | [[#7a9fcd33-5f4f-484a-a59a-0d139d664466][doom/open-private-config]]         |
+| ~SPC f R~ | [[#0ad71db4-847f-4c2c-a810-60b95a6e32ca][projectile-recentf]]               |
+| ~SPC f S~ | [[#e0b573aa-eeec-44cf-b0ca-e04d3d65ee2d][doom/sudo-find-file]]              |
+| ~SPC f X~ | [[#a0a591e6-9c4f-4908-bb0e-60b67d43a685][doom/delete-this-file]]            |
+| ~SPC f a~ | [[#327cdaeb-16af-4221-a4bf-794d9c34a0a6][projectile-find-other-file]]       |
+| ~SPC f d~ | [[#0e841789-fb96-4676-9508-03f456535a90][dired]]                            |
+| ~SPC f e~ | [[#eb1ba2ce-a41d-4155-b1df-696d2f4824dd][+default/find-in-emacsd]]          |
+| ~SPC f f~ | [[#9892bc3c-3b15-4db9-861c-b194ef56f20f][find-file]]                        |
+| ~SPC f p~ | [[#430b32d1-b0ad-46cb-b09b-04eb52d2886d][doom/find-file-in-private-config]] |
+| ~SPC f r~ | [[#42571b7e-ecb0-4139-9bba-6bfa26f03a73][recentf-open-files]]               |
+| ~SPC f s~ | [[#b6e2729e-0a3c-4075-a29b-58c3a9804f09][save-buffer]]                      |
+| ~SPC f y~ | [[#229e0852-f210-468e-be8a-01c5a6478c6f][+default/yank-buffer-filename]]    |
+| ~SPC f .~ | [[#cde6f4e1-78e8-4c19-bf41-08304a93d1a7][counsel-file-jump]]                |
+** SPC c 
+#+NAME: SPCc
+| Key       | Command                       |
+|-----------+-------------------------------|
+| ~SPC c E~ | [[#05873acb-b8b2-4be8-b5db-676b84fd8953][+eval:replace-region]]          |
+| ~SPC c W~ | [[#67612fe3-d58a-475b-ab7d-ef69376934a2][doom/delete-trailing-newlines]] |
+| ~SPC c c~ | [[#a773d677-4b59-4ac0-bd5e-265bcd610f97][projectile-compile-project]]    |
+| ~SPC c d~ | [[#9299bc1f-bd6b-47cf-b2c2-473b903c729f][+lookup/definition]]            |
+| ~SPC c e~ | [[#e4eccaa8-9b99-4347-923d-c78384d157c9][+eval/buffer-or-region]]        |
+| ~SPC c r~ | [[#f654f737-78a0-4ac5-be9b-d6024e375f8e][+eval/open-repl-other-window]]  |
+| ~SPC c w~ | [[#a44d557b-cc64-4a04-9927-abc8688dec4f][delete-trailing-whitespace]]    |
+| ~SPC c x~ | [[#39507ee5-1e2e-4a51-b3c4-a8ec5d9e230d][flycheck-list-errors]]          |
+| ~SPC c D~ | [[#cce8fbb8-a2ba-4472-8072-623dcbacf17d][+lookup/references]]            |
+** SPC b 
+#+NAME: SPCb
+| Key       | Command                      |
+|-----------+------------------------------|
+| ~SPC b B~ | [[#dc125ccf-1ead-4f6c-8c47-03bc1efa4d81][switch-to-buffer]]             |
+| ~SPC b N~ | [[#8736a7c0-787f-4a21-ba5e-3206441ddf47][evil-buffer-new]]              |
+| ~SPC b S~ | [[#99ed6b4f-d524-489e-83a0-b9bb4bf3dfc1][doom/sudo-this-file]]          |
+| ~SPC b [~ | [[#82b8f576-993e-42da-8935-d9b1336f4836][previous-buffer]]              |
+| ~SPC b ]~ | [[#064b0c1c-9571-4003-b3b0-1343dc224c31][next-buffer]]                  |
+| ~SPC b b~ | [[#9b8fc04a-3b2a-4209-85a4-21f2f93d2e81][persp-switch-to-buffer]]       |
+| ~SPC b k~ | [[#578d502f-4235-4b39-866e-950d5ef030d6][kill-this-buffer]]             |
+| ~SPC b n~ | [[#f4e68485-ddc7-4dd7-a570-90f70d6f431c][next-buffer]]                  |
+| ~SPC b o~ | [[#7fbf0183-47c6-415c-972b-5a259bac4091][doom/kill-other-buffers]]      |
+| ~SPC b p~ | [[#f73e13b8-7c1a-4189-9a2d-3d976abfe80e][previous-buffer]]              |
+| ~SPC b s~ | [[#f18f8000-8135-4422-9e37-27f4531f3abb][save-buffer]]                  |
+| ~SPC b x~ | [[#6ae67c63-ba98-408b-b090-547999b441ef][doom/open-scratch-buffer]]     |
+| ~SPC b z~ | [[#8581f4cf-4d51-4953-b463-f163abc54b24][bury-buffer]]                  |
+| ~SPC b -~ | [[#7b135a8c-6b6e-4283-97b4-6268ece92a89][doom/clone-and-narrow-buffer]] |
+** SPC TAB 
+#+NAME: SPCTAB
+| Key           | Command                         |
+|---------------+---------------------------------|
+| ~SPC TAB .~   | [[#563b1291-bc93-4f79-b0e8-ae9505be75a9][+workspace/switch-to]]            |
+| ~SPC TAB 0~   | [[#d937336d-1568-4394-aed2-f13835662f04][+workspace/switch-to-last]]       |
+| ~SPC TAB R~   | [[#5a19aa56-d6ea-4507-89e2-18cf15ea96b0][+workspace/restore-last-session]] |
+| ~SPC TAB [~   | [[#5bdfb9ef-7492-4dd8-9202-d0c92e08fe6c][+workspace/switch-left]]          |
+| ~SPC TAB ]~   | [[#c7cd0e7b-e22c-4e4b-a5e4-0414f3fa641c][+workspace/switch-right]]         |
+| ~SPC TAB d~   | [[#736e7c75-60e2-45b7-9c35-cb4d386d6f75][+workspace/delete]]               |
+| ~SPC TAB l~   | [[#b05a63c6-2d83-4953-b810-6e9fd7794dd1][+workspace/load]]                 |
+| ~SPC TAB n~   | [[#263007f3-26e2-4013-88e1-cc7c721699d1][+workspace/new]]                  |
+| ~SPC TAB r~   | [[#80d2bb54-5e63-498f-84e0-9531d501eab9][+workspace/rename]]               |
+| ~SPC TAB s~   | [[#ee3bfaff-eeef-4f5c-bc57-6d643959b649][+workspace/save]]                 |
+| ~SPC TAB x~   | [[#ea87d7a1-fa19-42ee-ac0c-64d8f7a61440][+workspace/kill-session]]         |
+| ~SPC TAB TAB~ | [[#12da431e-962d-4431-8e4e-0d9a3cbf9b05][+workspace/display]]              |
+** SPC / 
+#+NAME: SPC/
+| Key       | Command                  |
+|-----------+--------------------------|
+| ~SPC / b~ | [[#ca84966a-701f-4aba-965a-20147fe21166][swiper]]                   |
+| ~SPC / d~ | [[#860819ad-5347-4cd3-a5b7-2d8cb58c5c7c][+default/search-from-cwd]] |
+| ~SPC / i~ | [[#8df7abe2-0a2e-45a3-a076-229bd5d6b64e][imenu]]                    |
+| ~SPC / l~ | [[#d6484821-de45-49b4-bc9b-1b36c2e1be8e][ace-link]]                 |
+| ~SPC / o~ | [[#13bacd49-78e3-49c4-b1c1-f33e14fa1e32][+lookup/online-select]]    |
+| ~SPC / p~ | [[#340191b8-6b34-43ff-ac45-96d15f8fbec0][+default/search-project]]  |
+| ~SPC / I~ | [[#6f3bc9eb-c045-4312-bbde-ee47275959e7][imenu-anywhere]]           |
+** SPC h 
+#+NAME: SPCh
+| Key            | Command                          |
+|----------------+----------------------------------|
+| ~SPC h C-c~    | [[#fff865f8-f06c-4b10-acb4-b67c5e605898][describe-coding-system]]           |
+| ~SPC h C-d~    | [[#5bbaf8c6-719c-4a8b-a746-a3acd2cd5146][view-emacs-debugging]]             |
+| ~SPC h C-e~    | [[#c0ca285a-0ff2-4638-b711-2ba67778f225][view-external-packages]]           |
+| ~SPC h C-f~    | [[#804df121-ac92-4721-b9ee-3e020739c10b][view-emacs-FAQ]]                   |
+| ~SPC h C-h~    | [[#f5262db4-e665-438d-9228-c87fcf06ce08][help-for-help]]                    |
+| ~SPC h C-k~    | [[#1a5c85f9-ecd3-4d3e-8b50-f509676b79ed][describe-key-briefly]]             |
+| ~SPC h C-l~    | [[#648b92cd-80ba-4dad-b35f-33aad5fb7812][describe-language-environment]]    |
+| ~SPC h RET~    | [[#602fc2d6-2a41-4378-9542-5ea62b39c2a3][info-emacs-manual]]                |
+| ~SPC h C-n~    | [[#63fd04d6-3640-4345-a409-d41c2399b020][view-emacs-news]]                  |
+| ~SPC h C-o~    | [[#1e4271d2-0e19-48bf-8e3a-e186e8f6500b][describe-distribution]]            |
+| ~SPC h C-p~    | [[#38788eee-fa94-4298-9bbb-335fe0460d19][view-emacs-problems]]              |
+| ~SPC h C-s~    | [[#b2b38257-b2a3-426d-b71b-83ec00b3378e][search-forward-help-for-help]]     |
+| ~SPC h C-t~    | [[#398a3505-a539-434a-a5c2-fd2166bd6e19][view-emacs-todo]]                  |
+| ~SPC h C-v~    | [[#081c620d-0e0f-4e11-93b1-44985b3fc4e3][doom/version]]                     |
+| ~SPC h C-w~    | [[#37edf61d-3d4e-4698-a125-9b0d313d478c][describe-no-warranty]]             |
+| ~SPC h C-\~    | [[#e66f9b9c-dde5-4d43-a8bd-4499e6d10a5f][describe-input-method]]            |
+| ~SPC h '~      | [[#cb2c0ca4-0e90-49bc-8c08-1fcbc6db3212][describe-char]]                    |
+| ~SPC h .~      | [[#347ada0a-d386-499f-80d6-947a941f7147][display-local-help]]               |
+| ~SPC h ?~      | [[#34017cff-bb7a-4e04-bf4b-f3661c492230][help-for-help]]                    |
+| ~SPC h A~      | [[#a197ce2c-9dcb-44f1-a991-68ed06395507][doom/describe-autodefs]]           |
+| ~SPC h B~      | [[#329c0fe0-1532-4072-866b-9d98ea711367][doom/open-bug-report]]             |
+| ~SPC h C~      | [[#5f4cd864-6168-4fb7-9dd3-dd880efbaac4][describe-coding-system]]           |
+| ~SPC h D~      | [[#d1981467-4f35-49b6-bbf8-78bf3fbe61db][doom/open-manual]]                 |
+| ~SPC h E~      | [[#b67e9719-a497-4126-8051-3650f5d03b6a][doom/open-vanilla-sandbox]]        |
+| ~SPC h F~      | [[#2919e481-037c-4372-aa42-a35b45802de2][describe-face]]                    |
+| ~SPC h I~      | [[#cf568000-5032-4ec3-8d84-1366eba72a70][describe-input-method]]            |
+| ~SPC h K~      | [[#f335cf51-dc51-490c-a3ab-ffcd237c23a0][Info-goto-emacs-key-command-node]] |
+| ~SPC h L~      | [[#ac6e61a1-c1be-4744-869f-82b1c1ee9c99][global-command-log-mode]]          |
+| ~SPC h M~      | [[#d428e32c-943f-4a91-85ce-44265311f4c0][doom/describe-active-minor-mode]]  |
+| ~SPC h O~      | [[#f49348b8-cc94-4b96-9f06-15768908caa1][+lookup/online]]                   |
+| ~SPC h P~      | [[#b765e0d7-dd19-4a68-97bc-231f7c6b0d0a][find-library]]                     |
+| ~SPC h S~      | [[#75363e00-1798-4047-9874-fda29b6c3590][info-lookup-symbol]]               |
+| ~SPC h T~      | [[#42c7b5bb-c739-42e7-a0aa-18df314c11e8][doom/toggle-profiler]]             |
+| ~SPC h V~      | [[#683666bd-cfbe-47bc-a1a0-8b327cbb73a8][set-variable]]                     |
+| ~SPC h W~      | [[#fba6ed5d-ecec-41eb-82fb-0876eb012592][+default/man-or-woman]]            |
+| ~SPC h a~      | [[#1414fb3c-3a83-4fb4-8c59-a779db25eeea][apropos]]                          |
+| ~SPC h b~      | [[#239d952f-b950-44c0-ac4b-1b4da9c5e1cf][describe-bindings]]                |
+| ~SPC h c~      | [[#eb8d55b9-f9c5-40f9-8f9c-a13f19505fb8][describe-key-briefly]]             |
+| ~SPC h d~      | [[#af826057-043b-46e1-ac9d-429731ea76fa][doom/describe-module]]             |
+| ~SPC h e~      | [[#b3ccadf2-6477-4382-ad19-c6f9a5efb22e][view-echo-area-messages]]          |
+| ~SPC h f~      | [[#9b44db18-d308-453f-afe8-61a7f0437fe5][describe-function]]                |
+| ~SPC h g~      | [[#cc64abf1-e3e3-4ee4-8dc1-76e55898791f][describe-gnu-project]]             |
+| ~SPC h h~      | [[#8adb0204-368d-4389-8fb1-44d729318b5c][doom/describe-symbol]]             |
+| ~SPC h i~      | [[#4b1b1c77-7fcb-42d7-b83c-d6c45803f83a][info]]                             |
+| ~SPC h k~      | [[#1e83ed25-1256-41fa-8d5f-4c91f1f26e5c][describe-key]]                     |
+| ~SPC h l~      | [[#b25d9308-dcff-4e6d-8d6f-1cdbc738d3bd][view-lossage]]                     |
+| ~SPC h m~      | [[#1f416289-9fe0-42e1-a7e2-155200b6ce56][describe-mode]]                    |
+| ~SPC h n~      | [[#ad940fb9-c397-4788-abf9-25b6274b40f5][doom/open-news]]                   |
+| ~SPC h o~      | [[#e904f874-d638-43bc-871e-47396eaa4cd1][describe-symbol]]                  |
+| ~SPC h p~      | [[#def8717c-03b2-4338-9d28-1fa2a7e67c03][doom/describe-package]]            |
+| ~SPC h q~      | [[#6286b9e0-34d5-4879-8c64-b535cc046762][help-quit]]                        |
+| ~SPC h s~      | [[#ab855d43-1df5-4f1c-8dfc-e780744856fc][describe-syntax]]                  |
+| ~SPC h t~      | [[#3060da1a-9309-451c-b22b-2c72d7727b2e][help-with-tutorial]]               |
+| ~SPC h v~      | [[#3ef7e803-99b2-41db-afee-f9adadc4b97b][describe-variable]]                |
+| ~SPC h w~      | [[#0a4aa118-1bc4-4d8f-aeb7-de7d6bf05da2][where-is]]                         |
+| ~SPC h <f1>~   | [[#a74b6d20-62a1-43c8-9591-4c05728560e6][help-for-help]]                    |
+| ~SPC h <help>~ | [[#898af636-9728-4fd2-927a-6f9e4a2ab2cf][help-for-help]]                    |
+| ~SPC h C-a~    | [[#841236e3-4b6f-4bb7-ac97-28b5b2d276f3][about-emacs]]                      |
+** SPC w 
+#+NAME: SPCw
+| Key           | Command                              |   |
+|---------------+--------------------------------------+---|
+| ~SPC w C-c~   | [[#360c42c9-0aa3-4c04-9bab-9e31d6b70130][ace-delete-window]]                    |   |
+| ~SPC w C-f~   | [[#3b83dd04-d9f2-42f9-96c6-53ebcb759404][ffap-other-window]]                    |   |
+| ~SPC w C-h~   | [[#61841602-c30a-4d44-a81d-a3b96f924788][evil-window-left]]                     |   |
+| ~SPC w C-j~   | [[#baa03363-cf4a-4c2e-9273-763fb50695fb][evil-window-down]]                     |   |
+| ~SPC w C-k~   | [[#9dbcaf98-fedc-41ad-a7a2-f6d1f1adbea4][evil-window-up]]                       |   |
+| ~SPC w C-l~   | [[#eff33cc3-e873-4418-b90c-0dd6f0ec0be6][evil-window-right]]                    |   |
+| ~SPC w C-n~   | [[#521c9ce3-670c-41f5-8c0a-37776ac46396][evil-window-new]]                      |   |
+| ~SPC w C-o~   | [[#7ae97982-3cb9-43e8-a1c4-c76d6ed1b80d][delete-other-windows]]                 |   |
+| ~SPC w C-p~   | [[#fcdd7e2d-d116-4f72-acf2-30ebc75a719e][evil-window-mru]]                      |   |
+| ~SPC w C-r~   | [[#e59457f6-b8fe-4274-9ddf-21691c95eaee][winner-redo]]                          |   |
+| ~SPC w C-s~   | [[#2405cef8-7977-436d-8afd-9239ba595a8e][evil-window-split]]                    |   |
+| ~SPC w C-t~   | [[#9f5a483e-ec0e-406f-9309-88aebefbb946][evil-window-top-left]]                 |   |
+| ~SPC w C-u~   | [[#bc0a7c3c-3879-4221-9838-a0d1cc1fc81b][winner-undo]]                          |   |
+| ~SPC w C-v~   | [[#079c095d-e06b-4c4e-85ae-0c0ac3b0fd5a][evil-window-vsplit]]                   |   |
+| ~SPC w C-w~   | [[#8746985c-459e-4543-9dee-7aa40583cbf7][other-window]]                         |   |
+| ~SPC w C-_~   | [[#f379bf67-7a0d-4a61-8887-b39fb9a6a697][evil-window-set-height]]               |   |
+| ~SPC w +~     | [[#a3b13fe8-05f0-4fa6-82aa-8c7be4314187][evil-window-increase-height]]          |   |
+| ~SPC w -~     | [[#d5d22a92-081a-4d41-91f5-9d0b74996c3b][evil-window-decrease-height]]          |   |
+| ~SPC w <~     | [[#03322b72-04c4-4ae5-a354-580f303463c3][evil-window-decrease-width]]           |   |
+| ~SPC w =~     | [[#261a8573-9782-4847-9b9a-a9eb9a231f9e][balance-windows]]                      |   |
+| ~SPC w >~     | [[#3c59cffd-2e19-4ade-a0a6-f2ed984a0dd9][evil-window-increase-width]]           |   |
+| ~SPC w H~     | [[#63f0683e-2042-453e-b3c7-5093c5b4d5f1][+evil/window-move-left]]               |   |
+| ~SPC w J~     | [[#bd9ecad4-d58d-48ed-b7f7-2269a78549eb][+evil/window-move-down]]               |   |
+| ~SPC w K~     | [[#2139a5df-e308-450e-93fa-1d93b0515fb7][+evil/window-move-up]]                 |   |
+| ~SPC w L~     | [[#74918c58-7e79-497f-89f1-e21afff54e3d][+evil/window-move-right]]              |   |
+| ~SPC w O~     | [[#3c702966-27d6-4ed0-adde-756f8d73fa14][doom/window-zoom]]                     |   |
+| ~SPC w R~     | [[#ba2580b5-3a37-450f-8e0d-48255e8abe01][evil-window-rotate-upwards]]           |   |
+| ~SPC w S~     | [[#c920cebc-555a-4e2a-9fee-679272348e8a][evil-window-split]]                    |   |
+| ~SPC w W~     | [[#b8d22ab7-2bc9-4a81-b89e-467975578455][evil-window-prev]]                     |   |
+| ~SPC w _~     | [[#1ab32499-99ae-4544-bf68-5c16b18d2d53][evil-window-set-height]]               |   |
+| ~SPC w b~     | [[#8c1daac1-f25f-45f4-8482-91af4661d5bd][evil-window-bottom-right]]             |   |
+| ~SPC w c~     | [[#3d54f8f4-65e3-485e-a390-c942a48d3daa][+workspace/close-window-or-workspace]] |   |
+| ~SPC w h~     | [[#207ac13e-4f01-47d4-b0db-73d54c36d9d2][evil-window-left]]                     |   |
+| ~SPC w j~     | [[#66ac92db-c7ed-4607-af24-5d5a9d9eeab6][evil-window-down]]                     |   |
+| ~SPC w k~     | [[#da490da0-2d78-4bc5-9bbf-26b409d74960][evil-window-up]]                       |   |
+| ~SPC w l~     | [[#ea397415-9dd2-4e89-afc0-1aecb5d547a1][evil-window-right]]                    |   |
+| ~SPC w n~     | [[#e006ef98-fa88-4809-b33d-40aa310e1acb][evil-window-new]]                      |   |
+| ~SPC w o~     | [[#2886e7fe-317b-4213-b886-6c6d31f1e0a8][doom/window-enlargen]]                 |   |
+| ~SPC w p~     | [[#ade4b3a7-600f-47b7-845d-e4c47dd9200d][evil-window-mru]]                      |   |
+| ~SPC w q~     | [[#cfdf5150-077d-43cb-9d03-b733720a8913][evil-quit]]                            |   |
+| ~SPC w r~     | [[#f98585df-3c7a-46b4-b8d5-bfa1e1112ec2][evil-window-rotate-downwards]]         |   |
+| ~SPC w s~     | [[#ee5c68da-0c7f-4334-b18a-7abd40aa43da][evil-window-split]]                    |   |
+| ~SPC w t~     | [[#3ca3a668-62be-4878-b7cb-0d793de95a12][evil-window-top-left]]                 |   |
+| ~SPC w u~     | [[#74baa849-122c-4a94-94b6-9c16b6dbb3e4][winner-undo]]                          |   |
+| ~SPC w v~     | [[#e8b030d7-3fd4-4408-988d-2732062de781][evil-window-vsplit]]                   |   |
+| ~SPC w w~     | [[#75c943e7-45c3-4918-9a07-e1e7fb84b8a2][evil-window-next]]                     |   |
+| ~SPC w        | [[#8cbae348-7eaa-4514-8afe-eee81f872cd5][evil-window-set-width]]~               |   |
+| ~SPC w C-S-h~ | [[#65d47ab5-2e33-4511-a28f-93d991e9919b][evil-window-move-far-left]]            |   |
+| ~SPC w C-S-j~ | [[#0992ddf6-c617-4033-8cf8-a8db6309b25b][evil-window-move-very-bottom]]         |   |
+| ~SPC w C-S-k~ | [[#3c20eede-85dd-4168-821a-ceb7891e1553][evil-window-move-very-top]]            |   |
+| ~SPC w C-S-l~ | [[#4478fff5-91eb-4845-8738-61338e201207][evil-window-move-far-right]]           |   |
+| ~SPC w C-S-r~ | [[#8379682f-cf79-4d81-bb3e-897ca1d17588][evil-window-rotate-upwards]]           |   |
+| ~SPC w C-S-s~ | [[#486c2f0f-464f-4813-b618-6e0b411347af][evil-window-split]]                    |   |
+| ~SPC w C-S-w~ | [[#ffbc873a-2770-49de-8223-752d9270f9cf][ace-swap-window]]                      |   |
+| ~SPC w C-b~   | [[#1ec0edb8-b544-4d6f-9c2e-6274c23f309f][evil-window-bottom-right]]             |   |
+** SPC o 
+#+NAME: SPCo
+| Key         | Command         |
+|-------------+-----------------|
+| ~SPC o a m~ | [[#8e1b8820-d496-4bb4-9195-11c1c4c08253][org-tags-view]]   |
+| ~SPC o a t~ | [[#3f76119e-eee1-4c00-9262-66960ec0ee24][org-todo-list]]   |
+| ~SPC o a v~ | [[#795ceeea-5f76-4d7e-9ef4-f889a74630e7][org-search-view]] |
+| ~SPC o a a~ | [[#3c2276b3-f04a-4226-a628-06026f699884][org-agenda]]      |
+** SPC g 
+#+NAME: SPCg
+| Key         | Command                       |
+|-------------+-------------------------------|
+| ~SPC g c c~ | [[#11008e2e-1f71-4cb4-bca4-9ff37abf09b9][magit-commit-create]]           |
+| ~SPC g c i~ | [[#abf3bf2d-d0c8-4434-b56c-fec14c1b72bc][forge-create-issue]]            |
+| ~SPC g c p~ | [[#bf264227-abc8-4ba4-a795-1ab7dde1dece][forge-create-pullreq]]          |
+| ~SPC g c r~ | [[#ea7ab69d-2108-4911-8f17-48211122cb11][magit-init]]                    |
+| ~SPC g l i~ | [[#ca24535a-4d06-4034-b4eb-de9c9acc6d50][forge-list-issues]]             |
+| ~SPC g l n~ | [[#eef41034-677b-4c95-9e44-a7822183f8ff][forge-list-notifications]]      |
+| ~SPC g l p~ | [[#c4430da6-4223-45d3-81b2-ebd850a5d726][forge-list-pullreqs]]           |
+| ~SPC g l r~ | [[#404a64af-0118-469b-ae13-0960576f3ffb][magit-list-repositories]]       |
+| ~SPC g l s~ | [[#d434feae-3f72-4cee-b371-8f2714e64bd3][magit-list-submodules]]         |
+| ~SPC g o .~ | [[#fab16ff9-42e8-49d1-a73c-24258a403358][+vc/git-browse-region-or-line]] |
+| ~SPC g o I~ | [[#dd65f811-45f0-4747-941d-971d8556fe02][forge-browse-issues]]           |
+| ~SPC g o P~ | [[#7c8f931b-a142-4aab-92da-0c412e0fffa0][forge-browse-pullreqs]]         |
+| ~SPC g o c~ | [[#2bf8c13c-6890-464f-87f6-95ccba8a3ecf][forge-browse-commit]]           |
+| ~SPC g o i~ | [[#f48b246a-32db-45f4-8cc6-1eaceea99c62][forge-browse-issue]]            |
+| ~SPC g o p~ | [[#69b1dd4c-e667-409a-8ddc-a20badef1577][forge-browse-pullreq]]          |
+| ~SPC g o r~ | [[#2a3266bb-4e7b-4456-9373-04e74e4ed858][forge-browse-remote]]           |
+| ~SPC g f c~ | [[#84c00a5c-beff-4ef3-a147-87c282eb02e0][magit-show-commit]]             |
+| ~SPC g f f~ | [[#446b4fd8-12e3-49cd-9eb0-b0278ffa781f][magit-find-file]]               |
+| ~SPC g f g~ | [[#56858029-6614-4870-8403-00606818a106][magit-find-git-config-file]]    |
+| ~SPC g f i~ | [[#f4d50c1f-1d66-4180-9120-78b0671cd47b][forge-visit-issue]]             |
+| ~SPC g f p~ | [[#062f9f4b-17b2-418d-aa65-7e30816f0451][forge-visit-pullreq]]           |
+| ~SPC g c R~ | [[#f86c10a0-78b8-4c5c-a721-a669c85ae9ac][+magit/clone]]                  |
+** SPC h 
+#+NAME: SPCh
+| Key         | Command              |
+|-------------+----------------------|
+| ~SPC h r f~ | [[#6995fbba-9842-4fc5-a875-a34a060dfe0a][doom/reload-font]]     |
+| ~SPC h r p~ | [[#a36d8b41-c3bc-432b-970b-1ee7e8054973][doom/reload-packages]] |
+| ~SPC h r r~ | [[#d3112dd8-7d43-46fd-889e-dd4b7f13372d][doom/reload]]          |
+| ~SPC h r t~ | [[#263683a0-2abc-421c-971f-5dca2cc28a8d][doom/reload-theme]]    |
+| ~SPC h 4 i~ | [[#26faf9af-ee1e-44f3-89eb-af3bf4fc19bb][info-other-window]]    |
+| ~SPC h r P~ | [[#eab23ac2-6b7c-4a45-8a8d-f41f4e1d1d98][doom/reload-project]]  |
+** SPC m 
+#+NAME: SPCm
+| Key           | Command                              |
+|---------------+--------------------------------------|
+| ~SPC m b~     | [[#6ac15073-c267-44a1-9026-64f19189d0ef][org-switchb]]                          |
+| ~SPC m d~     | [[#3e395f97-38ef-479c-9abd-51ac084226e4][org-deadline]]                         |
+| ~SPC m l~     | [[#55d5a5dc-7e28-4115-8e44-6cd2e37bf950][org-store-link]]                       |
+| ~SPC m t~     | [[#9ee330e2-be2c-41f0-b285-45d56c28e734][org-todo]]                             |
+| ~SPC m e M~   | [[#f93a88f6-a233-4d7d-af93-d4d25bceb181][org-md-export-as-markdown]]            |
+| ~SPC m e R~   | [[#4219558d-4aab-4d57-b02d-738c1ddfc2f8][org-reveal-export-to-html-and-browse]] |
+| ~SPC m e m~   | [[#35f04100-1bb4-40b8-96e4-45ccddf1d23f][org-md-export-to-markdown]]            |
+| ~SPC m e r~   | [[#adb23c77-7135-4d86-954c-ab5244f53613][org-reveal-export-to-html]]            |
+| ~SPC m c C~   | [[#63a3f958-9499-455b-8c2c-4eecd361ac43][org-clock-out]]                        |
+| ~SPC m c c~   | [[#252e618d-05e6-4e1c-adc3-996e35fe59db][org-clock-in]]                         |
+| ~SPC m c g~   | [[#4817dde7-0f2c-4acc-9f91-d7005eb32ead][org-clock-goto]]                       |
+| ~SPC m c x~   | [[#51bd50b8-60c3-4b9b-8dbf-53745fde8d4b][org-clock-cancel]]                     |
+| ~SPC m e b L~ | [[#b92fadcc-dd90-4075-b178-b157369e48c3][org-beamer-export-as-latex]]           |
+| ~SPC m e b l~ | [[#28af5843-e859-494a-92bd-19d32270849e][org-beamer-export-to-latex]]           |
+| ~SPC m e b p~ | [[#d13c0ede-ea0d-4232-afce-8926155ad671][org-beamer-export-to-pdf]]             |
+| ~SPC m T~     | [[#2b5a30f5-4747-4bbf-b04b-f67e2e656080][org-todo-list]]                        |
+
+* Documentation
+:PROPERTIES:
+:CUSTOM_ID: DOCUMENTATION
+:END:
+** SPC RET
+:PROPERTIES:
+:CUSTOM_ID: ddd886db-adbb-41e6-836e-a3fd9f99087c
+:END:
+*** Function
+*bookmark-jump*
+*** Documentation
+Jump to bookmark BOOKMARK (a point in some file).
+You may have a problem using this function if the value of variable
+‘bookmark-alist’ is nil.  If that happens, you need to load in some
+bookmarks.  See help on function ‘bookmark-load’ for more about
+this.
+
+If the file pointed to by BOOKMARK no longer exists, you will be asked
+if you wish to give the bookmark a new location, and ‘bookmark-jump’
+will then jump to the new location, as well as recording it in place
+of the old one in the permanent bookmark record.
+
+BOOKMARK is usually a bookmark name (a string).  It can also be a
+bookmark record, but this is usually only done by programmatic callers.
+
+If DISPLAY-FUNC is non-nil, it is a function to invoke to display the
+bookmark.  It defaults to ‘pop-to-buffer-same-window’.  A typical value for
+DISPLAY-FUNC would be ‘switch-to-buffer-other-window’.
+** SPC SPC
+:PROPERTIES:
+:CUSTOM_ID: 26278e75-70cf-4941-b6e9-3e764df58e7d
+:END:
+*** Function
+*projectile-find-file*
+*** Documentation
+Jump to a project’s file using completion.
+With a prefix arg INVALIDATE-CACHE invalidates the cache first.
+
+(fn &optional INVALIDATE-CACHE)
+** SPC '
+:PROPERTIES:
+:CUSTOM_ID: 8539e917-f934-4061-aa8b-cadfb72e5bc9
+:END:
+*** Function
+*ivy-resume*
+*** Documentation
+Resume the last completion session.
+** SPC ,
+:PROPERTIES:
+:CUSTOM_ID: bfb7a058-e537-44a1-bc76-c6d5fa9f8a1b
+:END:
+*** Function
+*persp-switch-to-buffer*
+*** Documentation
+Switch to buffer, read buffer with restriction to current perspective.
+** SPC .
+:PROPERTIES:
+:CUSTOM_ID: 78842be2-3498-4474-9ee1-1fea5505fb37
+:END:
+*** Function
+*find-file*
+*** Documentation
+Edit file FILENAME.
+Switch to a buffer visiting file FILENAME,
+creating one if none already exists.
+Interactively, the default if you just type RET is the current directory,
+but the visited file name is available through the minibuffer history:
+type M-x next-history-element to pull it into the minibuffer.
+
+The first time M-x next-history-element is used after Emacs prompts for
+the file name, the result is affected by ‘file-name-at-point-functions’,
+which by default try to guess the file name by looking at point in the
+current buffer.  Customize the value of ‘file-name-at-point-functions’
+or set it to nil, if you want only the visited file name and the
+current directory to be available on first M-x next-history-element
+request.
+
+You can visit files on remote machines by specifying something
+like /ssh:SOME_REMOTE_MACHINE:FILE for the file name.  You can
+also visit local files as a different user by specifying
+/sudo::FILE for the file name.
+See the Info node ‘(tramp)File name Syntax’ in the Tramp Info
+manual, for more about this.
+
+Interactively, or if WILDCARDS is non-nil in a call from Lisp,
+expand wildcards (if any) and visit multiple files.  You can
+suppress wildcard expansion by setting ‘find-file-wildcards’ to nil.
+
+To visit a file without any kind of conversion and without
+automatically choosing a major mode, use M-x find-file-literally.
+
+(fn FILENAME &optional WILDCARDS)
+** SPC :
+:PROPERTIES:
+:CUSTOM_ID: 40844712-a959-4e9c-ae7f-62cf4d1a061f
+:END:
+*** Function
+*execute-extended-command*
+*** Documentation
+Read a command name, then read the arguments and call the command.
+To pass a prefix argument to the command you are
+invoking, give a prefix argument to ‘execute-extended-command’.
+
+(fn PREFIXARG &optional COMMAND-NAME TYPED)
+** SPC ;
+:PROPERTIES:
+:CUSTOM_ID: f3871fb8-6761-4130-89c2-b5d842a07bde
+:END:
+*** Function
+*eval-expression*
+*** Documentation
+:after advice: ‘amx-post-eval-force-update’
+
+Evaluate EXP and print value in the echo area.
+When called interactively, read an Emacs Lisp expression and
+evaluate it.  Value is also consed on to front of the variable
+‘values’.  Optional argument INSERT-VALUE non-nil (interactively,
+with a non ‘-’ prefix argument) means insert the result into the
+current buffer instead of printing it in the echo area.
+
+Normally, this function truncates long output according to the
+value of the variables ‘eval-expression-print-length’ and
+‘eval-expression-print-level’.  When NO-TRUNCATE is
+non-nil (interactively, with a prefix argument of zero), however,
+there is no such truncation.
+
+If the resulting value is an integer, and CHAR-PRINT-LIMIT is
+non-nil (interactively, unless given a non-zero prefix argument)
+it will be printed in several additional formats (octal,
+hexadecimal, and character).  The character format is only used
+if the value is below CHAR-PRINT-LIMIT (interactively, if the
+prefix argument is -1 or the value doesn’t exceed
+‘eval-expression-print-maximum-character’).
+
+Runs the hook ‘eval-expression-minibuffer-setup-hook’ on entering the
+minibuffer.
+
+If ‘eval-expression-debug-on-error’ is non-nil, which is the default,
+this command arranges for all errors to enter the debugger.
+
+(fn EXP &optional INSERT-VALUE NO-TRUNCATE CHAR-PRINT-LIMIT)
+** SPC <
+:PROPERTIES:
+:CUSTOM_ID: 3ef5c2c7-8713-468b-ac6d-84a601e2f6bb
+:END:
+*** Function
+*switch-to-buffer*
+*** Documentation
+:around advice: ‘ad-Advice-switch-to-buffer’
+:around advice: ‘doom*run-switch-buffer-hooks’
+
+Display buffer BUFFER-OR-NAME in the selected window.
+
+WARNING: This is NOT the way to work on another buffer temporarily
+within a Lisp program!  Use ‘set-buffer’ instead.  That avoids
+messing with the window-buffer correspondences.
+
+If the selected window cannot display the specified buffer
+because it is a minibuffer window or strongly dedicated to
+another buffer, call ‘pop-to-buffer’ to select the buffer in
+another window.  In interactive use, if the selected window is
+strongly dedicated to its buffer, the value of the option
+‘switch-to-buffer-in-dedicated-window’ specifies how to proceed.
+
+If called interactively, read the buffer name using ‘read-buffer’.
+The variable ‘confirm-nonexistent-file-or-buffer’ determines
+whether to request confirmation before creating a new buffer.
+See ‘read-buffer’ for features related to input and completion
+of buffer names.
+
+BUFFER-OR-NAME may be a buffer, a string (a buffer name), or nil.
+If BUFFER-OR-NAME is a string that does not identify an existing
+buffer, create a buffer with that name.  If BUFFER-OR-NAME is
+nil, switch to the buffer returned by ‘other-buffer’.
+
+If optional argument NORECORD is non-nil, do not put the buffer
+at the front of the buffer list, and do not make the window
+displaying it the most recently selected one.
+
+If optional argument FORCE-SAME-WINDOW is non-nil, the buffer
+must be displayed in the selected window when called
+non-interactively; if that is impossible, signal an error rather
+than calling ‘pop-to-buffer’.  It has no effect when the option
+‘switch-to-buffer-obey-display-actions’ is non-nil.
+
+The option ‘switch-to-buffer-preserve-window-point’ can be used
+to make the buffer appear at its last position in the selected
+window.
+
+If the option ‘switch-to-buffer-obey-display-actions’ is non-nil,
+run the function ‘pop-to-buffer-same-window’ instead.
+This may display the buffer in another window as specified by
+‘display-buffer-overriding-action’, ‘display-buffer-alist’ and
+other display related variables.  If this results in displaying
+the buffer in the selected window, window start and point are adjusted
+as prescribed by the option ‘switch-to-buffer-preserve-window-point’.
+Otherwise, these are left alone.
+
+Return the buffer switched to.
+
+(fn BUFFER-OR-NAME &optional NORECORD FORCE-SAME-WINDOW)
+** SPC X
+:PROPERTIES:
+:CUSTOM_ID: 1d773481-86af-444e-bd59-9924a97a5d8d
+:END:
+*** Function
+*org-capture*
+*** Documentation
+Capture something.
+
+This will let you select a template from ‘org-capture-templates’, and
+then file the newly captured information.  The text is immediately
+inserted at the target location, and an indirect buffer is shown where
+you can edit it.  Pressing ‘C-c C-c’ brings you back to the previous
+state of Emacs, so that you can continue your work.
+
+When called interactively with a ‘M-x universal-argument’ prefix argument GOTO, don’t
+capture anything, just go to the file/headline where the selected
+template stores its notes.
+
+With a ‘M-x universal-argument M-x universal-argument’ prefix argument, go to the last note stored.
+
+When called with a ‘C-0’ (zero) prefix, insert a template at point.
+
+When called with a ‘C-1’ (one) prefix, force prompting for a date when
+a datetree entry is made.
+
+ELisp programs can set KEYS to a string associated with a template
+in ‘org-capture-templates’.  In this case, interactive selection
+will be bypassed.
+
+If ‘org-capture-use-agenda-date’ is non-nil, capturing from the
+agenda will use the date at point as the default date.  Then, a
+‘C-1’ prefix will tell the capture process to use the HH:MM time
+of the day at point (if any) or the current HH:MM time.
+
+(fn &optional GOTO KEYS)
+** SPC u
+:PROPERTIES:
+:CUSTOM_ID: d1046b21-bd85-4b15-aea2-99d27277c901
+:END:
+*** Function
+*universal-argument*
+*** Documentation
+Begin a numeric argument for the following command.
+Digits or minus sign following SPC u make up the numeric argument.
+SPC u following the digits or minus sign ends the argument.
+SPC u without digits or minus sign provides 4 as argument.
+Repeating SPC u without digits or minus sign
+ multiplies the argument by 4 each time.
+For some commands, just SPC u by itself serves as a flag
+which is different in effect from any particular numeric argument.
+These commands include C-@ and M-x start-kbd-macro.
+** SPC x
+:PROPERTIES:
+:CUSTOM_ID: 66e376e1-de63-449c-bb44-f614ac5c3abb
+:END:
+*** Function
+*doom/open-scratch-buffer*
+*** Documentation
+Opens a scratch pad window in the same major-mode.
+
+If ARG (universal argument), then open a persistent scratch pad buffer. You’ll
+be prompted for its name, or to open a previously created. These are stored in
+‘doom-scratch-files-dir’.
+
+If a region is active, copy its contents to the scratch pad.
+** SPC ~
+:PROPERTIES:
+:CUSTOM_ID: 3f70dab2-1a32-483e-bb53-dcd1541a0e2d
+:END:
+*** Function
+*+popup/toggle*
+*** Documentation
+If popups are open, close them. If they aren’t, restore the last one or open
+the message buffer in a popup window.
+** SPC DEL
+:PROPERTIES:
+:CUSTOM_ID: 25c2c939-dd66-4dab-9b90-570c48741d34
+:END:
+*** Function
+*+nav-flash/blink-cursor*
+*** Documentation
+Blink current line using ‘nav-flash’.
+** SPC t F
+:PROPERTIES:
+:CUSTOM_ID: b46e4d11-5889-48db-afec-8068b2e06e3b
+:END:
+*** Function
+*toggle-frame-fullscreen*
+*** Documentation
+Toggle fullscreen state of FRAME.
+Make selected frame fullscreen or restore its previous size
+if it is already fullscreen.
+
+Before making the frame fullscreen remember the current value of
+the frame’s ‘fullscreen’ parameter in the ‘fullscreen-restore’
+parameter of the frame.  That value is used to restore the
+frame’s fullscreen state when toggling fullscreen the next time.
+
+Note that with some window managers you may have to set
+‘frame-resize-pixelwise’ to non-nil in order to make a frame
+appear truly fullscreen.  In addition, you may have to set
+‘x-frame-normalize-before-maximize’ in order to enable
+transitions from one fullscreen state to another.
+
+See also ‘toggle-frame-maximized’.
+
+(fn &optional FRAME)
+** SPC t b
+:PROPERTIES:
+:CUSTOM_ID: c6b4f519-bd97-4963-9ea6-8506bffc0476
+:END:
+*** Function
+*doom-big-font-mode*
+*** Documentation
+A global mode that resizes the font, for streams, screen-sharing and
+presentations.
+
+If called interactively, enable Doom-Big-Font mode if ARG is positive, and
+disable it if ARG is zero or negative.  If called from Lisp,
+also enable the mode if ARG is omitted or nil, and toggle it
+if ARG is ‘toggle’; disable the mode otherwise.
+
+Uses ‘doom-big-font’ when enabled.
+** SPC t f
+:PROPERTIES:
+:CUSTOM_ID: cd6c9224-500d-405d-ad7f-5670eed658bf
+:END:
+*** Function
+*flycheck-mode*
+*** Documentation
+Minor mode for on-the-fly syntax checking.
+
+When called interactively, toggle ‘flycheck-mode’.  With prefix
+ARG, enable ‘flycheck-mode’ if ARG is positive, otherwise disable
+it.
+
+When called from Lisp, enable ‘flycheck-mode’ if ARG is omitted,
+nil or positive.  If ARG is ‘toggle’, toggle ‘flycheck-mode’.
+Otherwise behave as if called interactively.
+
+In ‘flycheck-mode’ the buffer is automatically syntax-checked
+using the first suitable syntax checker from ‘flycheck-checkers’.
+Use ‘flycheck-select-checker’ to select a checker for the current
+buffer manually.
+
+key             binding
+---             -------
+
+C-c             Prefix Command
+
+C-c !           Prefix Command
+
+C-c ! C-c       flycheck-compile
+C-c ! C-w       flycheck-copy-errors-as-kill
+C-c ! ?         flycheck-describe-checker
+C-c ! C         flycheck-clear
+C-c ! H         display-local-help
+C-c ! V         flycheck-version
+C-c ! c         flycheck-buffer
+C-c ! e         flycheck-explain-error-at-point
+C-c ! h         flycheck-display-error-at-point
+C-c ! i         flycheck-manual
+C-c ! l         flycheck-list-errors
+C-c ! n         flycheck-next-error
+C-c ! p         flycheck-previous-error
+C-c ! s         flycheck-select-checker
+C-c ! v         flycheck-verify-setup
+C-c ! x         flycheck-disable-checker
+
+
+
+(fn &optional ARG)
+** SPC t g
+:PROPERTIES:
+:CUSTOM_ID: 784cade9-d8aa-4e2a-8d57-af5f1ae7fe0f
+:END:
+*** Function
+*evil-goggles-mode*
+*** Documentation
+evil-goggles global minor mode.
+
+If called interactively, enable Evil-Goggles mode if ARG is positive, and
+disable it if ARG is zero or negative.  If called from Lisp,
+also enable the mode if ARG is omitted or nil, and toggle it
+if ARG is ‘toggle’; disable the mode otherwise.
+
+(fn &optional ARG)
+** SPC t l
+:PROPERTIES:
+:CUSTOM_ID: c1cfad22-935c-47d8-8862-babc34f6b296
+:END:
+*** Function
+*doom/toggle-line-numbers*
+*** Documentation
+Toggle line numbers.
+
+Cycles through regular, relative and no line numbers. The order depends on what
+‘display-line-numbers-type’ is set to. If you’re using Emacs 26+, and
+visual-line-mode is on, this skips relative and uses visual instead.
+
+See ‘display-line-numbers’ for what these values mean.
+** SPC t p
+:PROPERTIES:
+:CUSTOM_ID: 3ebc7f9d-1371-4bc9-be4a-9671132ec5e4
+:END:
+*** Function
+*+org-present/start*
+*** Documentation
+TODO
+
+(fn)
+** SPC t s
+:PROPERTIES:
+:CUSTOM_ID: 49580ebd-86af-47df-98eb-398fefe7d51a
+:END:
+*** Function
+*flyspell-mode*
+*** Documentation
+Toggle on-the-fly spell checking (Flyspell mode).
+
+If called interactively, enable Flyspell mode if ARG is positive, and
+disable it if ARG is zero or negative.  If called from Lisp,
+also enable the mode if ARG is omitted or nil, and toggle it
+if ARG is ‘toggle’; disable the mode otherwise.
+
+Flyspell mode is a buffer-local minor mode.  When enabled, it
+spawns a single Ispell process and checks each word.  The default
+flyspell behavior is to highlight incorrect words.
+
+Bindings:
+z =: correct words (using Ispell).
+M-x flyspell-auto-correct-word: automatically correct word.
+M-x flyspell-auto-correct-previous-word: automatically correct the last misspelled word.
+M-x flyspell-correct-word (or down-mouse-2): popup correct words.
+
+Hooks:
+This runs ‘flyspell-mode-hook’ after flyspell mode is entered or exit.
+
+Remark:
+‘flyspell-mode’ uses ‘ispell-mode’.  Thus all Ispell options are
+valid.  For instance, a different dictionary can be used by
+invoking ‘ispell-change-dictionary’.
+
+Consider using the ‘ispell-parser’ to check your text.  For instance
+consider adding:
+(add-hook 'tex-mode-hook (function (lambda () (setq ispell-parser 'tex))))
+in your init file.
+
+M-x flyspell-region checks all words inside a region.
+M-x flyspell-buffer checks the whole buffer.
+
+(fn &optional ARG)
+** SPC s /
+:PROPERTIES:
+:CUSTOM_ID: 18f2864e-4323-4b03-bedc-3ef21e487913
+:END:
+*** Function
+*yas-visit-snippet-file*
+*** Documentation
+Choose a snippet to edit, selection like ‘yas-insert-snippet’.
+
+Only success if selected snippet was loaded from a file.  Put the
+visited file in ‘snippet-mode’.
+** SPC s S
+:PROPERTIES:
+:CUSTOM_ID: eee61d06-4cfc-4f01-a7e6-d6227bf8b905
+:END:
+*** Function
+*+snippets/browse*
+*** Documentation
+TODO
+
+(fn ARG)
+** SPC s c
+:PROPERTIES:
+:CUSTOM_ID: 06dead72-f56e-426a-8eaa-aaf3668bcc7d
+:END:
+*** Function
+*aya-create*
+*** Documentation
+Works on either the current line, or, if ‘mark-active’, the current region.
+Removes ‘aya-marker’ prefixes,
+writes the corresponding snippet to ‘aya-current’,
+with words prefixed by ‘aya-marker’ as fields, and mirrors properly set up.
+
+(fn)
+** SPC s e
+:PROPERTIES:
+:CUSTOM_ID: 9bc35088-069d-4037-896e-e085edbf0e76
+:END:
+*** Function
+*aya-expand*
+*** Documentation
+Insert the last yasnippet created by ‘aya-create’.
+
+(fn)
+** SPC s i
+:PROPERTIES:
+:CUSTOM_ID: 715f3005-621c-4fcd-9ae8-2bca567a641f
+:END:
+*** Function
+*yas-insert-snippet*
+*** Documentation
+Choose a snippet to expand, pop-up a list of choices according
+to ‘yas-prompt-functions’.
+
+With prefix argument NO-CONDITION, bypass filtering of snippets
+by condition.
+** SPC s n
+:PROPERTIES:
+:CUSTOM_ID: 08e24a83-8259-42ce-b262-c16670043e17
+:END:
+*** Function
+*yas-new-snippet*
+*** Documentation
+Pops a new buffer for writing a snippet.
+
+Expands a snippet-writing snippet, unless the optional prefix arg
+NO-TEMPLATE is non-nil.
+** SPC s r
+:PROPERTIES:
+:CUSTOM_ID: afcd9927-e613-4ed9-b75c-a70db677a82b
+:END:
+*** Function
+*yas-reload-all*
+*** Documentation
+Reload all snippets and rebuild the YASnippet menu.
+
+When NO-JIT is non-nil force immediate reload of all known
+snippets under ‘yas-snippet-dirs’, otherwise use just-in-time
+loading.
+
+When called interactively, use just-in-time loading when given a
+prefix argument.
+** SPC s s
+:PROPERTIES:
+:CUSTOM_ID: 4e5e2f4f-eca9-40d3-bd44-fba0d66a5b53
+:END:
+*** Function
+*+snippets/find-file*
+*** Documentation
+TODO
+
+(fn)
+** SPC q L
+:PROPERTIES:
+:CUSTOM_ID: 8123aefa-cbb6-4137-85d6-f442a4dd17f0
+:END:
+*** Function
+*doom/load-session*
+*** Documentation
+TODO
+
+(fn FILE)
+** SPC q Q
+:PROPERTIES:
+:CUSTOM_ID: b438e395-1d7b-4668-bbb3-59add510d1bb
+:END:
+*** Function
+*evil-save-and-quit*
+*** Documentation
+Save all buffers and exit Emacs.
+** SPC q R
+:PROPERTIES:
+:CUSTOM_ID: c98333ec-731c-4cc8-9734-b34b206719ba
+:END:
+*** Function
+*doom/restart*
+*** Documentation
+Restart Emacs.
+
+When called interactively ARGS is interpreted as follows
+
+- with a single ‘universal-argument’ (‘C-u’) Emacs is restarted
+  with ‘--debug-init’ flag
+- with two ‘universal-argument’ (‘C-u’) Emacs is restarted with
+  ‘-Q’ flag
+- with three ‘universal-argument’ (‘C-u’) the user prompted for
+  the arguments
+
+When called non-interactively ARGS should be a list of arguments
+with which Emacs should be restarted.
+
+(fn &optional ARGS)
+** SPC q S
+:PROPERTIES:
+:CUSTOM_ID: 7b9f26b5-23aa-490e-bacd-ec2b9dfe9c02
+:END:
+*** Function
+*doom/save-session*
+*** Documentation
+TODO
+
+(fn FILE)
+** SPC q l
+:PROPERTIES:
+:CUSTOM_ID: e53be59a-fecf-4f9c-8eb0-d7bdc87abe11
+:END:
+*** Function
+*doom/quickload-session*
+*** Documentation
+TODO
+
+(fn)
+** SPC q q
+:PROPERTIES:
+:CUSTOM_ID: 526cc63f-4179-4ea5-8795-11d4f620067a
+:END:
+*** Function
+*evil-quit-all*
+*** Documentation
+Exits Emacs, asking for saving.
+** SPC q r
+:PROPERTIES:
+:CUSTOM_ID: f4b6d9f8-0386-4c8b-a887-a27ac0e0af53
+:END:
+*** Function
+*doom/restart-and-restore*
+*** Documentation
+TODO
+
+(fn &optional DEBUG)
+** SPC q s
+:PROPERTIES:
+:CUSTOM_ID: 9a411d2e-9bd1-4639-b24f-0f73a6fddfcc
+:END:
+*** Function
+*doom/quicksave-session*
+*** Documentation
+TODO
+
+(fn)
+** SPC p !
+:PROPERTIES:
+:CUSTOM_ID: c3baea07-da14-415e-9172-20ed316e1a0e
+:END:
+*** Function
+*projectile-run-shell-command-in-root*
+*** Documentation
+Invoke ‘shell-command’ in the project’s root.
+** SPC p .
+:PROPERTIES:
+:CUSTOM_ID: 0f69f28c-808d-4210-8e88-483155864057
+:END:
+*** Function
+*+default/browse-project*
+*** Documentation
+
+** SPC p /
+:PROPERTIES:
+:CUSTOM_ID: 01224380-fe5d-4b8a-82e2-fa5d2474134f
+:END:
+*** Function
+*projectile-find-file*
+*** Documentation
+Jump to a project’s file using completion.
+With a prefix arg INVALIDATE-CACHE invalidates the cache first.
+
+(fn &optional INVALIDATE-CACHE)
+** SPC p c
+:PROPERTIES:
+:CUSTOM_ID: 3ee438fa-cc2d-4c8f-93b7-e8811f5fc52e
+:END:
+*** Function
+*projectile-compile-project*
+*** Documentation
+Run project compilation command.
+
+Normally you’ll be prompted for a compilation command, unless
+variable ‘compilation-read-command’.  You can force the prompt
+with a prefix ARG.
+
+(fn ARG)
+** SPC p o
+:PROPERTIES:
+:CUSTOM_ID: 8db21c2a-8a48-480f-836e-7dd43a22bf5f
+:END:
+*** Function
+*projectile-find-other-file*
+*** Documentation
+Switch between files with the same name but different extensions.
+With FLEX-MATCHING, match any file that contains the base name of current file.
+Other file extensions can be customized with the variable ‘projectile-other-file-alist’.
+
+(fn &optional FLEX-MATCHING)
+** SPC p p
+:PROPERTIES:
+:CUSTOM_ID: f18f7a78-7ab4-4a91-9005-e5634c7906c9
+:END:
+*** Function
+*projectile-switch-project*
+*** Documentation
+Switch to a project we have visited before.
+Invokes the command referenced by ‘projectile-switch-project-action’ on switch.
+With a prefix ARG invokes ‘projectile-commander’ instead of
+‘projectile-switch-project-action.’
+
+(fn &optional ARG)
+** SPC p r
+:PROPERTIES:
+:CUSTOM_ID: 0ed3cfe0-9c2b-4cde-b255-2d90d8b6609a
+:END:
+*** Function
+*projectile-recentf*
+*** Documentation
+Show a list of recently visited files in a project.
+** SPC p t
+:PROPERTIES:
+:CUSTOM_ID: 8c74a4d7-89a0-4c76-bde8-c9737c058d99
+:END:
+*** Function
+*+default/project-tasks*
+*** Documentation
+Invokes ‘+ivy/tasks’ or ‘+helm/tasks’, depending on which is available.
+** SPC p x
+:PROPERTIES:
+:CUSTOM_ID: 6c78b8d0-c9a0-40bd-bc91-7255324658c0
+:END:
+*** Function
+*projectile-invalidate-cache*
+*** Documentation
+Remove the current project’s files from ‘projectile-projects-cache’.
+
+With a prefix argument PROMPT prompts for the name of the project whose cache
+to invalidate.
+
+(fn PROMPT)
+** SPC o -
+:PROPERTIES:
+:CUSTOM_ID: bde8931f-5f2f-497c-9382-461ffc50ba76
+:END:
+*** Function
+*dired-jump*
+*** Documentation
+Jump to Dired buffer corresponding to current buffer.
+If in a file, Dired the current directory and move to file’s line.
+If in Dired already, pop up a level and goto old directory’s line.
+In case the proper Dired file line cannot be found, refresh the dired
+buffer and try again.
+When OTHER-WINDOW is non-nil, jump to Dired buffer in other window.
+When FILE-NAME is non-nil, jump to its line in Dired.
+Interactively with prefix argument, read FILE-NAME.
+
+(fn &optional OTHER-WINDOW FILE-NAME)
+** SPC o A
+:PROPERTIES:
+:CUSTOM_ID: 96e3834a-b5a9-459a-8a25-298175a8dd7a
+:END:
+*** Function
+*org-agenda*
+*** Documentation
+Dispatch agenda commands to collect entries to the agenda buffer.
+Prompts for a command to execute.  Any prefix arg will be passed
+on to the selected command.  The default selections are:
+
+a     Call ‘org-agenda-list’ to display the agenda for current day or week.
+t     Call ‘org-todo-list’ to display the global todo list.
+T     Call ‘org-todo-list’ to display the global todo list, select only
+      entries with a specific TODO keyword (the user gets a prompt).
+m     Call ‘org-tags-view’ to display headlines with tags matching
+      a condition  (the user is prompted for the condition).
+M     Like ‘m’, but select only TODO entries, no ordinary headlines.
+e     Export views to associated files.
+s     Search entries for keywords.
+S     Search entries for keywords, only with TODO keywords.
+/     Multi occur across all agenda files and also files listed
+      in ‘org-agenda-text-search-extra-files’.
+<     Restrict agenda commands to buffer, subtree, or region.
+      Press several times to get the desired effect.
+>     Remove a previous restriction.
+#     List "stuck" projects.
+!     Configure what "stuck" means.
+C     Configure custom agenda commands.
+
+More commands can be added by configuring the variable
+‘org-agenda-custom-commands’.  In particular, specific tags and TODO keyword
+searches can be pre-defined in this way.
+
+If the current buffer is in Org mode and visiting a file, you can also
+first press ‘<’ once to indicate that the agenda should be temporarily
+(until the next use of ‘SPC o A’) restricted to the current file.
+Pressing ‘<’ twice means to restrict to the current subtree or region
+(if active).
+** SPC o P
+:PROPERTIES:
+:CUSTOM_ID: 0deb6f6f-b67d-4c6d-8710-dacfc600af2d
+:END:
+*** Function
+*+treemacs/find-file*
+*** Documentation
+Open treemacs (if necessary) and find current file.
+** SPC o R
+:PROPERTIES:
+:CUSTOM_ID: 96c2ea28-ff17-4b84-aa64-63b7a76ad1e0
+:END:
+*** Function
+*+eval/open-repl-same-window*
+*** Documentation
+Opens (or reopens) the REPL associated with the current major-mode and place
+the cursor at the prompt.
+
+If ARG (universal argument), prompt for a specific REPL to open.
+
+(fn &optional ARG)
+** SPC o b
+:PROPERTIES:
+:CUSTOM_ID: c8d09934-9202-4f73-8a6a-29a54a16e068
+:END:
+*** Function
+*browse-url-of-file*
+*** Documentation
+Ask a WWW browser to display FILE.
+Display the current buffer’s file if FILE is nil or if called
+interactively.  Turn the filename into a URL with function
+‘browse-url-file-url’.  Pass the URL to a browser using the
+‘browse-url’ function then run ‘browse-url-of-file-hook’.
+** SPC o i
+:PROPERTIES:
+:CUSTOM_ID: 26f4fd07-418f-4a4a-b78a-81ead7ec52cc
+:END:
+*** Function
+*imenu-list-smart-toggle*
+*** Documentation
+Enable or disable ‘imenu-list-minor-mode’ according to buffer’s visibility.
+If the imenu-list buffer is displayed in any window, disable
+‘imenu-list-minor-mode’, otherwise enable it.
+Note that all the windows in every frame searched, even invisible ones, not
+only those in the selected frame.
+
+(fn)
+** SPC o p
+:PROPERTIES:
+:CUSTOM_ID: 24aefb39-4bea-4fcf-bc16-41a7a4d5b841
+:END:
+*** Function
+*+treemacs/toggle*
+*** Documentation
+Initialize or toggle treemacs.
+
+Ensures that only the current project is present and all other projects have
+been removed.
+
+Use ‘treemacs’ command for old functionality.
+** SPC o r
+:PROPERTIES:
+:CUSTOM_ID: f9ac1337-fca2-4bc8-a428-ea7660cc547c
+:END:
+*** Function
+*+eval/open-repl-other-window*
+*** Documentation
+Does ‘+eval/open-repl’, but in a popup window.
+
+If ARG (universal argument), prompt for a specific REPL to open.
+
+(fn &optional ARG)
+** SPC n N
+:PROPERTIES:
+:CUSTOM_ID: 507be8e8-0a5e-4c59-a918-4ccd22fd3378
+:END:
+*** Function
+*+default/browse-notes*
+*** Documentation
+
+** SPC n l
+:PROPERTIES:
+:CUSTOM_ID: 6804b10e-6c33-436b-9ab0-d526e874f991
+:END:
+*** Function
+*org-store-link*
+*** Documentation
+Store a link to the current location.
+
+This link is added to ‘org-stored-links’ and can later be inserted
+into an Org buffer with ‘org-insert-link’ (‘C-c C-l’).
+
+For some link types, a ‘M-x universal-argument’ prefix ARG is interpreted.  A single
+‘M-x universal-argument’ negates ‘org-context-in-file-links’ for file links or
+‘org-gnus-prefer-web-links’ for links to Usenet articles.
+
+A ‘M-x universal-argument M-x universal-argument’ prefix ARG forces skipping storing functions that are not
+part of Org core.
+
+A ‘M-x universal-argument M-x universal-argument M-x universal-argument’ prefix ARG forces storing a link for each line in the
+active region.
+
+Assume the function is called interactively if INTERACTIVE? is
+non-nil.
+
+(fn ARG &optional INTERACTIVE\?)
+** SPC n n
+:PROPERTIES:
+:CUSTOM_ID: 0d4cfaa6-986f-4a13-bfd6-f7d45c79db0b
+:END:
+*** Function
+*+default/find-in-notes*
+*** Documentation
+
+** SPC n s
+:PROPERTIES:
+:CUSTOM_ID: 2043f14f-cc33-44f5-98b9-2f57a1500121
+:END:
+*** Function
+*doom/open-scratch-buffer*
+*** Documentation
+Opens a scratch pad window in the same major-mode.
+
+If ARG (universal argument), then open a persistent scratch pad buffer. You’ll
+be prompted for its name, or to open a previously created. These are stored in
+‘doom-scratch-files-dir’.
+
+If a region is active, copy its contents to the scratch pad.
+** SPC n x
+:PROPERTIES:
+:CUSTOM_ID: 5ea72aab-c498-43b2-b1d6-f8abffcd33be
+:END:
+*** Function
+*org-capture*
+*** Documentation
+Capture something.
+
+This will let you select a template from ‘org-capture-templates’, and
+then file the newly captured information.  The text is immediately
+inserted at the target location, and an indirect buffer is shown where
+you can edit it.  Pressing ‘C-c C-c’ brings you back to the previous
+state of Emacs, so that you can continue your work.
+
+When called interactively with a ‘M-x universal-argument’ prefix argument GOTO, don’t
+capture anything, just go to the file/headline where the selected
+template stores its notes.
+
+With a ‘M-x universal-argument M-x universal-argument’ prefix argument, go to the last note stored.
+
+When called with a ‘C-0’ (zero) prefix, insert a template at point.
+
+When called with a ‘C-1’ (one) prefix, force prompting for a date when
+a datetree entry is made.
+
+ELisp programs can set KEYS to a string associated with a template
+in ‘org-capture-templates’.  In this case, interactive selection
+will be bypassed.
+
+If ‘org-capture-use-agenda-date’ is non-nil, capturing from the
+agenda will use the date at point as the default date.  Then, a
+‘C-1’ prefix will tell the capture process to use the HH:MM time
+of the day at point (if any) or the current HH:MM time.
+
+(fn &optional GOTO KEYS)
+** SPC i s
+:PROPERTIES:
+:CUSTOM_ID: 6e4ddd41-7acc-4a4a-b309-fd66f07aa192
+:END:
+*** Function
+*yas-insert-snippet*
+*** Documentation
+Choose a snippet to expand, pop-up a list of choices according
+to ‘yas-prompt-functions’.
+
+With prefix argument NO-CONDITION, bypass filtering of snippets
+by condition.
+** SPC i y
+:PROPERTIES:
+:CUSTOM_ID: d4c5729d-b1b5-4dc9-97bd-fd45d019f1e8
+:END:
+*** Function
+*+default/yank-pop*
+*** Documentation
+Interactively select what text to insert from the kill ring.
+** SPC g '
+:PROPERTIES:
+:CUSTOM_ID: c1533220-d39f-4833-8e8b-2794bb8a2849
+:END:
+*** Function
+*forge-dispatch*
+*** Documentation
+Dispatch a forge command.
+** SPC g /
+:PROPERTIES:
+:CUSTOM_ID: bb8ba1d6-0654-4eaf-be15-b3d8eda62969
+:END:
+*** Function
+*magit-dispatch*
+*** Documentation
+Invoke a Magit command from a list of available commands.
+** SPC g B
+:PROPERTIES:
+:CUSTOM_ID: 7aa7f47a-afc0-44fc-ac53-b79668450148
+:END:
+*** Function
+*magit-blame-addition*
+*** Documentation
+For each line show the revision in which it was added.
+** SPC g C
+:PROPERTIES:
+:CUSTOM_ID: d86bf6be-a880-4f98-9f48-025ccb27ef4c
+:END:
+*** Function
+*+magit/clone*
+*** Documentation
+Like ‘magit-clone’, but supports additional formats on top of absolute URLs:
+
++ USER/REPO: assumes {‘+magit-default-clone-url’}/USER/REPO
++ REPO: assumes {‘+magit-default-clone-url’}/{USER}/REPO, where {USER} is
+  ascertained from your global gitconfig.
+** SPC g F
+:PROPERTIES:
+:CUSTOM_ID: 34e4eda9-bcbd-4614-99cd-7229bd4f079d
+:END:
+*** Function
+*magit-fetch*
+*** Documentation
+Fetch from another repository.
+** SPC g L
+:PROPERTIES:
+:CUSTOM_ID: af27acd3-c53b-424d-a57e-eb28d8a647fb
+:END:
+*** Function
+*magit-log*
+*** Documentation
+Show a commit or reference log.
+** SPC g R
+:PROPERTIES:
+:CUSTOM_ID: 609480df-63a5-48de-b83f-0c41847718a6
+:END:
+*** Function
+*vc-revert*
+*** Documentation
+Revert working copies of the selected fileset to their repository contents.
+This asks for confirmation if the buffer contents are not identical
+to the working revision (except for keyword expansion).
+
+(fn)
+** SPC g S
+:PROPERTIES:
+:CUSTOM_ID: e6f54fe2-a435-4b9a-a47f-5c0f6cab3f29
+:END:
+*** Function
+*magit-stage-file*
+*** Documentation
+:after advice: ‘+version-control|update-git-gutter’
+
+Stage all changes to FILE.
+With a prefix argument or when there is no file at point ask for
+the file to be staged.  Otherwise stage the file at point without
+requiring confirmation.
+
+(fn FILE)
+** SPC g U
+:PROPERTIES:
+:CUSTOM_ID: fc5ab156-f36b-48cf-918f-8cd4dfcfecd9
+:END:
+*** Function
+*magit-unstage-file*
+*** Documentation
+:after advice: ‘+version-control|update-git-gutter’
+
+Unstage all changes to FILE.
+With a prefix argument or when there is no file at point ask for
+the file to be unstaged.  Otherwise unstage the file at point
+without requiring confirmation.
+
+(fn FILE)
+** SPC g [
+:PROPERTIES:
+:CUSTOM_ID: be85350a-3108-430b-92ca-0d7db75909aa
+:END:
+*** Function
+*git-gutter:previous-hunk*
+*** Documentation
+Move to previous diff hunk
+
+(fn ARG)
+** SPC g ]
+:PROPERTIES:
+:CUSTOM_ID: ea205d2c-6dfe-4651-a4ac-4c25419caec5
+:END:
+*** Function
+*git-gutter:next-hunk*
+*** Documentation
+Move to next diff hunk
+
+(fn ARG)
+** SPC g g
+:PROPERTIES:
+:CUSTOM_ID: 50738165-b36a-449a-9f98-473879ed1a02
+:END:
+*** Function
+*magit-status*
+*** Documentation
+Show the status of the current Git repository in a buffer.
+
+If the current directory isn’t located within a Git repository,
+then prompt for an existing repository or an arbitrary directory,
+depending on option ‘magit-repository-directories’, and show the
+status of the selected repository instead.
+
+ If that option specifies any existing repositories, then offer
+  those for completion and show the status buffer for the
+  selected one.
+
+ Otherwise read an arbitrary directory using regular file-name
+  completion.  If the selected directory is the top-level of an
+  existing working tree, then show the status buffer for that.
+
+ Otherwise offer to initialize the selected directory as a new
+  repository.  After creating the repository show its status
+  buffer.
+
+These fallback behaviors can also be forced using one or more
+prefix arguments:
+
+ With two prefix arguments (or more precisely a numeric prefix
+  value of 16 or greater) read an arbitrary directory and act on
+  it as described above.  The same could be accomplished using
+  the command ‘magit-init’.
+
+ With a single prefix argument read an existing repository, or
+  if none can be found based on ‘magit-repository-directories’,
+  then fall back to the same behavior as with two prefix
+  arguments.
+
+(fn &optional DIRECTORY CACHE)
+** SPC g r
+:PROPERTIES:
+:CUSTOM_ID: e039b402-96dc-4ab0-bff2-d967040051b6
+:END:
+*** Function
+*git-gutter:revert-hunk*
+*** Documentation
+Revert current hunk.
+** SPC g s
+:PROPERTIES:
+:CUSTOM_ID: 1efc64cb-105a-4b56-8de3-1228d8245641
+:END:
+*** Function
+*git-gutter:stage-hunk*
+*** Documentation
+Stage this hunk like ’git add -p’.
+** SPC g t
+:PROPERTIES:
+:CUSTOM_ID: 358408b3-05a8-49d6-aa03-a4d2170bd310
+:END:
+*** Function
+*git-timemachine-toggle*
+*** Documentation
+Toggle git timemachine mode.
+
+(fn)
+** SPC g x
+:PROPERTIES:
+:CUSTOM_ID: a000da5b-59c1-46f3-aa67-12cf302fae5d
+:END:
+*** Function
+*magit-file-delete*
+*** Documentation
+Delete the selected FILES or one file read in the minibuffer.
+
+With a prefix argument FORCE do so even when the files have
+uncommitted changes.  When the files aren’t being tracked in
+Git, then fallback to using ‘delete-file’.
+
+(fn FILES &optional FORCE)
+** SPC f .
+:PROPERTIES:
+:CUSTOM_ID: cde6f4e1-78e8-4c19-bf41-08304a93d1a7
+:END:
+*** Function
+*counsel-file-jump*
+*** Documentation
+Jump to a file below the current directory.
+List all files within the current directory or any of its subdirectories.
+INITIAL-INPUT can be given as the initial minibuffer input.
+INITIAL-DIRECTORY, if non-nil, is used as the root directory for search.
+
+(fn &optional INITIAL-INPUT INITIAL-DIRECTORY)
+** SPC f /
+:PROPERTIES:
+:CUSTOM_ID: 4faaad38-ce99-4c73-b6be-28f4c424fcf6
+:END:
+*** Function
+*projectile-find-file*
+*** Documentation
+Jump to a project’s file using completion.
+With a prefix arg INVALIDATE-CACHE invalidates the cache first.
+
+(fn &optional INVALIDATE-CACHE)
+** SPC f >
+:PROPERTIES:
+:CUSTOM_ID: d8ffa58d-2100-4f9a-9f80-eb5dcc7387e2
+:END:
+*** Function
+*doom/browse-in-other-project*
+*** Documentation
+Preforms ‘find-file’ in a known project of your choosing.
+** SPC f ?
+:PROPERTIES:
+:CUSTOM_ID: 474c09e4-62ed-4783-90c4-eabaecf5edb8
+:END:
+*** Function
+*doom/find-file-in-other-project*
+*** Documentation
+Preforms ‘projectile-find-file’ in a known project of your choosing.
+** SPC f E
+:PROPERTIES:
+:CUSTOM_ID: 2969e944-783f-49b0-9235-be0ac42498db
+:END:
+*** Function
+*+default/browse-emacsd*
+*** Documentation
+
+** SPC f P
+:PROPERTIES:
+:CUSTOM_ID: 7a9fcd33-5f4f-484a-a59a-0d139d664466
+:END:
+*** Function
+*doom/open-private-config*
+*** Documentation
+TODO
+
+(fn)
+** SPC f R
+:PROPERTIES:
+:CUSTOM_ID: 0ad71db4-847f-4c2c-a810-60b95a6e32ca
+:END:
+*** Function
+*projectile-recentf*
+*** Documentation
+Show a list of recently visited files in a project.
+** SPC f S
+:PROPERTIES:
+:CUSTOM_ID: e0b573aa-eeec-44cf-b0ca-e04d3d65ee2d
+:END:
+*** Function
+*doom/sudo-find-file*
+*** Documentation
+Open FILE as root.
+
+(fn FILE)
+** SPC f X
+:PROPERTIES:
+:CUSTOM_ID: a0a591e6-9c4f-4908-bb0e-60b67d43a685
+:END:
+*** Function
+*doom/delete-this-file*
+*** Documentation
+Delete FILENAME (defaults to the file associated with current buffer) and
+kills the buffer. If FORCE-P, force the deletion (don’t ask for confirmation).
+
+(fn &optional PATH FORCE-P)
+** SPC f a
+:PROPERTIES:
+:CUSTOM_ID: 327cdaeb-16af-4221-a4bf-794d9c34a0a6
+:END:
+*** Function
+*projectile-find-other-file*
+*** Documentation
+Switch between files with the same name but different extensions.
+With FLEX-MATCHING, match any file that contains the base name of current file.
+Other file extensions can be customized with the variable ‘projectile-other-file-alist’.
+
+(fn &optional FLEX-MATCHING)
+** SPC f d
+:PROPERTIES:
+:CUSTOM_ID: 0e841789-fb96-4676-9508-03f456535a90
+:END:
+*** Function
+*dired*
+*** Documentation
+"Edit" directory DIRNAME--delete, rename, print, etc. some files in it.
+Optional second argument SWITCHES specifies the ‘ls’ options used.
+(Interactively, use a prefix argument to be able to specify SWITCHES.)
+
+If DIRNAME is a string, Dired displays a list of files in DIRNAME (which
+may also have shell wildcards appended to select certain files).
+
+If DIRNAME is a cons, its first element is taken as the directory name
+and the rest as an explicit list of files to make directory entries for.
+In this case, SWITCHES are applied to each of the files separately, and
+therefore switches that control the order of the files in the produced
+listing have no effect.
+
+You can flag files for deletion with d and then
+delete them by typing x.
+Type h after entering Dired for more info.
+
+If DIRNAME is already in a Dired buffer, that buffer is used without refresh.
+
+(fn DIRNAME &optional SWITCHES)
+** SPC f e
+:PROPERTIES:
+:CUSTOM_ID: eb1ba2ce-a41d-4155-b1df-696d2f4824dd
+:END:
+*** Function
+*+default/find-in-emacsd*
+*** Documentation
+
+** SPC f f
+:PROPERTIES:
+:CUSTOM_ID: 9892bc3c-3b15-4db9-861c-b194ef56f20f
+:END:
+*** Function
+*find-file*
+*** Documentation
+Edit file FILENAME.
+Switch to a buffer visiting file FILENAME,
+creating one if none already exists.
+Interactively, the default if you just type RET is the current directory,
+but the visited file name is available through the minibuffer history:
+type M-x next-history-element to pull it into the minibuffer.
+
+The first time M-x next-history-element is used after Emacs prompts for
+the file name, the result is affected by ‘file-name-at-point-functions’,
+which by default try to guess the file name by looking at point in the
+current buffer.  Customize the value of ‘file-name-at-point-functions’
+or set it to nil, if you want only the visited file name and the
+current directory to be available on first M-x next-history-element
+request.
+
+You can visit files on remote machines by specifying something
+like /ssh:SOME_REMOTE_MACHINE:FILE for the file name.  You can
+also visit local files as a different user by specifying
+/sudo::FILE for the file name.
+See the Info node ‘(tramp)File name Syntax’ in the Tramp Info
+manual, for more about this.
+
+Interactively, or if WILDCARDS is non-nil in a call from Lisp,
+expand wildcards (if any) and visit multiple files.  You can
+suppress wildcard expansion by setting ‘find-file-wildcards’ to nil.
+
+To visit a file without any kind of conversion and without
+automatically choosing a major mode, use M-x find-file-literally.
+
+(fn FILENAME &optional WILDCARDS)
+** SPC f p
+:PROPERTIES:
+:CUSTOM_ID: 430b32d1-b0ad-46cb-b09b-04eb52d2886d
+:END:
+*** Function
+*doom/find-file-in-private-config*
+*** Documentation
+TODO
+
+(fn)
+** SPC f r
+:PROPERTIES:
+:CUSTOM_ID: 42571b7e-ecb0-4139-9bba-6bfa26f03a73
+:END:
+*** Function
+*recentf-open-files*
+*** Documentation
+Show a dialog to open a recent file.
+If optional argument FILES is non-nil, it is a list of recently-opened
+files to choose from.  It defaults to the whole recent list.
+If optional argument BUFFER-NAME is non-nil, it is a buffer name to
+use for the dialog.  It defaults to "*‘recentf-menu-title’*".
+** SPC f s
+:PROPERTIES:
+:CUSTOM_ID: b6e2729e-0a3c-4075-a29b-58c3a9804f09
+:END:
+*** Function
+*save-buffer*
+*** Documentation
+Save current buffer in visited file if modified.
+Variations are described below.
+
+By default, makes the previous version into a backup file
+ if previously requested or if this is the first save.
+Prefixed with one SPC u, marks this version
+ to become a backup when the next save is done.
+Prefixed with two SPC u’s,
+ makes the previous version into a backup file.
+Prefixed with three SPC u’s, marks this version
+ to become a backup when the next save is done,
+ and makes the previous version into a backup file.
+
+With a numeric prefix argument of 0, never make the previous version
+into a backup file.
+
+Note that the various variables that control backups, such
+as ‘version-control’, ‘backup-enable-predicate’, ‘vc-make-backup-files’,
+and ‘backup-inhibited’, to name just the more popular ones, still
+control whether a backup will actually be produced, even when you
+invoke this command prefixed with two or three SPC u’s.
+
+If a file’s name is FOO, the names of its numbered backup versions are
+ FOO.~i~ for various integers i.  A non-numbered backup file is called FOO~.
+Numeric backups (rather than FOO~) will be made if value of
+ ‘version-control’ is not the atom ‘never’ and either there are already
+ numeric versions of the file being backed up, or ‘version-control’ is
+ non-nil.
+We don’t want excessive versions piling up, so there are variables
+ ‘kept-old-versions’, which tells Emacs how many oldest versions to keep,
+ and ‘kept-new-versions’, which tells how many newest versions to keep.
+ Defaults are 2 old versions and 2 new.
+‘dired-kept-versions’ controls dired’s clean-directory (.) command.
+If ‘delete-old-versions’ is nil, system will query user
+ before trimming versions.  Otherwise it does it silently.
+
+If ‘vc-make-backup-files’ is nil, which is the default,
+ no backup files are made for files managed by version control.
+ (This is because the version control system itself records previous versions.)
+
+See the subroutine ‘basic-save-buffer’ for more information.
+
+(fn &optional ARG)
+** SPC f y
+:PROPERTIES:
+:CUSTOM_ID: 229e0852-f210-468e-be8a-01c5a6478c6f
+:END:
+*** Function
+*+default/yank-buffer-filename*
+*** Documentation
+Copy the current buffer’s path to the kill ring.
+** SPC c D
+:PROPERTIES:
+:CUSTOM_ID: cce8fbb8-a2ba-4472-8072-623dcbacf17d
+:END:
+*** Function
+*+lookup/references*
+*** Documentation
+Show a list of usages of IDENTIFIER (defaults to the symbol at point)
+
+Tries each function in ‘+lookup-references-functions’ until one changes the
+point and/or current buffer. Falls back to a naive ripgrep/the_silver_searcher
+search otherwise.
+** SPC c E
+:PROPERTIES:
+:CUSTOM_ID: 05873acb-b8b2-4be8-b5db-676b84fd8953
+:END:
+*** Function
+*+eval:replace-region*
+*** Documentation
+
+** SPC c W
+:PROPERTIES:
+:CUSTOM_ID: 67612fe3-d58a-475b-ab7d-ef69376934a2
+:END:
+*** Function
+*doom/delete-trailing-newlines*
+*** Documentation
+Trim trailing newlines.
+
+Respects ‘require-final-newline’.
+** SPC c c
+:PROPERTIES:
+:CUSTOM_ID: a773d677-4b59-4ac0-bd5e-265bcd610f97
+:END:
+*** Function
+*projectile-compile-project*
+*** Documentation
+Run project compilation command.
+
+Normally you’ll be prompted for a compilation command, unless
+variable ‘compilation-read-command’.  You can force the prompt
+with a prefix ARG.
+
+(fn ARG)
+** SPC c d
+:PROPERTIES:
+:CUSTOM_ID: 9299bc1f-bd6b-47cf-b2c2-473b903c729f
+:END:
+*** Function
+*+lookup/definition*
+*** Documentation
+Jump to the definition of IDENTIFIER (defaults to the symbol at point).
+
+If OTHER-WINDOW (universal argument), open the result in another window.
+
+Each function in ‘+lookup-definition-functions’ is tried until one changes the
+point or current buffer. Falls back to dumb-jump, naive
+ripgrep/the_silver_searcher text search, then ‘evil-goto-definition’ if
+evil-mode is active.
+** SPC c e
+:PROPERTIES:
+:CUSTOM_ID: e4eccaa8-9b99-4347-923d-c78384d157c9
+:END:
+*** Function
+*+eval/buffer-or-region*
+*** Documentation
+Evaluate the whole buffer.
+** SPC c r
+:PROPERTIES:
+:CUSTOM_ID: f654f737-78a0-4ac5-be9b-d6024e375f8e
+:END:
+*** Function
+*+eval/open-repl-other-window*
+*** Documentation
+Does ‘+eval/open-repl’, but in a popup window.
+
+If ARG (universal argument), prompt for a specific REPL to open.
+
+(fn &optional ARG)
+** SPC c w
+:PROPERTIES:
+:CUSTOM_ID: a44d557b-cc64-4a04-9927-abc8688dec4f
+:END:
+*** Function
+*delete-trailing-whitespace*
+*** Documentation
+Delete trailing whitespace between START and END.
+If called interactively, START and END are the start/end of the
+region if the mark is active, or of the buffer’s accessible
+portion if the mark is inactive.
+
+This command deletes whitespace characters after the last
+non-whitespace character in each line between START and END.  It
+does not consider formfeed characters to be whitespace.
+
+If this command acts on the entire buffer (i.e. if called
+interactively with the mark inactive, or called from Lisp with
+END nil), it also deletes all trailing lines at the end of the
+buffer if the variable ‘delete-trailing-lines’ is non-nil.
+
+(fn &optional START END)
+** SPC c x
+:PROPERTIES:
+:CUSTOM_ID: 39507ee5-1e2e-4a51-b3c4-a8ec5d9e230d
+:END:
+*** Function
+*flycheck-list-errors*
+*** Documentation
+Show the error list for the current buffer.
+** SPC b -
+:PROPERTIES:
+:CUSTOM_ID: 7b135a8c-6b6e-4283-97b4-6268ece92a89
+:END:
+*** Function
+*doom/clone-and-narrow-buffer*
+*** Documentation
+Restrict editing in this buffer to the current region, indirectly. With CLONE-P,
+clone the buffer and hard-narrow the selection. If mark isn’t active, then widen
+the buffer (if narrowed).
+
+Inspired from http://demonastery.org/2013/04/emacs-evil-narrow-region/
+** SPC b B
+:PROPERTIES:
+:CUSTOM_ID: dc125ccf-1ead-4f6c-8c47-03bc1efa4d81
+:END:
+*** Function
+*switch-to-buffer*
+*** Documentation
+:around advice: ‘ad-Advice-switch-to-buffer’
+:around advice: ‘doom*run-switch-buffer-hooks’
+
+Display buffer BUFFER-OR-NAME in the selected window.
+
+WARNING: This is NOT the way to work on another buffer temporarily
+within a Lisp program!  Use ‘set-buffer’ instead.  That avoids
+messing with the window-buffer correspondences.
+
+If the selected window cannot display the specified buffer
+because it is a minibuffer window or strongly dedicated to
+another buffer, call ‘pop-to-buffer’ to select the buffer in
+another window.  In interactive use, if the selected window is
+strongly dedicated to its buffer, the value of the option
+‘switch-to-buffer-in-dedicated-window’ specifies how to proceed.
+
+If called interactively, read the buffer name using ‘read-buffer’.
+The variable ‘confirm-nonexistent-file-or-buffer’ determines
+whether to request confirmation before creating a new buffer.
+See ‘read-buffer’ for features related to input and completion
+of buffer names.
+
+BUFFER-OR-NAME may be a buffer, a string (a buffer name), or nil.
+If BUFFER-OR-NAME is a string that does not identify an existing
+buffer, create a buffer with that name.  If BUFFER-OR-NAME is
+nil, switch to the buffer returned by ‘other-buffer’.
+
+If optional argument NORECORD is non-nil, do not put the buffer
+at the front of the buffer list, and do not make the window
+displaying it the most recently selected one.
+
+If optional argument FORCE-SAME-WINDOW is non-nil, the buffer
+must be displayed in the selected window when called
+non-interactively; if that is impossible, signal an error rather
+than calling ‘pop-to-buffer’.  It has no effect when the option
+‘switch-to-buffer-obey-display-actions’ is non-nil.
+
+The option ‘switch-to-buffer-preserve-window-point’ can be used
+to make the buffer appear at its last position in the selected
+window.
+
+If the option ‘switch-to-buffer-obey-display-actions’ is non-nil,
+run the function ‘pop-to-buffer-same-window’ instead.
+This may display the buffer in another window as specified by
+‘display-buffer-overriding-action’, ‘display-buffer-alist’ and
+other display related variables.  If this results in displaying
+the buffer in the selected window, window start and point are adjusted
+as prescribed by the option ‘switch-to-buffer-preserve-window-point’.
+Otherwise, these are left alone.
+
+Return the buffer switched to.
+
+(fn BUFFER-OR-NAME &optional NORECORD FORCE-SAME-WINDOW)
+** SPC b N
+:PROPERTIES:
+:CUSTOM_ID: 8736a7c0-787f-4a21-ba5e-3206441ddf47
+:END:
+*** Function
+*evil-buffer-new*
+*** Documentation
+Creates a new buffer replacing the current window, optionally
+   editing a certain FILE
+** SPC b S
+:PROPERTIES:
+:CUSTOM_ID: 99ed6b4f-d524-489e-83a0-b9bb4bf3dfc1
+:END:
+*** Function
+*doom/sudo-this-file*
+*** Documentation
+Open the current file as root.
+
+(fn)
+** SPC b [
+:PROPERTIES:
+:CUSTOM_ID: 82b8f576-993e-42da-8935-d9b1336f4836
+:END:
+*** Function
+*previous-buffer*
+*** Documentation
+In selected window switch to previous buffer.
+** SPC b ]
+:PROPERTIES:
+:CUSTOM_ID: 064b0c1c-9571-4003-b3b0-1343dc224c31
+:END:
+*** Function
+*next-buffer*
+*** Documentation
+In selected window switch to next buffer.
+** SPC b b
+:PROPERTIES:
+:CUSTOM_ID: 9b8fc04a-3b2a-4209-85a4-21f2f93d2e81
+:END:
+*** Function
+*persp-switch-to-buffer*
+*** Documentation
+Switch to buffer, read buffer with restriction to current perspective.
+** SPC b k
+:PROPERTIES:
+:CUSTOM_ID: 578d502f-4235-4b39-866e-950d5ef030d6
+:END:
+*** Function
+*kill-this-buffer*
+*** Documentation
+:around advice: ‘doom*switch-to-fallback-buffer-maybe’
+
+Kill the current buffer.
+When called in the minibuffer, get out of the minibuffer
+using ‘abort-recursive-edit’.
+
+This command can be reliably invoked only from the menu bar,
+otherwise it could decide to silently do nothing.
+
+(fn)
+** SPC b n
+:PROPERTIES:
+:CUSTOM_ID: f4e68485-ddc7-4dd7-a570-90f70d6f431c
+:END:
+*** Function
+*next-buffer*
+*** Documentation
+In selected window switch to next buffer.
+** SPC b o
+:PROPERTIES:
+:CUSTOM_ID: 7fbf0183-47c6-415c-972b-5a259bac4091
+:END:
+*** Function
+*doom/kill-other-buffers*
+*** Documentation
+Kill all other buffers (besides the current one).
+
+If PROJECT-P (universal argument), kill only buffers that belong to the current
+project.
+** SPC b p
+:PROPERTIES:
+:CUSTOM_ID: f73e13b8-7c1a-4189-9a2d-3d976abfe80e
+:END:
+*** Function
+*previous-buffer*
+*** Documentation
+In selected window switch to previous buffer.
+** SPC b s
+:PROPERTIES:
+:CUSTOM_ID: f18f8000-8135-4422-9e37-27f4531f3abb
+:END:
+*** Function
+*save-buffer*
+*** Documentation
+Save current buffer in visited file if modified.
+Variations are described below.
+
+By default, makes the previous version into a backup file
+ if previously requested or if this is the first save.
+Prefixed with one SPC u, marks this version
+ to become a backup when the next save is done.
+Prefixed with two SPC u’s,
+ makes the previous version into a backup file.
+Prefixed with three SPC u’s, marks this version
+ to become a backup when the next save is done,
+ and makes the previous version into a backup file.
+
+With a numeric prefix argument of 0, never make the previous version
+into a backup file.
+
+Note that the various variables that control backups, such
+as ‘version-control’, ‘backup-enable-predicate’, ‘vc-make-backup-files’,
+and ‘backup-inhibited’, to name just the more popular ones, still
+control whether a backup will actually be produced, even when you
+invoke this command prefixed with two or three SPC u’s.
+
+If a file’s name is FOO, the names of its numbered backup versions are
+ FOO.~i~ for various integers i.  A non-numbered backup file is called FOO~.
+Numeric backups (rather than FOO~) will be made if value of
+ ‘version-control’ is not the atom ‘never’ and either there are already
+ numeric versions of the file being backed up, or ‘version-control’ is
+ non-nil.
+We don’t want excessive versions piling up, so there are variables
+ ‘kept-old-versions’, which tells Emacs how many oldest versions to keep,
+ and ‘kept-new-versions’, which tells how many newest versions to keep.
+ Defaults are 2 old versions and 2 new.
+‘dired-kept-versions’ controls dired’s clean-directory (.) command.
+If ‘delete-old-versions’ is nil, system will query user
+ before trimming versions.  Otherwise it does it silently.
+
+If ‘vc-make-backup-files’ is nil, which is the default,
+ no backup files are made for files managed by version control.
+ (This is because the version control system itself records previous versions.)
+
+See the subroutine ‘basic-save-buffer’ for more information.
+
+(fn &optional ARG)
+** SPC b x
+:PROPERTIES:
+:CUSTOM_ID: 6ae67c63-ba98-408b-b090-547999b441ef
+:END:
+*** Function
+*doom/open-scratch-buffer*
+*** Documentation
+Opens a scratch pad window in the same major-mode.
+
+If ARG (universal argument), then open a persistent scratch pad buffer. You’ll
+be prompted for its name, or to open a previously created. These are stored in
+‘doom-scratch-files-dir’.
+
+If a region is active, copy its contents to the scratch pad.
+** SPC b z
+:PROPERTIES:
+:CUSTOM_ID: 8581f4cf-4d51-4953-b463-f163abc54b24
+:END:
+*** Function
+*bury-buffer*
+*** Documentation
+Put BUFFER-OR-NAME at the end of the list of all buffers.
+There it is the least likely candidate for ‘other-buffer’ to
+return; thus, the least likely buffer for SPC < to
+select by default.
+
+You can specify a buffer name as BUFFER-OR-NAME, or an actual
+buffer object.  If BUFFER-OR-NAME is nil or omitted, bury the
+current buffer.  Also, if BUFFER-OR-NAME is nil or omitted,
+remove the current buffer from the selected window if it is
+displayed there.
+
+(fn &optional BUFFER-OR-NAME)
+** SPC TAB TAB
+:PROPERTIES:
+:CUSTOM_ID: 12da431e-962d-4431-8e4e-0d9a3cbf9b05
+:END:
+*** Function
+*+workspace/display*
+*** Documentation
+Display a list of workspaces (like tabs) in the echo area.
+** SPC TAB .
+:PROPERTIES:
+:CUSTOM_ID: 563b1291-bc93-4f79-b0e8-ae9505be75a9
+:END:
+*** Function
+*+workspace/switch-to*
+*** Documentation
+Switch to a workspace at a given INDEX. A negative number will start from the
+end of the workspace list.
+** SPC TAB 0
+:PROPERTIES:
+:CUSTOM_ID: d937336d-1568-4394-aed2-f13835662f04
+:END:
+*** Function
+*+workspace/switch-to-last*
+*** Documentation
+Switch to the last workspace.
+** SPC TAB R
+:PROPERTIES:
+:CUSTOM_ID: 5a19aa56-d6ea-4507-89e2-18cf15ea96b0
+:END:
+*** Function
+*+workspace/restore-last-session*
+*** Documentation
+TODO
+
+(fn)
+** SPC TAB [
+:PROPERTIES:
+:CUSTOM_ID: 5bdfb9ef-7492-4dd8-9202-d0c92e08fe6c
+:END:
+*** Function
+*+workspace/switch-left*
+*** Documentation
+
+** SPC TAB ]
+:PROPERTIES:
+:CUSTOM_ID: c7cd0e7b-e22c-4e4b-a5e4-0414f3fa641c
+:END:
+*** Function
+*+workspace/switch-right*
+*** Documentation
+
+** SPC TAB d
+:PROPERTIES:
+:CUSTOM_ID: 736e7c75-60e2-45b7-9c35-cb4d386d6f75
+:END:
+*** Function
+*+workspace/delete*
+*** Documentation
+Delete this workspace. If called with C-u, prompts you for the name of the
+workspace to delete.
+** SPC TAB l
+:PROPERTIES:
+:CUSTOM_ID: b05a63c6-2d83-4953-b810-6e9fd7794dd1
+:END:
+*** Function
+*+workspace/load*
+*** Documentation
+Load a workspace and switch to it. If called with C-u, try to reload the
+current workspace (by name) from session files.
+** SPC TAB n
+:PROPERTIES:
+:CUSTOM_ID: 263007f3-26e2-4013-88e1-cc7c721699d1
+:END:
+*** Function
+*+workspace/new*
+*** Documentation
+Create a new workspace named NAME. If CLONE-P is non-nil, clone the current
+workspace, otherwise the new workspace is blank.
+** SPC TAB r
+:PROPERTIES:
+:CUSTOM_ID: 80d2bb54-5e63-498f-84e0-9531d501eab9
+:END:
+*** Function
+*+workspace/rename*
+*** Documentation
+Rename the current workspace.
+** SPC TAB s
+:PROPERTIES:
+:CUSTOM_ID: ee3bfaff-eeef-4f5c-bc57-6d643959b649
+:END:
+*** Function
+*+workspace/save*
+*** Documentation
+Save the current workspace. If called with C-u, autosave the current
+workspace.
+** SPC TAB x
+:PROPERTIES:
+:CUSTOM_ID: ea87d7a1-fa19-42ee-ac0c-64d8f7a61440
+:END:
+*** Function
+*+workspace/kill-session*
+*** Documentation
+Delete the current session, all workspaces, windows and their buffers.
+** SPC / I
+:PROPERTIES:
+:CUSTOM_ID: 6f3bc9eb-c045-4312-bbde-ee47275959e7
+:END:
+*** Function
+*imenu-anywhere*
+*** Documentation
+Go to imenu tag defined in all reachable buffers.
+Reachable buffers are determined by applying functions in
+‘imenu-anywhere-buffer-filter-functions’ to all buffers returned
+by ‘imenu-anywhere-buffer-list-function’.
+
+Sorting is done within each buffer and takes into account items’
+length. Thus more recent buffers in ‘buffer-list’ and shorter
+entries have higher priority.
+
+(fn)
+** SPC / b
+:PROPERTIES:
+:CUSTOM_ID: ca84966a-701f-4aba-965a-20147fe21166
+:END:
+*** Function
+*swiper*
+*** Documentation
+‘isearch’ with an overview.
+When non-nil, INITIAL-INPUT is the initial search pattern.
+
+(fn &optional INITIAL-INPUT)
+** SPC / d
+:PROPERTIES:
+:CUSTOM_ID: 860819ad-5347-4cd3-a5b7-2d8cb58c5c7c
+:END:
+*** Function
+*+default/search-from-cwd*
+*** Documentation
+Conduct a text search in files under the current folder.
+If prefix ARG is set, prompt for a directory to search from.
+** SPC / i
+:PROPERTIES:
+:CUSTOM_ID: 8df7abe2-0a2e-45a3-a076-229bd5d6b64e
+:END:
+*** Function
+*imenu*
+*** Documentation
+Jump to a place in the buffer chosen using a buffer menu or mouse menu.
+INDEX-ITEM specifies the position.  See ‘imenu-choose-buffer-index’
+for more information.
+
+(fn INDEX-ITEM)
+** SPC / l
+:PROPERTIES:
+:CUSTOM_ID: d6484821-de45-49b4-bc9b-1b36c2e1be8e
+:END:
+*** Function
+*ace-link*
+*** Documentation
+Call the ace link function for the current ‘major-mode’
+
+(fn)
+** SPC / o
+:PROPERTIES:
+:CUSTOM_ID: 13bacd49-78e3-49c4-b1c1-f33e14fa1e32
+:END:
+*** Function
+*+lookup/online-select*
+*** Documentation
+Runs ‘+lookup/online’, but always prompts for the provider to use.
+** SPC / p
+:PROPERTIES:
+:CUSTOM_ID: 340191b8-6b34-43ff-ac45-96d15f8fbec0
+:END:
+*** Function
+*+default/search-project*
+*** Documentation
+Conduct a text search in files under the project root.
+If prefix ARG is set, prompt for a project to search from.
+** SPC h C-a
+:PROPERTIES:
+:CUSTOM_ID: 841236e3-4b6f-4bb7-ac97-28b5b2d276f3
+:END:
+*** Function
+*about-emacs*
+*** Documentation
+Display the *About GNU Emacs* buffer.
+A fancy display is used on graphic displays, normal otherwise.
+** SPC h C-c
+:PROPERTIES:
+:CUSTOM_ID: fff865f8-f06c-4b10-acb4-b67c5e605898
+:END:
+*** Function
+*describe-coding-system*
+*** Documentation
+Display information about CODING-SYSTEM.
+
+(fn CODING-SYSTEM)
+** SPC h C-d
+:PROPERTIES:
+:CUSTOM_ID: 5bbaf8c6-719c-4a8b-a746-a3acd2cd5146
+:END:
+*** Function
+*view-emacs-debugging*
+*** Documentation
+Display info on how to debug Emacs problems.
+** SPC h C-e
+:PROPERTIES:
+:CUSTOM_ID: c0ca285a-0ff2-4638-b711-2ba67778f225
+:END:
+*** Function
+*view-external-packages*
+*** Documentation
+Display info on where to get more Emacs packages.
+** SPC h C-f
+:PROPERTIES:
+:CUSTOM_ID: 804df121-ac92-4721-b9ee-3e020739c10b
+:END:
+*** Function
+*view-emacs-FAQ*
+*** Documentation
+Display the Emacs Frequently Asked Questions (FAQ) file.
+** SPC h C-h
+:PROPERTIES:
+:CUSTOM_ID: f5262db4-e665-438d-9228-c87fcf06ce08
+:END:
+*** Function
+*help-for-help*
+*** Documentation
+Help command.
+** SPC h C-k
+:PROPERTIES:
+:CUSTOM_ID: 1a5c85f9-ecd3-4d3e-8b50-f509676b79ed
+:END:
+*** Function
+*describe-key-briefly*
+*** Documentation
+Print the name of the functions KEY-LIST invokes.
+KEY-LIST is a list of pairs (SEQ . RAW-SEQ) of key sequences, where
+RAW-SEQ is the untranslated form of the key sequence SEQ.
+If INSERT (the prefix arg) is non-nil, insert the message in the buffer.
+
+While reading KEY-LIST interactively, this command temporarily enables
+menu items or tool-bar buttons that are disabled to allow getting help
+on them.
+
+(fn &optional KEY-LIST INSERT UNTRANSLATED)
+** SPC h C-l
+:PROPERTIES:
+:CUSTOM_ID: 648b92cd-80ba-4dad-b35f-33aad5fb7812
+:END:
+*** Function
+*describe-language-environment*
+*** Documentation
+Describe how Emacs supports language environment LANGUAGE-NAME.
+
+(fn LANGUAGE-NAME)
+** SPC h RET
+:PROPERTIES:
+:CUSTOM_ID: 602fc2d6-2a41-4378-9542-5ea62b39c2a3
+:END:
+*** Function
+*info-emacs-manual*
+*** Documentation
+Display the Emacs manual in Info mode.
+** SPC h C-n
+:PROPERTIES:
+:CUSTOM_ID: 63fd04d6-3640-4345-a409-d41c2399b020
+:END:
+*** Function
+*view-emacs-news*
+*** Documentation
+Display info on recent changes to Emacs.
+With argument, display info only for the selected version.
+
+(fn &optional VERSION)
+** SPC h C-o
+:PROPERTIES:
+:CUSTOM_ID: 1e4271d2-0e19-48bf-8e3a-e186e8f6500b
+:END:
+*** Function
+*describe-distribution*
+*** Documentation
+Display info on how to obtain the latest version of GNU Emacs.
+** SPC h C-p
+:PROPERTIES:
+:CUSTOM_ID: 38788eee-fa94-4298-9bbb-335fe0460d19
+:END:
+*** Function
+*view-emacs-problems*
+*** Documentation
+Display info on known problems with Emacs and possible workarounds.
+** SPC h C-s
+:PROPERTIES:
+:CUSTOM_ID: b2b38257-b2a3-426d-b71b-83ec00b3378e
+:END:
+*** Function
+*search-forward-help-for-help*
+*** Documentation
+Search forward "help window".
+** SPC h C-t
+:PROPERTIES:
+:CUSTOM_ID: 398a3505-a539-434a-a5c2-fd2166bd6e19
+:END:
+*** Function
+*view-emacs-todo*
+*** Documentation
+Display the Emacs TODO list.
+
+(fn &optional ARG)
+** SPC h C-v
+:PROPERTIES:
+:CUSTOM_ID: 081c620d-0e0f-4e11-93b1-44985b3fc4e3
+:END:
+*** Function
+*doom/version*
+*** Documentation
+Display the current version of Doom & Emacs, including the current Doom
+branch and commit.
+** SPC h C-w
+:PROPERTIES:
+:CUSTOM_ID: 37edf61d-3d4e-4698-a125-9b0d313d478c
+:END:
+*** Function
+*describe-no-warranty*
+*** Documentation
+Display info on all the kinds of warranty Emacs does NOT have.
+** SPC h C-\
+:PROPERTIES:
+:CUSTOM_ID: e66f9b9c-dde5-4d43-a8bd-4499e6d10a5f
+:END:
+*** Function
+*describe-input-method*
+*** Documentation
+Describe input method INPUT-METHOD.
+
+(fn INPUT-METHOD)
+** SPC h '
+:PROPERTIES:
+:CUSTOM_ID: cb2c0ca4-0e90-49bc-8c08-1fcbc6db3212
+:END:
+*** Function
+*describe-char*
+*** Documentation
+Describe position POS (interactively, point) and the char after POS.
+POS is taken to be in BUFFER, or the current buffer if BUFFER is nil.
+The information is displayed in buffer ‘*Help*’.
+
+The position information includes POS; the total size of BUFFER; the
+region limits, if narrowed; the column number; and the horizontal
+scroll amount, if the buffer is horizontally scrolled.
+
+The character information includes:
+ its codepoint;
+ its charset (see ‘char-charset’), overridden by the ‘charset’ text
+   property at POS, if any;
+ the codepoint of the character in the above charset;
+ the character’s script (as defined by ‘char-script-table’)
+ the character’s syntax, as produced by ‘syntax-after’
+   and ‘internal-describe-syntax-value’;
+ its category (see ‘char-category-set’ and ‘describe-char-categories’);
+ how to input the character using the keyboard and input methods;
+ how the character is encoded in BUFFER and in BUFFER’s file;
+ the font and font glyphs used to display the character;
+ the composition information for displaying the character (if relevant);
+ the character’s canonical name and other properties defined by the
+   Unicode Data Base;
+ and widgets, buttons, overlays, and text properties relevant to POS.
+
+(fn POS &optional BUFFER)
+** SPC h .
+:PROPERTIES:
+:CUSTOM_ID: 347ada0a-d386-499f-80d6-947a941f7147
+:END:
+*** Function
+*display-local-help*
+*** Documentation
+Display local help in the echo area.
+This displays a short help message, namely the string produced by
+the ‘kbd-help’ property at point.  If ‘kbd-help’ does not produce
+a string, but the ‘help-echo’ property does, then that string is
+printed instead.
+
+A numeric argument ARG prevents display of a message in case
+there is no help.  While ARG can be used interactively, it is
+mainly meant for use from Lisp.
+
+(fn &optional ARG)
+** SPC h ?
+:PROPERTIES:
+:CUSTOM_ID: 34017cff-bb7a-4e04-bf4b-f3661c492230
+:END:
+*** Function
+*help-for-help*
+*** Documentation
+Help command.
+** SPC h A
+:PROPERTIES:
+:CUSTOM_ID: a197ce2c-9dcb-44f1-a991-68ed06395507
+:END:
+*** Function
+*doom/describe-autodefs*
+*** Documentation
+Open the documentation of Doom autodefs.
+
+What is an autodef? It’s a function or macro that is always defined, even if its
+containing module is disabled (in which case it will safely no-op). This
+syntactic sugar lets you use them without needing to check if they are
+available.
+
+(fn AUTODEF)
+** SPC h B
+:PROPERTIES:
+:CUSTOM_ID: 329c0fe0-1532-4072-866b-9d98ea711367
+:END:
+*** Function
+*doom/open-bug-report*
+*** Documentation
+Open a markdown buffer destinated to populate the New Issue page on Doom
+Emacs’ issue tracker.
+
+If called when a backtrace buffer is present, it and the output of ‘doom-info’
+will be automatically appended to the result.
+** SPC h C
+:PROPERTIES:
+:CUSTOM_ID: 5f4cd864-6168-4fb7-9dd3-dd880efbaac4
+:END:
+*** Function
+*describe-coding-system*
+*** Documentation
+Display information about CODING-SYSTEM.
+
+(fn CODING-SYSTEM)
+** SPC h D
+:PROPERTIES:
+:CUSTOM_ID: d1981467-4f35-49b6-bbf8-78bf3fbe61db
+:END:
+*** Function
+*doom/open-manual*
+*** Documentation
+TODO
+
+(fn)
+** SPC h E
+:PROPERTIES:
+:CUSTOM_ID: b67e9719-a497-4126-8051-3650f5d03b6a
+:END:
+*** Function
+*doom/open-vanilla-sandbox*
+*** Documentation
+Open the Emacs Lisp sandbox.
+
+This is a test bed for running Emacs Lisp in an instance of Emacs with varying
+amounts of Doom loaded, including:
+
+  a) vanilla Emacs (nothing loaded),
+  b) vanilla Doom (only Doom core) and
+  c) Doom + modules - your private config.
+
+This is done without sacrificing access to installed packages. Use the sandbox
+to reproduce bugs and determine if Doom is to blame.
+** SPC h F
+:PROPERTIES:
+:CUSTOM_ID: 2919e481-037c-4372-aa42-a35b45802de2
+:END:
+*** Function
+*describe-face*
+*** Documentation
+Display the properties of face FACE on FRAME.
+Interactively, FACE defaults to the faces of the character after point
+and FRAME defaults to the selected frame.
+
+If the optional argument FRAME is given, report on face FACE in that frame.
+If FRAME is t, report on the defaults for face FACE (for new frames).
+If FRAME is omitted or nil, use the selected frame.
+
+(fn FACE &optional FRAME)
+** SPC h I
+:PROPERTIES:
+:CUSTOM_ID: cf568000-5032-4ec3-8d84-1366eba72a70
+:END:
+*** Function
+*describe-input-method*
+*** Documentation
+Describe input method INPUT-METHOD.
+
+(fn INPUT-METHOD)
+** SPC h K
+:PROPERTIES:
+:CUSTOM_ID: f335cf51-dc51-490c-a3ab-ffcd237c23a0
+:END:
+*** Function
+*Info-goto-emacs-key-command-node*
+*** Documentation
+Go to the node in the Emacs manual which describes the command bound to KEY.
+KEY is a string.
+Interactively, if the binding is ‘execute-extended-command’, a command is read.
+The command is found by looking up in Emacs manual’s indices
+or in another manual found via COMMAND’s ‘info-file’ property or
+the variable ‘Info-file-list-for-emacs’.
+
+(fn KEY)
+** SPC h L
+:PROPERTIES:
+:CUSTOM_ID: ac6e61a1-c1be-4744-869f-82b1c1ee9c99
+:END:
+*** Function
+*global-command-log-mode*
+*** Documentation
+
+** SPC h M
+:PROPERTIES:
+:CUSTOM_ID: d428e32c-943f-4a91-85ce-44265311f4c0
+:END:
+*** Function
+*doom/describe-active-minor-mode*
+*** Documentation
+Get information on an active minor mode. Use ‘describe-minor-mode’ for a
+selection of all minor-modes, active or not.
+
+(fn MODE)
+** SPC h O
+:PROPERTIES:
+:CUSTOM_ID: f49348b8-cc94-4b96-9f06-15768908caa1
+:END:
+*** Function
+*+lookup/online*
+*** Documentation
+Looks up SEARCH (a string) in you browser using PROVIDER.
+
+PROVIDER should be a key of ‘+lookup-provider-url-alist’.
+
+When used interactively, it will prompt for a query and, for the first time, the
+provider from ‘+lookup-provider-url-alist’. On consecutive uses, the last
+provider will be reused. If the universal argument is supplied, always prompt
+for the provider.
+** SPC h P
+:PROPERTIES:
+:CUSTOM_ID: b765e0d7-dd19-4a68-97bc-231f7c6b0d0a
+:END:
+*** Function
+*find-library*
+*** Documentation
+Find the Emacs Lisp source of LIBRARY.
+
+Interactively, prompt for LIBRARY using the one at or near point.
+
+(fn LIBRARY)
+** SPC h S
+:PROPERTIES:
+:CUSTOM_ID: 75363e00-1798-4047-9874-fda29b6c3590
+:END:
+*** Function
+*info-lookup-symbol*
+*** Documentation
+:after advice: ‘+popup*switch-to-info-window’
+
+Display the definition of SYMBOL, as found in the relevant manual.
+When this command is called interactively, it reads SYMBOL from the
+minibuffer.  In the minibuffer, use M-n to yank the default argument
+value into the minibuffer so you can edit it.  The default symbol is the
+one found at point.
+
+With prefix arg MODE a query for the symbol help mode is offered.
+
+(fn SYMBOL &optional MODE)
+** SPC h T
+:PROPERTIES:
+:CUSTOM_ID: 42c7b5bb-c739-42e7-a0aa-18df314c11e8
+:END:
+*** Function
+*doom/toggle-profiler*
+*** Documentation
+Toggle the Emacs profiler. Run it again to see the profiling report.
+** SPC h V
+:PROPERTIES:
+:CUSTOM_ID: 683666bd-cfbe-47bc-a1a0-8b327cbb73a8
+:END:
+*** Function
+*set-variable*
+*** Documentation
+Set VARIABLE to VALUE.  VALUE is a Lisp object.
+VARIABLE should be a user option variable name, a Lisp variable
+meant to be customized by users.  You should enter VALUE in Lisp syntax,
+so if you want VALUE to be a string, you must surround it with doublequotes.
+VALUE is used literally, not evaluated.
+
+If VARIABLE has a ‘variable-interactive’ property, that is used as if
+it were the arg to ‘interactive’ (which see) to interactively read VALUE.
+
+If VARIABLE has been defined with ‘defcustom’, then the type information
+in the definition is used to check that VALUE is valid.
+
+Note that this function is at heart equivalent to the basic ‘set’ function.
+For a variable defined with ‘defcustom’, it does not pay attention to
+any :set property that the variable might have (if you want that, use
+M-x customize-set-variable instead).
+
+With a prefix argument, set VARIABLE to VALUE buffer-locally.
+
+(fn VARIABLE VALUE &optional MAKE-LOCAL)
+** SPC h W
+:PROPERTIES:
+:CUSTOM_ID: fba6ed5d-ecec-41eb-82fb-0876eb012592
+:END:
+*** Function
+*+default/man-or-woman*
+*** Documentation
+Invoke ‘man’ if man is installed, otherwise use ‘woman’.
+** SPC h a
+:PROPERTIES:
+:CUSTOM_ID: 1414fb3c-3a83-4fb4-8c59-a779db25eeea
+:END:
+*** Function
+*apropos*
+*** Documentation
+Show all meaningful Lisp symbols whose names match PATTERN.
+Symbols are shown if they are defined as functions, variables, or
+faces, or if they have nonempty property lists.
+
+PATTERN can be a word, a list of words (separated by spaces),
+or a regexp (using some regexp special characters).  If it is a word,
+search for matches for that word as a substring.  If it is a list of words,
+search for matches for any two (or more) of those words.
+
+With SPC u prefix, or if ‘apropos-do-all’ is non-nil,
+consider all symbols (if they match PATTERN).
+
+Returns list of symbols and documentation found.
+
+(fn PATTERN &optional DO-ALL)
+** SPC h b
+:PROPERTIES:
+:CUSTOM_ID: 239d952f-b950-44c0-ac4b-1b4da9c5e1cf
+:END:
+*** Function
+*describe-bindings*
+*** Documentation
+Display a buffer showing a list of all defined keys, and their definitions.
+The keys are displayed in order of precedence.
+
+The optional argument PREFIX, if non-nil, should be a key sequence;
+then we display only bindings that start with that prefix.
+The optional argument BUFFER specifies which buffer’s bindings
+to display (default, the current buffer).  BUFFER can be a buffer
+or a buffer name.
+
+(fn &optional PREFIX BUFFER)
+** SPC h c
+:PROPERTIES:
+:CUSTOM_ID: eb8d55b9-f9c5-40f9-8f9c-a13f19505fb8
+:END:
+*** Function
+*describe-key-briefly*
+*** Documentation
+Print the name of the functions KEY-LIST invokes.
+KEY-LIST is a list of pairs (SEQ . RAW-SEQ) of key sequences, where
+RAW-SEQ is the untranslated form of the key sequence SEQ.
+If INSERT (the prefix arg) is non-nil, insert the message in the buffer.
+
+While reading KEY-LIST interactively, this command temporarily enables
+menu items or tool-bar buttons that are disabled to allow getting help
+on them.
+
+(fn &optional KEY-LIST INSERT UNTRANSLATED)
+** SPC h d
+:PROPERTIES:
+:CUSTOM_ID: af826057-043b-46e1-ac9d-429731ea76fa
+:END:
+*** Function
+*doom/describe-module*
+*** Documentation
+Open the documentation of CATEGORY MODULE.
+
+CATEGORY is a keyword and MODULE is a symbol. e.g. :feature and ’evil.
+
+Automatically selects a) the module at point (in private init files), b) the
+module derived from a ‘featurep!’ or ‘require!’ call, c) the module that the
+current file is in, or d) the module associated with the current major mode (see
+‘doom--module-mode-alist’).
+
+(fn CATEGORY MODULE)
+** SPC h e
+:PROPERTIES:
+:CUSTOM_ID: b3ccadf2-6477-4382-ad19-c6f9a5efb22e
+:END:
+*** Function
+*view-echo-area-messages*
+*** Documentation
+View the log of recent echo-area messages: the ‘*Messages*’ buffer.
+The number of messages retained in that buffer
+is specified by the variable ‘message-log-max’.
+** SPC h f
+:PROPERTIES:
+:CUSTOM_ID: 9b44db18-d308-453f-afe8-61a7f0437fe5
+:END:
+*** Function
+*describe-function*
+*** Documentation
+Display the full documentation of FUNCTION (a symbol).
+When called from lisp, FUNCTION may also be a function object.
+
+(fn FUNCTION)
+** SPC h g
+:PROPERTIES:
+:CUSTOM_ID: cc64abf1-e3e3-4ee4-8dc1-76e55898791f
+:END:
+*** Function
+*describe-gnu-project*
+*** Documentation
+Browse online information on the GNU project.
+** SPC h h
+:PROPERTIES:
+:CUSTOM_ID: 8adb0204-368d-4389-8fb1-44d729318b5c
+:END:
+*** Function
+*doom/describe-symbol*
+*** Documentation
+Show help for SYMBOL, a variable, function or macro.
+
+(fn SYMBOL)
+** SPC h i
+:PROPERTIES:
+:CUSTOM_ID: 4b1b1c77-7fcb-42d7-b83c-d6c45803f83a
+:END:
+*** Function
+*info*
+*** Documentation
+Enter Info, the documentation browser.
+Optional argument FILE-OR-NODE specifies the file to examine;
+the default is the top-level directory of Info.
+Called from a program, FILE-OR-NODE may specify an Info node of the form
+"(FILENAME)NODENAME".
+Optional argument BUFFER specifies the Info buffer name;
+the default buffer name is *info*.  If BUFFER exists,
+just switch to BUFFER.  Otherwise, create a new buffer
+with the top-level Info directory.
+
+In interactive use, a non-numeric prefix argument directs
+this command to read a file name from the minibuffer.
+
+A numeric prefix argument of N selects an Info buffer named "*info*<N>".
+
+The search path for Info files is in the variable ‘Info-directory-list’.
+The top-level Info directory is made by combining all the files named ‘dir’
+in all the directories in that path.
+
+See a list of available Info commands in ‘Info-mode’.
+
+(fn &optional FILE-OR-NODE BUFFER)
+** SPC h k
+:PROPERTIES:
+:CUSTOM_ID: 1e83ed25-1256-41fa-8d5f-4c91f1f26e5c
+:END:
+*** Function
+*describe-key*
+*** Documentation
+Display documentation of the function invoked by KEY-LIST.
+KEY-LIST can be any kind of a key sequence; it can include keyboard events,
+mouse events, and/or menu events.  When calling from a program,
+pass KEY-LIST as a list of elements (SEQ . RAW-SEQ) where SEQ is
+a key-sequence and RAW-SEQ is its untranslated form.
+
+While reading KEY-LIST interactively, this command temporarily enables
+menu items or tool-bar buttons that are disabled to allow getting help
+on them.
+
+BUFFER is the buffer in which to lookup those keys; it defaults to the
+current buffer.
+
+(fn &optional KEY-LIST BUFFER UP-EVENT)
+** SPC h l
+:PROPERTIES:
+:CUSTOM_ID: b25d9308-dcff-4e6d-8d6f-1cdbc738d3bd
+:END:
+*** Function
+*view-lossage*
+*** Documentation
+Display last few input keystrokes and the commands run.
+For convenience this uses the same format as
+‘edit-last-kbd-macro’.
+
+To record all your input, use ‘open-dribble-file’.
+** SPC h m
+:PROPERTIES:
+:CUSTOM_ID: 1f416289-9fe0-42e1-a7e2-155200b6ce56
+:END:
+*** Function
+*describe-mode*
+*** Documentation
+Display documentation of current major mode and minor modes.
+A brief summary of the minor modes comes first, followed by the
+major mode description.  This is followed by detailed
+descriptions of the minor modes, each on a separate page.
+
+For this to work correctly for a minor mode, the mode’s indicator
+variable (listed in ‘minor-mode-alist’) must also be a function
+whose documentation describes the minor mode.
+
+If called from Lisp with a non-nil BUFFER argument, display
+documentation for the major and minor modes of that buffer.
+
+(fn &optional BUFFER)
+** SPC h n
+:PROPERTIES:
+:CUSTOM_ID: ad940fb9-c397-4788-abf9-25b6274b40f5
+:END:
+*** Function
+*doom/open-news*
+*** Documentation
+TODO
+
+(fn)
+** SPC h o
+:PROPERTIES:
+:CUSTOM_ID: e904f874-d638-43bc-871e-47396eaa4cd1
+:END:
+*** Function
+*describe-symbol*
+*** Documentation
+Display the full documentation of SYMBOL.
+Will show the info of SYMBOL as a function, variable, and/or face.
+Optional arguments BUFFER and FRAME specify for which buffer and
+frame to show the information about SYMBOL; they default to the
+current buffer and the selected frame, respectively.
+
+(fn SYMBOL &optional BUFFER FRAME)
+** SPC h p
+:PROPERTIES:
+:CUSTOM_ID: def8717c-03b2-4338-9d28-1fa2a7e67c03
+:END:
+*** Function
+*doom/describe-package*
+*** Documentation
+Like ‘describe-packages’, but is Doom aware.
+
+Only shows installed packages. Includes information about where packages are
+defined and configured.
+
+If prefix arg is prsent, refresh the cache.
+
+(fn PACKAGE)
+** SPC h q
+:PROPERTIES:
+:CUSTOM_ID: 6286b9e0-34d5-4879-8c64-b535cc046762
+:END:
+*** Function
+*help-quit*
+*** Documentation
+Just exit from the Help command’s command loop.
+** SPC h s
+:PROPERTIES:
+:CUSTOM_ID: ab855d43-1df5-4f1c-8dfc-e780744856fc
+:END:
+*** Function
+*describe-syntax*
+*** Documentation
+Describe the syntax specifications in the syntax table of BUFFER.
+The descriptions are inserted in a help buffer, which is then displayed.
+BUFFER defaults to the current buffer.
+
+(fn &optional BUFFER)
+** SPC h t
+:PROPERTIES:
+:CUSTOM_ID: 3060da1a-9309-451c-b22b-2c72d7727b2e
+:END:
+*** Function
+*help-with-tutorial*
+*** Documentation
+Select the Emacs learn-by-doing tutorial.
+If there is a tutorial version written in the language
+of the selected language environment, that version is used.
+If there’s no tutorial in that language, ‘TUTORIAL’ is selected.
+With ARG, you are asked to choose which language.
+If DONT-ASK-FOR-REVERT is non-nil the buffer is reverted without
+any question when restarting the tutorial.
+
+If any of the standard Emacs key bindings that are used in the
+tutorial have been changed then an explanatory note about this is
+shown in the beginning of the tutorial buffer.
+
+When the tutorial buffer is killed the content and the point
+position in the buffer is saved so that the tutorial may be
+resumed later.
+
+(fn &optional ARG DONT-ASK-FOR-REVERT)
+** SPC h v
+:PROPERTIES:
+:CUSTOM_ID: 3ef7e803-99b2-41db-afee-f9adadc4b97b
+:END:
+*** Function
+*describe-variable*
+*** Documentation
+Display the full documentation of VARIABLE (a symbol).
+Returns the documentation as a string, also.
+If VARIABLE has a buffer-local value in BUFFER or FRAME
+(default to the current buffer and current frame),
+it is displayed along with the global value.
+
+(fn VARIABLE &optional BUFFER FRAME)
+** SPC h w
+:PROPERTIES:
+:CUSTOM_ID: 0a4aa118-1bc4-4d8f-aeb7-de7d6bf05da2
+:END:
+*** Function
+*where-is*
+*** Documentation
+Print message listing key sequences that invoke the command DEFINITION.
+Argument is a command definition, usually a symbol with a function definition.
+If INSERT (the prefix arg) is non-nil, insert the message in the buffer.
+
+(fn DEFINITION &optional INSERT)
+** SPC h <f1>
+:PROPERTIES:
+:CUSTOM_ID: a74b6d20-62a1-43c8-9591-4c05728560e6
+:END:
+*** Function
+*help-for-help*
+*** Documentation
+Help command.
+** SPC h <help>
+:PROPERTIES:
+:CUSTOM_ID: 898af636-9728-4fd2-927a-6f9e4a2ab2cf
+:END:
+*** Function
+*help-for-help*
+*** Documentation
+Help command.
+** SPC w C-b
+:PROPERTIES:
+:CUSTOM_ID: 1ec0edb8-b544-4d6f-9c2e-6274c23f309f
+:END:
+*** Function
+*evil-window-bottom-right*
+*** Documentation
+Move the cursor to bottom-right window.
+** SPC w C-c
+:PROPERTIES:
+:CUSTOM_ID: 360c42c9-0aa3-4c04-9bab-9e31d6b70130
+:END:
+*** Function
+*ace-delete-window*
+*** Documentation
+Ace delete window.
+** SPC w C-f
+:PROPERTIES:
+:CUSTOM_ID: 3b83dd04-d9f2-42f9-96c6-53ebcb759404
+:END:
+*** Function
+*ffap-other-window*
+*** Documentation
+Like ‘ffap’, but put buffer in another window.
+Only intended for interactive use.
+** SPC w C-h
+:PROPERTIES:
+:CUSTOM_ID: 61841602-c30a-4d44-a81d-a3b96f924788
+:END:
+*** Function
+*evil-window-left*
+*** Documentation
+Move the cursor to new COUNT-th window left of the current one.
+** SPC w C-j
+:PROPERTIES:
+:CUSTOM_ID: baa03363-cf4a-4c2e-9273-763fb50695fb
+:END:
+*** Function
+*evil-window-down*
+*** Documentation
+Move the cursor to new COUNT-th window below the current one.
+** SPC w C-k
+:PROPERTIES:
+:CUSTOM_ID: 9dbcaf98-fedc-41ad-a7a2-f6d1f1adbea4
+:END:
+*** Function
+*evil-window-up*
+*** Documentation
+Move the cursor to new COUNT-th window above the current one.
+** SPC w C-l
+:PROPERTIES:
+:CUSTOM_ID: eff33cc3-e873-4418-b90c-0dd6f0ec0be6
+:END:
+*** Function
+*evil-window-right*
+*** Documentation
+Move the cursor to new COUNT-th window right of the current one.
+** SPC w C-n
+:PROPERTIES:
+:CUSTOM_ID: 521c9ce3-670c-41f5-8c0a-37776ac46396
+:END:
+*** Function
+*evil-window-new*
+*** Documentation
+Splits the current window horizontally
+and opens a new buffer or edits a certain FILE.
+** SPC w C-o
+:PROPERTIES:
+:CUSTOM_ID: 7ae97982-3cb9-43e8-a1c4-c76d6ed1b80d
+:END:
+*** Function
+*delete-other-windows*
+*** Documentation
+Make WINDOW fill its frame.
+WINDOW must be a valid window and defaults to the selected one.
+Return nil.
+
+If the variable ‘ignore-window-parameters’ is non-nil or the
+‘delete-other-windows’ parameter of WINDOW equals t, do not pay
+attention to any other parameters of WINDOW.  Otherwise, if the
+‘delete-other-windows’ parameter of WINDOW specifies a function,
+call that function with WINDOW as its sole argument and return
+the value returned by that function.
+
+Else, if WINDOW is part of an atomic window, call this function
+with the root of the atomic window as its argument.  Signal an
+error if that root window is the root window of WINDOW’s frame.
+Also signal an error if WINDOW is a side window.  Do not delete
+any window whose ‘no-delete-other-windows’ parameter is non-nil.
+
+(fn &optional WINDOW)
+** SPC w C-p
+:PROPERTIES:
+:CUSTOM_ID: fcdd7e2d-d116-4f72-acf2-30ebc75a719e
+:END:
+*** Function
+*evil-window-mru*
+*** Documentation
+Move the cursor to the previous (last accessed) buffer in another window.
+More precisely, it selects the most recently used buffer that is
+shown in some other window, preferably of the current frame, and
+is different from the current one.
+** SPC w C-r
+:PROPERTIES:
+:CUSTOM_ID: e59457f6-b8fe-4274-9ddf-21691c95eaee
+:END:
+*** Function
+*winner-redo*
+*** Documentation
+Restore a more recent window configuration saved by Winner mode.
+** SPC w C-s
+:PROPERTIES:
+:CUSTOM_ID: 2405cef8-7977-436d-8afd-9239ba595a8e
+:END:
+*** Function
+*evil-window-split*
+*** Documentation
+:override advice: ‘+evil*window-split’
+
+Splits the current window horizontally, COUNT lines height,
+editing a certain FILE. The new window will be created below
+when ‘evil-split-window-below’ is non-nil. If COUNT and
+‘evil-auto-balance-windows’ are both non-nil then all children
+of the parent of the splitted window are rebalanced.
+
+(fn &optional COUNT FILE)
+** SPC w C-t
+:PROPERTIES:
+:CUSTOM_ID: 9f5a483e-ec0e-406f-9309-88aebefbb946
+:END:
+*** Function
+*evil-window-top-left*
+*** Documentation
+Move the cursor to top-left window.
+** SPC w C-u
+:PROPERTIES:
+:CUSTOM_ID: bc0a7c3c-3879-4221-9838-a0d1cc1fc81b
+:END:
+*** Function
+*winner-undo*
+*** Documentation
+Switch back to an earlier window configuration saved by Winner mode.
+In other words, "undo" changes in window configuration.
+** SPC w C-v
+:PROPERTIES:
+:CUSTOM_ID: 079c095d-e06b-4c4e-85ae-0c0ac3b0fd5a
+:END:
+*** Function
+*evil-window-vsplit*
+*** Documentation
+:override advice: ‘+evil*window-vsplit’
+
+Splits the current window vertically, COUNT columns width,
+editing a certain FILE. The new window will be created to the
+right when ‘evil-vsplit-window-right’ is non-nil. If COUNT and
+‘evil-auto-balance-windows’are both non-nil then all children
+of the parent of the splitted window are rebalanced.
+
+(fn &optional COUNT FILE)
+** SPC w C-w
+:PROPERTIES:
+:CUSTOM_ID: 8746985c-459e-4543-9dee-7aa40583cbf7
+:END:
+*** Function
+*other-window*
+*** Documentation
+Select another window in cyclic ordering of windows.
+COUNT specifies the number of windows to skip, starting with the
+selected window, before making the selection.  If COUNT is
+positive, skip COUNT windows forwards.  If COUNT is negative,
+skip -COUNT windows backwards.  COUNT zero means do not skip any
+window, so select the selected window.  In an interactive call,
+COUNT is the numeric prefix argument.  Return nil.
+
+If the ‘other-window’ parameter of the selected window is a
+function and ‘ignore-window-parameters’ is nil, call that
+function with the arguments COUNT and ALL-FRAMES.
+
+This function does not select a window whose ‘no-other-window’
+window parameter is non-nil.
+
+This function uses ‘next-window’ for finding the window to
+select.  The argument ALL-FRAMES has the same meaning as in
+‘next-window’, but the MINIBUF argument of ‘next-window’ is
+always effectively nil.
+
+(fn COUNT &optional ALL-FRAMES)
+** SPC w C-_
+:PROPERTIES:
+:CUSTOM_ID: f379bf67-7a0d-4a61-8887-b39fb9a6a697
+:END:
+*** Function
+*evil-window-set-height*
+*** Documentation
+Sets the height of the current window to COUNT.
+** SPC w +
+:PROPERTIES:
+:CUSTOM_ID: a3b13fe8-05f0-4fa6-82aa-8c7be4314187
+:END:
+*** Function
+*evil-window-increase-height*
+*** Documentation
+Increase current window height by COUNT.
+** SPC w -
+:PROPERTIES:
+:CUSTOM_ID: d5d22a92-081a-4d41-91f5-9d0b74996c3b
+:END:
+*** Function
+*evil-window-decrease-height*
+*** Documentation
+Decrease current window height by COUNT.
+** SPC w <
+:PROPERTIES:
+:CUSTOM_ID: 03322b72-04c4-4ae5-a354-580f303463c3
+:END:
+*** Function
+*evil-window-decrease-width*
+*** Documentation
+Decrease current window width by COUNT.
+** SPC w =
+:PROPERTIES:
+:CUSTOM_ID: 261a8573-9782-4847-9b9a-a9eb9a231f9e
+:END:
+*** Function
+*balance-windows*
+*** Documentation
+:around advice: ‘+popup*save’
+
+Balance the sizes of windows of WINDOW-OR-FRAME.
+WINDOW-OR-FRAME is optional and defaults to the selected frame.
+If WINDOW-OR-FRAME denotes a frame, balance the sizes of all
+windows of that frame.  If WINDOW-OR-FRAME denotes a window,
+recursively balance the sizes of all child windows of that
+window.
+
+(fn &optional WINDOW-OR-FRAME)
+** SPC w >
+:PROPERTIES:
+:CUSTOM_ID: 3c59cffd-2e19-4ade-a0a6-f2ed984a0dd9
+:END:
+*** Function
+*evil-window-increase-width*
+*** Documentation
+Increase current window width by COUNT.
+** SPC w H
+:PROPERTIES:
+:CUSTOM_ID: 63f0683e-2042-453e-b3c7-5093c5b4d5f1
+:END:
+*** Function
+*+evil/window-move-left*
+*** Documentation
+See ‘+evil--window-swap’
+
+(fn)
+** SPC w J
+:PROPERTIES:
+:CUSTOM_ID: bd9ecad4-d58d-48ed-b7f7-2269a78549eb
+:END:
+*** Function
+*+evil/window-move-down*
+*** Documentation
+See ‘+evil--window-swap’
+
+(fn)
+** SPC w K
+:PROPERTIES:
+:CUSTOM_ID: 2139a5df-e308-450e-93fa-1d93b0515fb7
+:END:
+*** Function
+*+evil/window-move-up*
+*** Documentation
+See ‘+evil--window-swap’
+
+(fn)
+** SPC w L
+:PROPERTIES:
+:CUSTOM_ID: 74918c58-7e79-497f-89f1-e21afff54e3d
+:END:
+*** Function
+*+evil/window-move-right*
+*** Documentation
+See ‘+evil--window-swap’
+
+(fn)
+** SPC w O
+:PROPERTIES:
+:CUSTOM_ID: 3c702966-27d6-4ed0-adde-756f8d73fa14
+:END:
+*** Function
+*doom/window-zoom*
+*** Documentation
+Close other windows to focus on this one. Activate again to undo this. If the
+window changes before then, the undo expires.
+
+Alternatively, use ‘doom/window-enlargen’.
+** SPC w R
+:PROPERTIES:
+:CUSTOM_ID: ba2580b5-3a37-450f-8e0d-48255e8abe01
+:END:
+*** Function
+*evil-window-rotate-upwards*
+*** Documentation
+Rotates the windows according to the currenty cyclic ordering.
+** SPC w S
+:PROPERTIES:
+:CUSTOM_ID: c920cebc-555a-4e2a-9fee-679272348e8a
+:END:
+*** Function
+*evil-window-split*
+*** Documentation
+:override advice: ‘+evil*window-split’
+
+Splits the current window horizontally, COUNT lines height,
+editing a certain FILE. The new window will be created below
+when ‘evil-split-window-below’ is non-nil. If COUNT and
+‘evil-auto-balance-windows’ are both non-nil then all children
+of the parent of the splitted window are rebalanced.
+
+(fn &optional COUNT FILE)
+** SPC w W
+:PROPERTIES:
+:CUSTOM_ID: b8d22ab7-2bc9-4a81-b89e-467975578455
+:END:
+*** Function
+*evil-window-prev*
+*** Documentation
+Move the cursor to the previous window in the cyclic order.
+With COUNT go to the count-th window in the order starting from
+top-left.
+** SPC w _
+:PROPERTIES:
+:CUSTOM_ID: 1ab32499-99ae-4544-bf68-5c16b18d2d53
+:END:
+*** Function
+*evil-window-set-height*
+*** Documentation
+Sets the height of the current window to COUNT.
+** SPC w b
+:PROPERTIES:
+:CUSTOM_ID: 8c1daac1-f25f-45f4-8482-91af4661d5bd
+:END:
+*** Function
+*evil-window-bottom-right*
+*** Documentation
+Move the cursor to bottom-right window.
+** SPC w c
+:PROPERTIES:
+:CUSTOM_ID: 3d54f8f4-65e3-485e-a390-c942a48d3daa
+:END:
+*** Function
+*+workspace/close-window-or-workspace*
+*** Documentation
+Close the selected window. If it’s the last window in the workspace, either
+close the workspace (as well as its associated frame, if one exists) and move to
+the next.
+** SPC w h
+:PROPERTIES:
+:CUSTOM_ID: 207ac13e-4f01-47d4-b0db-73d54c36d9d2
+:END:
+*** Function
+*evil-window-left*
+*** Documentation
+Move the cursor to new COUNT-th window left of the current one.
+** SPC w j
+:PROPERTIES:
+:CUSTOM_ID: 66ac92db-c7ed-4607-af24-5d5a9d9eeab6
+:END:
+*** Function
+*evil-window-down*
+*** Documentation
+Move the cursor to new COUNT-th window below the current one.
+** SPC w k
+:PROPERTIES:
+:CUSTOM_ID: da490da0-2d78-4bc5-9bbf-26b409d74960
+:END:
+*** Function
+*evil-window-up*
+*** Documentation
+Move the cursor to new COUNT-th window above the current one.
+** SPC w l
+:PROPERTIES:
+:CUSTOM_ID: ea397415-9dd2-4e89-afc0-1aecb5d547a1
+:END:
+*** Function
+*evil-window-right*
+*** Documentation
+Move the cursor to new COUNT-th window right of the current one.
+** SPC w n
+:PROPERTIES:
+:CUSTOM_ID: e006ef98-fa88-4809-b33d-40aa310e1acb
+:END:
+*** Function
+*evil-window-new*
+*** Documentation
+Splits the current window horizontally
+and opens a new buffer or edits a certain FILE.
+** SPC w o
+:PROPERTIES:
+:CUSTOM_ID: 2886e7fe-317b-4213-b886-6c6d31f1e0a8
+:END:
+*** Function
+*doom/window-enlargen*
+*** Documentation
+Enlargen the current window to focus on this one. Does not close other
+windows (unlike ‘doom/window-zoom’) Activate again to undo.
+** SPC w p
+:PROPERTIES:
+:CUSTOM_ID: ade4b3a7-600f-47b7-845d-e4c47dd9200d
+:END:
+*** Function
+*evil-window-mru*
+*** Documentation
+Move the cursor to the previous (last accessed) buffer in another window.
+More precisely, it selects the most recently used buffer that is
+shown in some other window, preferably of the current frame, and
+is different from the current one.
+** SPC w q
+:PROPERTIES:
+:CUSTOM_ID: cfdf5150-077d-43cb-9d03-b733720a8913
+:END:
+*** Function
+*evil-quit*
+*** Documentation
+Closes the current window, current frame, Emacs.
+If the current frame belongs to some client the client connection
+is closed.
+** SPC w r
+:PROPERTIES:
+:CUSTOM_ID: f98585df-3c7a-46b4-b8d5-bfa1e1112ec2
+:END:
+*** Function
+*evil-window-rotate-downwards*
+*** Documentation
+Rotates the windows according to the currenty cyclic ordering.
+** SPC w s
+:PROPERTIES:
+:CUSTOM_ID: ee5c68da-0c7f-4334-b18a-7abd40aa43da
+:END:
+*** Function
+*evil-window-split*
+*** Documentation
+:override advice: ‘+evil*window-split’
+
+Splits the current window horizontally, COUNT lines height,
+editing a certain FILE. The new window will be created below
+when ‘evil-split-window-below’ is non-nil. If COUNT and
+‘evil-auto-balance-windows’ are both non-nil then all children
+of the parent of the splitted window are rebalanced.
+
+(fn &optional COUNT FILE)
+** SPC w t
+:PROPERTIES:
+:CUSTOM_ID: 3ca3a668-62be-4878-b7cb-0d793de95a12
+:END:
+*** Function
+*evil-window-top-left*
+*** Documentation
+Move the cursor to top-left window.
+** SPC w u
+:PROPERTIES:
+:CUSTOM_ID: 74baa849-122c-4a94-94b6-9c16b6dbb3e4
+:END:
+*** Function
+*winner-undo*
+*** Documentation
+Switch back to an earlier window configuration saved by Winner mode.
+In other words, "undo" changes in window configuration.
+** SPC w v
+:PROPERTIES:
+:CUSTOM_ID: e8b030d7-3fd4-4408-988d-2732062de781
+:END:
+*** Function
+*evil-window-vsplit*
+*** Documentation
+:override advice: ‘+evil*window-vsplit’
+
+Splits the current window vertically, COUNT columns width,
+editing a certain FILE. The new window will be created to the
+right when ‘evil-vsplit-window-right’ is non-nil. If COUNT and
+‘evil-auto-balance-windows’are both non-nil then all children
+of the parent of the splitted window are rebalanced.
+
+(fn &optional COUNT FILE)
+** SPC w w
+:PROPERTIES:
+:CUSTOM_ID: 75c943e7-45c3-4918-9a07-e1e7fb84b8a2
+:END:
+*** Function
+*evil-window-next*
+*** Documentation
+Move the cursor to the next window in the cyclic order.
+With COUNT go to the count-th window in the order starting from
+top-left.
+** SPC w |
+:PROPERTIES:
+:CUSTOM_ID: 8cbae348-7eaa-4514-8afe-eee81f872cd5
+:END:
+*** Function
+*evil-window-set-width*
+*** Documentation
+Sets the width of the current window to COUNT.
+** SPC w C-S-h
+:PROPERTIES:
+:CUSTOM_ID: 65d47ab5-2e33-4511-a28f-93d991e9919b
+:END:
+*** Function
+*evil-window-move-far-left*
+*** Documentation
+:around advice: ‘+popup*save’
+
+Closes the current window, splits the upper-left one vertically
+and redisplays the current buffer there.
+
+(fn)
+** SPC w C-S-j
+:PROPERTIES:
+:CUSTOM_ID: 0992ddf6-c617-4033-8cf8-a8db6309b25b
+:END:
+*** Function
+*evil-window-move-very-bottom*
+*** Documentation
+:around advice: ‘+popup*save’
+
+Closes the current window, splits the lower-right one horizontally
+and redisplays the current buffer there.
+
+(fn)
+** SPC w C-S-k
+:PROPERTIES:
+:CUSTOM_ID: 3c20eede-85dd-4168-821a-ceb7891e1553
+:END:
+*** Function
+*evil-window-move-very-top*
+*** Documentation
+:around advice: ‘+popup*save’
+
+Closes the current window, splits the upper-left one horizontally
+and redisplays the current buffer there.
+
+(fn)
+** SPC w C-S-l
+:PROPERTIES:
+:CUSTOM_ID: 4478fff5-91eb-4845-8738-61338e201207
+:END:
+*** Function
+*evil-window-move-far-right*
+*** Documentation
+:around advice: ‘+popup*save’
+
+Closes the current window, splits the lower-right one vertically
+and redisplays the current buffer there.
+
+(fn)
+** SPC w C-S-r
+:PROPERTIES:
+:CUSTOM_ID: 8379682f-cf79-4d81-bb3e-897ca1d17588
+:END:
+*** Function
+*evil-window-rotate-upwards*
+*** Documentation
+Rotates the windows according to the currenty cyclic ordering.
+** SPC w C-S-s
+:PROPERTIES:
+:CUSTOM_ID: 486c2f0f-464f-4813-b618-6e0b411347af
+:END:
+*** Function
+*evil-window-split*
+*** Documentation
+:override advice: ‘+evil*window-split’
+
+Splits the current window horizontally, COUNT lines height,
+editing a certain FILE. The new window will be created below
+when ‘evil-split-window-below’ is non-nil. If COUNT and
+‘evil-auto-balance-windows’ are both non-nil then all children
+of the parent of the splitted window are rebalanced.
+
+(fn &optional COUNT FILE)
+** SPC w C-S-w
+:PROPERTIES:
+:CUSTOM_ID: ffbc873a-2770-49de-8223-752d9270f9cf
+:END:
+*** Function
+*ace-swap-window*
+*** Documentation
+Ace swap window.
+** SPC o a a
+:PROPERTIES:
+:CUSTOM_ID: 3c2276b3-f04a-4226-a628-06026f699884
+:END:
+*** Function
+*org-agenda*
+*** Documentation
+Dispatch agenda commands to collect entries to the agenda buffer.
+Prompts for a command to execute.  Any prefix arg will be passed
+on to the selected command.  The default selections are:
+
+a     Call ‘org-agenda-list’ to display the agenda for current day or week.
+t     Call ‘org-todo-list’ to display the global todo list.
+T     Call ‘org-todo-list’ to display the global todo list, select only
+      entries with a specific TODO keyword (the user gets a prompt).
+m     Call ‘org-tags-view’ to display headlines with tags matching
+      a condition  (the user is prompted for the condition).
+M     Like ‘m’, but select only TODO entries, no ordinary headlines.
+e     Export views to associated files.
+s     Search entries for keywords.
+S     Search entries for keywords, only with TODO keywords.
+/     Multi occur across all agenda files and also files listed
+      in ‘org-agenda-text-search-extra-files’.
+<     Restrict agenda commands to buffer, subtree, or region.
+      Press several times to get the desired effect.
+>     Remove a previous restriction.
+#     List "stuck" projects.
+!     Configure what "stuck" means.
+C     Configure custom agenda commands.
+
+More commands can be added by configuring the variable
+‘org-agenda-custom-commands’.  In particular, specific tags and TODO keyword
+searches can be pre-defined in this way.
+
+If the current buffer is in Org mode and visiting a file, you can also
+first press ‘<’ once to indicate that the agenda should be temporarily
+(until the next use of ‘SPC o A’) restricted to the current file.
+Pressing ‘<’ twice means to restrict to the current subtree or region
+(if active).
+** SPC o a m
+:PROPERTIES:
+:CUSTOM_ID: 8e1b8820-d496-4bb4-9195-11c1c4c08253
+:END:
+*** Function
+*org-tags-view*
+*** Documentation
+Show all headlines for all ‘org-agenda-files’ matching a TAGS criterion.
+The prefix arg TODO-ONLY limits the search to TODO entries.
+** SPC o a t
+:PROPERTIES:
+:CUSTOM_ID: 3f76119e-eee1-4c00-9262-66960ec0ee24
+:END:
+*** Function
+*org-todo-list*
+*** Documentation
+Show all (not done) TODO entries from all agenda file in a single list.
+The prefix arg can be used to select a specific TODO keyword and limit
+the list to these.  When using ‘SPC u’, you will be prompted
+for a keyword.  A numeric prefix directly selects the Nth keyword in
+‘org-todo-keywords-1’.
+** SPC o a v
+:PROPERTIES:
+:CUSTOM_ID: 795ceeea-5f76-4d7e-9ef4-f889a74630e7
+:END:
+*** Function
+*org-search-view*
+*** Documentation
+Show all entries that contain a phrase or words or regular expressions.
+
+With optional prefix argument TODO-ONLY, only consider entries that are
+TODO entries.  The argument STRING can be used to pass a default search
+string into this function.  If EDIT-AT is non-nil, it means that the
+user should get a chance to edit this string, with cursor at position
+EDIT-AT.
+
+The search string can be viewed either as a phrase that should be found as
+is, or it can be broken into a number of snippets, each of which must match
+in a Boolean way to select an entry.  The default depends on the variable
+‘org-agenda-search-view-always-boolean’.
+Even if this is turned off (the default) you can always switch to
+Boolean search dynamically by preceding the first word with  "+" or "-".
+
+The default is a direct search of the whole phrase, where each space in
+the search string can expand to an arbitrary amount of whitespace,
+including newlines.
+
+If using a Boolean search, the search string is split on whitespace and
+each snippet is searched separately, with logical AND to select an entry.
+Words prefixed with a minus must *not* occur in the entry.  Words without
+a prefix or prefixed with a plus must occur in the entry.  Matching is
+case-insensitive.  Words are enclosed by word delimiters (i.e. they must
+match whole words, not parts of a word) if
+‘org-agenda-search-view-force-full-words’ is set (default is nil).
+
+Boolean search snippets enclosed by curly braces are interpreted as
+regular expressions that must or (when preceded with "-") must not
+match in the entry.  Snippets enclosed into double quotes will be taken
+as a whole, to include whitespace.
+
+- If the search string starts with an asterisk, search only in headlines.
+- If (possibly after the leading star) the search string starts with an
+  exclamation mark, this also means to look at TODO entries only, an effect
+  that can also be achieved with a prefix argument.
+- If (possibly after star and exclamation mark) the search string starts
+  with a colon, this will mean that the (non-regexp) snippets of the
+  Boolean search must match as full words.
+
+This command searches the agenda files, and in addition the files
+listed in ‘org-agenda-text-search-extra-files’ unless a restriction lock
+is active.
+** SPC g c R
+:PROPERTIES:
+:CUSTOM_ID: f86c10a0-78b8-4c5c-a721-a669c85ae9ac
+:END:
+*** Function
+*+magit/clone*
+*** Documentation
+Like ‘magit-clone’, but supports additional formats on top of absolute URLs:
+
++ USER/REPO: assumes {‘+magit-default-clone-url’}/USER/REPO
++ REPO: assumes {‘+magit-default-clone-url’}/{USER}/REPO, where {USER} is
+  ascertained from your global gitconfig.
+** SPC g c c
+:PROPERTIES:
+:CUSTOM_ID: 11008e2e-1f71-4cb4-bca4-9ff37abf09b9
+:END:
+*** Function
+*magit-commit-create*
+*** Documentation
+Create a new commit on ‘HEAD’.
+With a prefix argument, amend to the commit at ‘HEAD’ instead.
+
+(git commit [--amend] ARGS)
+
+(fn &optional ARGS)
+** SPC g c i
+:PROPERTIES:
+:CUSTOM_ID: abf3bf2d-d0c8-4434-b56c-fec14c1b72bc
+:END:
+*** Function
+*forge-create-issue*
+*** Documentation
+Create a new issue for the current repository.
+** SPC g c p
+:PROPERTIES:
+:CUSTOM_ID: bf264227-abc8-4ba4-a795-1ab7dde1dece
+:END:
+*** Function
+*forge-create-pullreq*
+*** Documentation
+Create a new pull-request for the current repository.
+
+(fn SOURCE TARGET)
+** SPC g c r
+:PROPERTIES:
+:CUSTOM_ID: ea7ab69d-2108-4911-8f17-48211122cb11
+:END:
+*** Function
+*magit-init*
+*** Documentation
+Initialize a Git repository, then show its status.
+
+If the directory is below an existing repository, then the user
+has to confirm that a new one should be created inside.  If the
+directory is the root of the existing repository, then the user
+has to confirm that it should be reinitialized.
+
+Non-interactively DIRECTORY is (re-)initialized unconditionally.
+
+(fn DIRECTORY)
+** SPC g l i
+:PROPERTIES:
+:CUSTOM_ID: ca24535a-4d06-4034-b4eb-de9c9acc6d50
+:END:
+*** Function
+*forge-list-issues*
+*** Documentation
+List issues in a separate buffer.
+
+(fn REPO)
+** SPC g l n
+:PROPERTIES:
+:CUSTOM_ID: eef41034-677b-4c95-9e44-a7822183f8ff
+:END:
+*** Function
+*forge-list-notifications*
+*** Documentation
+List notifications.
+** SPC g l p
+:PROPERTIES:
+:CUSTOM_ID: c4430da6-4223-45d3-81b2-ebd850a5d726
+:END:
+*** Function
+*forge-list-pullreqs*
+*** Documentation
+List pull-requests in a separate buffer.
+
+(fn REPO)
+** SPC g l r
+:PROPERTIES:
+:CUSTOM_ID: 404a64af-0118-469b-ae13-0960576f3ffb
+:END:
+*** Function
+*magit-list-repositories*
+*** Documentation
+Display a list of repositories.
+
+Use the options ‘magit-repository-directories’ to control which
+repositories are displayed.
+** SPC g l s
+:PROPERTIES:
+:CUSTOM_ID: d434feae-3f72-4cee-b371-8f2714e64bd3
+:END:
+*** Function
+*magit-list-submodules*
+*** Documentation
+Display a list of the current repository’s submodules.
+** SPC g o .
+:PROPERTIES:
+:CUSTOM_ID: fab16ff9-42e8-49d1-a73c-24258a403358
+:END:
+*** Function
+*+vc/git-browse-region-or-line*
+*** Documentation
+Open the website for the current version controlled file. Fallback to
+repository root.
+
+(fn &optional ARG)
+** SPC g o I
+:PROPERTIES:
+:CUSTOM_ID: dd65f811-45f0-4747-941d-971d8556fe02
+:END:
+*** Function
+*forge-browse-issues*
+*** Documentation
+Visit the url corresponding to REPO’s issues using a browser.
+
+(fn REPO)
+** SPC g o P
+:PROPERTIES:
+:CUSTOM_ID: 7c8f931b-a142-4aab-92da-0c412e0fffa0
+:END:
+*** Function
+*forge-browse-pullreqs*
+*** Documentation
+Visit the url corresponding to REPO’s pull-requests using a browser.
+
+(fn REPO)
+** SPC g o c
+:PROPERTIES:
+:CUSTOM_ID: 2bf8c13c-6890-464f-87f6-95ccba8a3ecf
+:END:
+*** Function
+*forge-browse-commit*
+*** Documentation
+Visit the url corresponding to REV using a browser.
+
+(fn REV)
+** SPC g o i
+:PROPERTIES:
+:CUSTOM_ID: f48b246a-32db-45f4-8cc6-1eaceea99c62
+:END:
+*** Function
+*forge-browse-issue*
+*** Documentation
+Visit the url corresponding to ISSUE using a browser.
+
+(fn ISSUE)
+** SPC g o p
+:PROPERTIES:
+:CUSTOM_ID: 69b1dd4c-e667-409a-8ddc-a20badef1577
+:END:
+*** Function
+*forge-browse-pullreq*
+*** Documentation
+Visit the url corresponding to PULLREQ using a browser.
+
+(fn PULLREQ)
+** SPC g o r
+:PROPERTIES:
+:CUSTOM_ID: 2a3266bb-4e7b-4456-9373-04e74e4ed858
+:END:
+*** Function
+*forge-browse-remote*
+*** Documentation
+Visit the url corresponding to REMOTE using a browser.
+
+(fn REMOTE)
+** SPC g f c
+:PROPERTIES:
+:CUSTOM_ID: 84c00a5c-beff-4ef3-a147-87c282eb02e0
+:END:
+*** Function
+*magit-show-commit*
+*** Documentation
+Visit the revision at point in another buffer.
+If there is no revision at point or with a prefix argument prompt
+for a revision.
+
+(fn REV &optional ARGS FILES MODULE)
+** SPC g f f
+:PROPERTIES:
+:CUSTOM_ID: 446b4fd8-12e3-49cd-9eb0-b0278ffa781f
+:END:
+*** Function
+*magit-find-file*
+*** Documentation
+View FILE from REV.
+Switch to a buffer visiting blob REV:FILE,
+creating one if none already exists.
+
+(fn REV FILE)
+** SPC g f g
+:PROPERTIES:
+:CUSTOM_ID: 56858029-6614-4870-8403-00606818a106
+:END:
+*** Function
+*magit-find-git-config-file*
+*** Documentation
+Edit a file located in the current repository’s git directory.
+
+When ".git", located at the root of the working tree, is a
+regular file, then that makes it cumbersome to open a file
+located in the actual git directory.
+
+This command is like ‘find-file’, except that it temporarily
+binds ‘default-directory’ to the actual git directory, while
+reading the FILENAME.
+
+(fn FILENAME &optional WILDCARDS)
+** SPC g f i
+:PROPERTIES:
+:CUSTOM_ID: f4d50c1f-1d66-4180-9120-78b0671cd47b
+:END:
+*** Function
+*forge-visit-issue*
+*** Documentation
+View the issue at point in a separate buffer.
+
+(fn ISSUE)
+** SPC g f p
+:PROPERTIES:
+:CUSTOM_ID: 062f9f4b-17b2-418d-aa65-7e30816f0451
+:END:
+*** Function
+*forge-visit-pullreq*
+*** Documentation
+View the pull-request at point in a separate buffer.
+
+(fn PULLREQ)
+** SPC h r P
+:PROPERTIES:
+:CUSTOM_ID: eab23ac2-6b7c-4a45-8a8d-f41f4e1d1d98
+:END:
+*** Function
+*doom/reload-project*
+*** Documentation
+Reload the project root cache.
+** SPC h r f
+:PROPERTIES:
+:CUSTOM_ID: 6995fbba-9842-4fc5-a875-a34a060dfe0a
+:END:
+*** Function
+*doom/reload-font*
+*** Documentation
+Reload ‘doom-font’, ‘doom-variable-pitch-font’, and ‘doom-unicode-font’, if
+set.
+** SPC h r p
+:PROPERTIES:
+:CUSTOM_ID: a36d8b41-c3bc-432b-970b-1ee7e8054973
+:END:
+*** Function
+*doom/reload-packages*
+*** Documentation
+Reload ‘doom-packages’, ‘package’ and ‘quelpa’.
+** SPC h r r
+:PROPERTIES:
+:CUSTOM_ID: d3112dd8-7d43-46fd-889e-dd4b7f13372d
+:END:
+*** Function
+*doom/reload*
+*** Documentation
+Reloads your config. This is experimental!
+
+If called from a noninteractive session, this will try to communicate with a
+live server (if one is found) to tell it to run this function.
+
+If called from an interactive session, tries to reload autoloads files (if
+necessary), reinistalize doom (via ‘doom-initialize’) and reloads your private
+init.el and config.el. Then runs ‘doom-reload-hook’.
+
+(fn &optional FORCE-P)
+** SPC h r t
+:PROPERTIES:
+:CUSTOM_ID: 263683a0-2abc-421c-971f-5dca2cc28a8d
+:END:
+*** Function
+*doom/reload-theme*
+*** Documentation
+Reset the current color theme and fonts.
+** SPC h 4 i
+:PROPERTIES:
+:CUSTOM_ID: 26faf9af-ee1e-44f3-89eb-af3bf4fc19bb
+:END:
+*** Function
+*info-other-window*
+*** Documentation
+Like ‘info’ but show the Info buffer in another window.
+
+(fn &optional FILE-OR-NODE BUFFER)
+** SPC m T
+:PROPERTIES:
+:CUSTOM_ID: 2b5a30f5-4747-4bbf-b04b-f67e2e656080
+:END:
+*** Function
+*org-todo-list*
+*** Documentation
+Show all (not done) TODO entries from all agenda file in a single list.
+The prefix arg can be used to select a specific TODO keyword and limit
+the list to these.  When using ‘SPC u’, you will be prompted
+for a keyword.  A numeric prefix directly selects the Nth keyword in
+‘org-todo-keywords-1’.
+** SPC m b
+:PROPERTIES:
+:CUSTOM_ID: 6ac15073-c267-44a1-9026-64f19189d0ef
+:END:
+*** Function
+*org-switchb*
+*** Documentation
+Switch between Org buffers.
+
+With ‘SPC u’ prefix, restrict available buffers to files.
+
+With ‘SPC u SPC u’ prefix, restrict available buffers to agenda files.
+
+(fn &optional ARG)
+** SPC m d
+:PROPERTIES:
+:CUSTOM_ID: 3e395f97-38ef-479c-9abd-51ac084226e4
+:END:
+*** Function
+*org-deadline*
+*** Documentation
+Insert the "DEADLINE:" string with a timestamp to make a deadline.
+With one universal prefix argument, remove any deadline from the item.
+With two universal prefix arguments, prompt for a warning delay.
+With argument TIME, set the deadline at the corresponding date.  TIME
+can either be an Org date like "2011-07-24" or a delta like "+2d".
+
+(fn ARG &optional TIME)
+** SPC m l
+:PROPERTIES:
+:CUSTOM_ID: 55d5a5dc-7e28-4115-8e44-6cd2e37bf950
+:END:
+*** Function
+*org-store-link*
+*** Documentation
+Store a link to the current location.
+
+This link is added to ‘org-stored-links’ and can later be inserted
+into an Org buffer with ‘org-insert-link’ (‘C-c C-l’).
+
+For some link types, a ‘M-x universal-argument’ prefix ARG is interpreted.  A single
+‘M-x universal-argument’ negates ‘org-context-in-file-links’ for file links or
+‘org-gnus-prefer-web-links’ for links to Usenet articles.
+
+A ‘M-x universal-argument M-x universal-argument’ prefix ARG forces skipping storing functions that are not
+part of Org core.
+
+A ‘M-x universal-argument M-x universal-argument M-x universal-argument’ prefix ARG forces storing a link for each line in the
+active region.
+
+Assume the function is called interactively if INTERACTIVE? is
+non-nil.
+
+(fn ARG &optional INTERACTIVE\?)
+** SPC m t
+:PROPERTIES:
+:CUSTOM_ID: 9ee330e2-be2c-41f0-b285-45d56c28e734
+:END:
+*** Function
+*org-todo*
+*** Documentation
+Change the TODO state of an item.
+
+The state of an item is given by a keyword at the start of the heading,
+like
+     *** TODO Write paper
+     *** DONE Call mom
+
+The different keywords are specified in the variable ‘org-todo-keywords’.
+By default the available states are "TODO" and "DONE".  So, for this
+example: when the item starts with TODO, it is changed to DONE.
+When it starts with DONE, the DONE is removed.  And when neither TODO nor
+DONE are present, add TODO at the beginning of the heading.
+
+With ‘SPC u’ prefix ARG, use completion to determine the new state.
+With numeric prefix ARG, switch to that state.
+With a ‘SPC u SPC u’ prefix, switch to the next set of TODO keywords (nextset).
+With a ‘SPC u SPC u SPC u’ prefix, circumvent any state blocking.
+With a numeric prefix arg of 0, inhibit note taking for the change.
+With a numeric prefix arg of -1, cancel repeater to allow marking as DONE.
+
+When called through ELisp, arg is also interpreted in the following way:
+‘none’        -> empty state
+""            -> switch to empty state
+‘done’        -> switch to DONE
+‘nextset’     -> switch to the next set of keywords
+‘previousset’ -> switch to the previous set of keywords
+"WAITING"     -> switch to the specified keyword, but only if it
+                 really is a member of ‘org-todo-keywords’.
+
+(fn &optional ARG)
+** SPC m e M
+:PROPERTIES:
+:CUSTOM_ID: f93a88f6-a233-4d7d-af93-d4d25bceb181
+:END:
+*** Function
+*org-md-export-as-markdown*
+*** Documentation
+Export current buffer to a Markdown buffer.
+
+If narrowing is active in the current buffer, only export its
+narrowed part.
+
+If a region is active, export that region.
+
+A non-nil optional argument ASYNC means the process should happen
+asynchronously.  The resulting buffer should be accessible
+through the ‘org-export-stack’ interface.
+
+When optional argument SUBTREEP is non-nil, export the sub-tree
+at point, extracting information from the headline properties
+first.
+
+When optional argument VISIBLE-ONLY is non-nil, don’t export
+contents of hidden elements.
+
+Export is done in a buffer named "*Org MD Export*", which will
+be displayed when ‘org-export-show-temporary-export-buffer’ is
+non-nil.
+
+(fn &optional ASYNC SUBTREEP VISIBLE-ONLY)
+** SPC m e R
+:PROPERTIES:
+:CUSTOM_ID: 4219558d-4aab-4d57-b02d-738c1ddfc2f8
+:END:
+*** Function
+*org-reveal-export-to-html-and-browse*
+*** Documentation
+Export current buffer to a reveal.js and browse HTML file.
+** SPC m e m
+:PROPERTIES:
+:CUSTOM_ID: 35f04100-1bb4-40b8-96e4-45ccddf1d23f
+:END:
+*** Function
+*org-md-export-to-markdown*
+*** Documentation
+Export current buffer to a Markdown file.
+
+If narrowing is active in the current buffer, only export its
+narrowed part.
+
+If a region is active, export that region.
+
+A non-nil optional argument ASYNC means the process should happen
+asynchronously.  The resulting file should be accessible through
+the ‘org-export-stack’ interface.
+
+When optional argument SUBTREEP is non-nil, export the sub-tree
+at point, extracting information from the headline properties
+first.
+
+When optional argument VISIBLE-ONLY is non-nil, don’t export
+contents of hidden elements.
+
+Return output file’s name.
+
+(fn &optional ASYNC SUBTREEP VISIBLE-ONLY)
+** SPC m e r
+:PROPERTIES:
+:CUSTOM_ID: adb23c77-7135-4d86-954c-ab5244f53613
+:END:
+*** Function
+*org-reveal-export-to-html*
+*** Documentation
+Export current buffer to a reveal.js HTML file.
+** SPC m c C
+:PROPERTIES:
+:CUSTOM_ID: 63a3f958-9499-455b-8c2c-4eecd361ac43
+:END:
+*** Function
+*org-clock-out*
+*** Documentation
+Stop the currently running clock.
+Throw an error if there is no running clock and FAIL-QUIETLY is nil.
+With a universal prefix, prompt for a state to switch the clocked out task
+to, overriding the existing value of ‘org-clock-out-switch-to-state’.
+
+(fn &optional SWITCH-TO-STATE FAIL-QUIETLY AT-TIME)
+** SPC m c c
+:PROPERTIES:
+:CUSTOM_ID: 252e618d-05e6-4e1c-adc3-996e35fe59db
+:END:
+*** Function
+*org-clock-in*
+*** Documentation
+Start the clock on the current item.
+
+If necessary, clock-out of the currently active clock.
+
+With a ‘SPC u’ prefix argument SELECT, offer a list of recently clocked
+tasks to clock into.
+
+When SELECT is ‘SPC u SPC u’, clock into the current task and mark it as
+the default task, a special task that will always be offered in the
+clocking selection, associated with the letter ‘d’.
+
+When SELECT is ‘SPC u SPC u SPC u’, clock in by using the last clock-out
+time as the start time.  See ‘org-clock-continuously’ to make this
+the default behavior.
+
+(fn &optional SELECT START-TIME)
+** SPC m c g
+:PROPERTIES:
+:CUSTOM_ID: 4817dde7-0f2c-4acc-9f91-d7005eb32ead
+:END:
+*** Function
+*org-clock-goto*
+*** Documentation
+Go to the currently clocked-in entry, or to the most recently clocked one.
+With prefix arg SELECT, offer recently clocked tasks for selection.
+
+(fn &optional SELECT)
+** SPC m c x
+:PROPERTIES:
+:CUSTOM_ID: 51bd50b8-60c3-4b9b-8dbf-53745fde8d4b
+:END:
+*** Function
+*org-clock-cancel*
+*** Documentation
+Cancel the running clock by removing the start timestamp.
+** SPC m e b L
+:PROPERTIES:
+:CUSTOM_ID: b92fadcc-dd90-4075-b178-b157369e48c3
+:END:
+*** Function
+*org-beamer-export-as-latex*
+*** Documentation
+Export current buffer as a Beamer buffer.
+
+If narrowing is active in the current buffer, only export its
+narrowed part.
+
+If a region is active, export that region.
+
+A non-nil optional argument ASYNC means the process should happen
+asynchronously.  The resulting buffer should be accessible
+through the ‘org-export-stack’ interface.
+
+When optional argument SUBTREEP is non-nil, export the sub-tree
+at point, extracting information from the headline properties
+first.
+
+When optional argument VISIBLE-ONLY is non-nil, don’t export
+contents of hidden elements.
+
+When optional argument BODY-ONLY is non-nil, only write code
+between "\begin{document}" and "\end{document}".
+
+EXT-PLIST, when provided, is a property list with external
+parameters overriding Org default settings, but still inferior to
+file-local settings.
+
+Export is done in a buffer named "*Org BEAMER Export*", which
+will be displayed when ‘org-export-show-temporary-export-buffer’
+is non-nil.
+
+(fn &optional ASYNC SUBTREEP VISIBLE-ONLY BODY-ONLY EXT-PLIST)
+** SPC m e b l
+:PROPERTIES:
+:CUSTOM_ID: 28af5843-e859-494a-92bd-19d32270849e
+:END:
+*** Function
+*org-beamer-export-to-latex*
+*** Documentation
+Export current buffer as a Beamer presentation (tex).
+
+If narrowing is active in the current buffer, only export its
+narrowed part.
+
+If a region is active, export that region.
+
+A non-nil optional argument ASYNC means the process should happen
+asynchronously.  The resulting file should be accessible through
+the ‘org-export-stack’ interface.
+
+When optional argument SUBTREEP is non-nil, export the sub-tree
+at point, extracting information from the headline properties
+first.
+
+When optional argument VISIBLE-ONLY is non-nil, don’t export
+contents of hidden elements.
+
+When optional argument BODY-ONLY is non-nil, only write code
+between "\begin{document}" and "\end{document}".
+
+EXT-PLIST, when provided, is a property list with external
+parameters overriding Org default settings, but still inferior to
+file-local settings.
+
+Return output file’s name.
+
+(fn &optional ASYNC SUBTREEP VISIBLE-ONLY BODY-ONLY EXT-PLIST)
+** SPC m e b p
+:PROPERTIES:
+:CUSTOM_ID: d13c0ede-ea0d-4232-afce-8926155ad671
+:END:
+*** Function
+*org-beamer-export-to-pdf*
+*** Documentation
+Export current buffer as a Beamer presentation (PDF).
+
+If narrowing is active in the current buffer, only export its
+narrowed part.
+
+If a region is active, export that region.
+
+A non-nil optional argument ASYNC means the process should happen
+asynchronously.  The resulting file should be accessible through
+the ‘org-export-stack’ interface.
+
+When optional argument SUBTREEP is non-nil, export the sub-tree
+at point, extracting information from the headline properties
+first.
+
+When optional argument VISIBLE-ONLY is non-nil, don’t export
+contents of hidden elements.
+
+When optional argument BODY-ONLY is non-nil, only write code
+between "\begin{document}" and "\end{document}".
+
+EXT-PLIST, when provided, is a property list with external
+parameters overriding Org default settings, but still inferior to
+file-local settings.
+
+Return PDF file’s name.
+
+(fn &optional ASYNC SUBTREEP VISIBLE-ONLY BODY-ONLY EXT-PLIST)
