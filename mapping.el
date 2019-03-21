@@ -1,4 +1,4 @@
-(defun map-bindings (prefix buffer)
+(defun doom-abcs/map-bindings (prefix buffer)
   (let ((buffer (or buffer (current-buffer)))
         (re-exclude (regexp-opt
                      '("<vertical-line>" "<bottom-divider>" "<right-divider>"
@@ -27,9 +27,23 @@
         (forward-line 1)))
     (nreverse res)))
 
+(defun doom-abcs/init-page()
+    (insert "#+TITLE: Doom Emacs ABCs
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+#+OPTIONS: num:nil
 
+* Overview
+:PROPERTIES:
+:CUSTOM_ID: OVERVIEW
+:END:
 
-(defun build-entry (key descript cmd)
+* Documentation
+:PROPERTIES:
+:CUSTOM_ID: DOCUMENTATION
+:END:
+"))
+
+(defun doom-abcs/build-entry (key descript cmd)
   (let* ((doc (documentation cmd))
          (doc-string (if (not doc) "" doc))
          (uuid (org-id-uuid)))
@@ -49,59 +63,15 @@
 
 
 
-(defun add-entry(key descript cmd insert)
-  (let ((uuid (build-entry key descript cmd)))
-    (add-row uuid key descript insert)))
+(defun doom-abcs/add-entry(key descript cmd insert)
+  (let ((uuid (doom-abcs/build-entry key descript cmd)))
+    (doom-abcs/add-row uuid key descript insert)))
 
-(defun build-org-file (prefix)
-  (with-temp-file "~/doom-abcs/index.org"
-    (org-mode)
-    (build-table)
-    (let ((bindings (map-bindings prefix (current-buffer))))
-      (-reduce-from
-       (lambda (acc it)
-         (let* ((keymap (car it))
-                (cmd (cdr it))
-                (key (car keymap))
-                (keyparts (split-string key " "))
-                (pfx (-take 2  keyparts))
-                (descript (cdr keymap)))
-           (if (not (equal acc pfx))
-               (progn
-                 (add-table pfx)
-                 (add-entry key descript cmd nil)
-                 pfx
-                 )
-
-             (progn
-               (add-entry key descript cmd t)
-               acc
-               ))))
-       ""
-       bindings))))
-(build-org-file (vector (string-to-char (kbd doom-leader-key))))
-
-(defun build-table()
-    (insert "
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
-#+OPTIONS: num:nil
-
-* Overview
-:PROPERTIES:
-:CUSTOM_ID: OVERVIEW
-:END:
-
-* Documentation
-:PROPERTIES:
-:CUSTOM_ID: DOCUMENTATION
-:END:
-"))
-
-(defun add-table(key-parts) 
+(defun doom-abcs/add-table(key-parts)
     (goto-char (point-min))
     (re-search-forward (rx bol "* Documentation"))
     (previous-line)
-    (insert (format 
+    (insert (format
 "** %s \n#+NAME: %s\n" (string-join key-parts " ") (string-join key-parts)))
 
     (org-table-create "2x1")
@@ -111,7 +81,7 @@
     (insert "Command")
     (org-table-hline-and-move))
 
-(defun add-row(uuid key descript insert)
+(defun doom-abcs/add-row(uuid key descript insert)
   (goto-char (point-min))
   (re-search-forward "* Documentation")
   (re-search-backward "#\\+NAME:")
@@ -125,5 +95,35 @@
   (insert (format "[[#%s][%s]]" uuid descript))
   (org-table-align))
 
-(build-table)(add-table '("SPC" "RET"))
-(add-row '("SPC" "RET"))
+(defun doom-abcs/build-org-file (prefix)
+  (with-temp-file "~/doom-abcs/index.org"
+    (org-mode)
+    (doom-abcs/init-page)
+    (let ((bindings (doom-abcs/map-bindings prefix (current-buffer))))
+      (-reduce-from
+       (lambda (acc it)
+         (let* ((keymap (car it))
+                (cmd (cdr it))
+                (key (car keymap))
+                (keyparts (split-string key " "))
+                (pfx (-take 2  keyparts))
+                (descript (cdr keymap)))
+           (if (not (equal acc pfx))
+               (progn
+                 (doom-abcs/add-table pfx)
+                 (doom-abcs/add-entry key descript cmd nil)
+                 pfx
+                 )
+
+             (progn
+               (doom-abcs/add-entry key descript cmd t)
+               acc
+               ))))
+       ""
+       bindings))))
+
+(doom-abcs/build-org-file (vector (string-to-char (kbd doom-leader-key))))
+
+
+
+
