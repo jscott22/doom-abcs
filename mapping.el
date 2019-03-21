@@ -30,6 +30,8 @@
 
 
 (defun build-entry (keyparts key descript cmd)
+  (let* ((doc (documentation cmd))
+        (doc-string (if (not doc) "" doc)))
   (goto-char (max-char))
   (insert
    (format
@@ -41,14 +43,15 @@
 %s
 *** Documentation
 %s\n"
-    key (string-join keyparts) descript (documentation cmd))))
+    key (string-join keyparts) descript (replace-regexp-in-string (rx bol "*") "" doc-string)))
+  ))
 
 
-(defun build-org-file (prefix buffer)
-  (with-current-buffer "*scratch*"
-    (erase-buffer)
+(defun build-org-file (prefix)
+  (with-temp-file "~/doom-abcs/index.org"
+    (org-mode)
     (build-table)
-    (let ((bindings (map-bindings prefix buffer)))
+    (let ((bindings (map-bindings prefix (current-buffer))))
       (-reduce-from
        (lambda (acc it)
          (let* ((keymap (car it))
@@ -66,18 +69,15 @@
                  )
 
              (progn
-               (add-row key descript t)
+               (add-row key descript )
                (build-entry keyparts key descript cmd)
                acc
                ))))
        ""
        bindings))))
-(build-org-file (vector (string-to-char (kbd doom-leader-key))) (current-buffer))
+(build-org-file (vector (string-to-char (kbd doom-leader-key))))
 
 (defun build-table()
-  (with-current-buffer "*scratch*"
-    (erase-buffer)
-    (org-mode)
     (insert "
 * Overview
 :PROPERTIES:
@@ -88,22 +88,21 @@
 :PROPERTIES:
 :CUSTOM_ID: DOCUMENTATION
 :PROPERTIES:
-")))
+"))
 
-(defun add-table(key-parts)
-  (with-current-buffer "*scratch*"
+(defun add-table(key-parts) 
     (goto-char (point-min))
     (re-search-forward (rx bol "* Documentation"))
     (previous-line)
-    (insert (format "
-** %s
-#+NAME: %s\n" (string-join key-parts " ") (string-join key-parts)))
+    (insert (format 
+"** %s \n#+NAME: %s\n" (string-join key-parts " ") (string-join key-parts)))
+
     (org-table-create "2x1")
     (org-table-goto-column 1)
     (insert "Key")
     (org-table-goto-column 2)
     (insert "Command")
-    (org-table-hline-and-move)))
+    (org-table-hline-and-move))
 
 (defun add-row(key descript insert)
   (goto-char (point-min))
